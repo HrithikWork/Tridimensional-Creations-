@@ -1,0 +1,468 @@
+[
+  {
+    "id": "cnc-jali-cutting-panels",
+    "category": "2D CNC",
+    "manufacturing_method": "2D CNC Routing",
+    "title": "Custom CNC Jali Cutting Panels & Room Dividers",
+    "description": "Jali cutting is an architectural technique of cutting open, decorative patterns into rigid panels. It lets air and natural light pass through freely while acting as an elegant partition between spaces.",
+    "design_scope": [
+      "Traditional temple lattices",
+      "Indian floral carvings",
+      "Modern geometric grids",
+      "Custom architect-specified patterns"
+    ],
+    "where_to_use": [
+      "Pooja room backdrops, partitions, and doors",
+      "Living-dining room privacy dividers",
+      "False ceiling decorative panels and light cutouts",
+      "Balcony and staircase railing screens"
+    ],
+    "tech_specs": {
+      "thickness": "6mm to 75mm+",
+      "materials": "HDHMR, WPC, Plywood, Acrylic, Corian",
+      "finishes": "Raw machine-cut, White primer-coated, or Factory PU paint"
+    },
+    "customization": "Made to your exact wall or frame measurements. Share an image reference, rough sketch, or CAD file to begin.",
+    "image_placeholder": "data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='800' height='600' viewBox='0 0 800 600' fill='%23F7F7F7'><rect width='800' height='600' fill='%23EDEAE3'/><g stroke='%23BDB5A8' stroke-width='2' fill='none'><rect x='80' y='60' width='640' height='480'/><path d='M80 60 L720 540 M720 60 L80 540'/><circle cx='400' cy='300' r='140'/><polygon points='400,180 500,300 400,420 300,300'/><circle cx='400' cy='300' r='60'/><circle cx='200' cy='180' r='40'/><circle cx='600' cy='180' r='40'/><circle cx='200' cy='420' r='40'/><circle cx='600' cy='420' r='40'/></g><rect x='100' y='80' width='600' height='440' fill='none' stroke='%232C2C2C' stroke-width='1.5'/><text x='400' y='515' font-family='sans-serif' font-size='13' letter-spacing='3' fill='%232C2C2C' text-anchor='middle'>PRECISION CNC JALI LATTICE • 2D SUBTRACTIVE CUTTING</text></svg>"
+  },
+  {
+    "id": "cnc-wardrobe-shutters",
+    "category": "2D CNC",
+    "manufacturing_method": "2D CNC Routing",
+    "title": "Custom CNC Wardrobe Shutters & Cabinet Panels",
+    "description": "Turn plain wardrobes and cabinets into custom furniture accents. Our CNC machine carves continuous fluted textures, patterns, and relief details across wardrobe shutters to create a cohesive designer look.",
+    "design_scope": [
+      "Modern fluted/reeded grooves",
+      "Chevron lines and herringbone cuts",
+      "Geometric textures",
+      "Flowing patterns continuous across multiple consecutive doors"
+    ],
+    "where_to_use": [
+      "Bedroom wardrobe sliding and hinged shutters",
+      "TV consoles, crockery units, and bar cabinets",
+      "Vanity units and chest-of-drawers facings"
+    ],
+    "tech_specs": {
+      "thickness": "6mm to 75mm+",
+      "materials": "Moisture-resistant HDHMR, Marine Plywood, Solid Wood",
+      "finishes": "Raw sanded, White primer-coated, or Factory PU paint"
+    },
+    "customization": "Manufactured to your shutter opening schedule; patterns can align seamlessly across consecutive doors.",
+    "image_placeholder": "data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='800' height='600' viewBox='0 0 800 600' fill='%23F7F7F7'><rect width='800' height='600' fill='%23EFECE6'/><g stroke='%23C5BEB2' stroke-width='2.5'><line x1='140' y1='80' x2='140' y2='520'/><line x1='180' y1='80' x2='180' y2='520'/><line x1='220' y1='80' x2='220' y2='520'/><line x1='260' y1='80' x2='260' y2='520'/><line x1='300' y1='80' x2='300' y2='520'/><line x1='340' y1='80' x2='340' y2='520'/><line x1='380' y1='80' x2='380' y2='520'/><line x1='420' y1='80' x2='420' y2='520'/><line x1='460' y1='80' x2='460' y2='520'/><line x1='500' y1='80' x2='500' y2='520'/><line x1='540' y1='80' x2='540' y2='520'/><line x1='580' y1='80' x2='580' y2='520'/><line x1='620' y1='80' x2='620' y2='520'/><line x1='660' y1='80' x2='660' y2='520'/></g><rect x='100' y='60' width='600' height='480' fill='none' stroke='%232C2C2C' stroke-width='2'/><text x='400' y='570' font-family='sans-serif' font-size='13' letter-spacing='3' fill='%232C2C2C' text-anchor='middle'>CONTINUOUS FLUTED REEDED CNC SHUTTERS</text></svg>"
+  },
+  {
+    "id": "cnc-door-panels-entrance-overlays",
+    "category": "2D CNC",
+    "manufacturing_method": "2D CNC Routing",
+    "title": "Custom CNC Door Panels & Entrance Overlays",
+    "description": "Upgrade entrance doors with carved architectural relief panels. These are supplied either as complete door leaves or as decorative front overlays that fit onto your existing flush doors.",
+    "design_scope": [
+      "Symmetrical double-door peacock motifs",
+      "Temple door carvings",
+      "Vertical fluting with brass inlay channels",
+      "Contemporary geometric reliefs"
+    ],
+    "where_to_use": [
+      "Main entrance double doors and single doors",
+      "Pooja room entrance doors",
+      "Master bedroom doors and luxury office entrances"
+    ],
+    "tech_specs": {
+      "thickness": "6mm to 75mm+",
+      "materials": "Exterior WPC, HDHMR, MDF, Plywood, Corian, Natural Wood",
+      "finishes": "Raw sanded, White primer-coated, or Weather-resistant PU finish"
+    },
+    "customization": "Cut to your exact frame dimensions with margins left clear for locks, handles, and hinges.",
+    "image_placeholder": "data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='800' height='600' viewBox='0 0 800 600' fill='%23F7F7F7'><rect width='800' height='600' fill='%23ECE7DE'/><rect x='220' y='50' width='360' height='500' fill='none' stroke='%232C2C2C' stroke-width='2.5'/><rect x='250' y='80' width='300' height='190' fill='none' stroke='%23BDB5A8' stroke-width='1.5'/><rect x='250' y='290' width='300' height='230' fill='none' stroke='%23BDB5A8' stroke-width='1.5'/><circle cx='540' cy='300' r='8' fill='%232C2C2C'/><text x='400' y='575' font-family='sans-serif' font-size='13' letter-spacing='3' fill='%232C2C2C' text-anchor='middle'>ENTRANCE OVERLAY & RELIEF SLAB</text></svg>"
+  },
+  {
+    "id": "cnc-decorative-screens-partitions",
+    "category": "2D CNC",
+    "manufacturing_method": "2D CNC Routing",
+    "title": "Custom Decorative Screens & Spatial Partitions",
+    "description": "Decorative screens are freestanding or framed feature panels that visually separate areas within a home or office without closing them off with a dark, solid wall.",
+    "design_scope": [
+      "Organic leaf and tree branches",
+      "Modern abstract curves",
+      "Geometric lattices",
+      "Minimalist linear patterns"
+    ],
+    "where_to_use": [
+      "Living-to-dining and foyer dividers",
+      "Office cabin boundaries and waiting lounge screens",
+      "Restaurant seating partitions",
+      "Bedhead backdrop panels"
+    ],
+    "tech_specs": {
+      "thickness": "6mm to 75mm+",
+      "materials": "HDHMR, WPC, Acrylic, Wood",
+      "finishes": "Raw machine-finished, White primer-coated, or Factory PU spray"
+    },
+    "customization": "Sized to your space as a single panel or as modular interlocking panels to cover wide openings.",
+    "image_placeholder": "data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='800' height='600' viewBox='0 0 800 600' fill='%23F7F7F7'><rect width='800' height='600' fill='%23EDE9E1'/><g stroke='%23AFA79A' stroke-width='2' fill='none'><path d='M150 100 Q 250 250 150 400 T 150 500'/><path d='M250 80 Q 350 220 250 360 T 250 520'/><path d='M350 100 Q 450 250 350 400 T 350 500'/><path d='M450 80 Q 550 220 450 360 T 450 520'/><path d='M550 100 Q 650 250 550 400 T 550 500'/><path d='M650 80 Q 750 220 650 360 T 650 520'/></g><rect x='100' y='60' width='600' height='480' fill='none' stroke='%232C2C2C' stroke-width='2'/><text x='400' y='570' font-family='sans-serif' font-size='13' letter-spacing='3' fill='%232C2C2C' text-anchor='middle'>ORGANIC SPATIAL PARTITION</text></svg>"
+  },
+  {
+    "id": "cnc-signage-nameplates",
+    "category": "2D CNC",
+    "manufacturing_method": "2D CNC Routing",
+    "title": "Custom CNC Architectural Signage & Nameplates",
+    "description": "Precision-cut brand logos and residential nameplates that deliver a clean, three-dimensional identity for homes, offices, and retail storefronts.",
+    "design_scope": [
+      "Cut-out silhouette lettering",
+      "Layered 3D raised plaques",
+      "Stencil boards",
+      "Backlit acrylic-backed logo panels"
+    ],
+    "where_to_use": [
+      "Office reception and boardroom branding walls",
+      "Villa, bungalow, and apartment entrance nameplates",
+      "Hotel floor signage and room directories",
+      "Retail storefront branding"
+    ],
+    "tech_specs": {
+      "thickness": "6mm to 75mm+",
+      "materials": "Acrylic, HDHMR, Exterior WPC, Birch Ply",
+      "finishes": "Solid colors, Metallic gold/brass paint, or Natural clear wood coat"
+    },
+    "customization": "Cut directly from your logo, brand typeface, or simple text outline.",
+    "image_placeholder": "data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='800' height='600' viewBox='0 0 800 600' fill='%23F7F7F7'><rect width='800' height='600' fill='%23ECE8E0'/><rect x='160' y='140' width='480' height='300' fill='%23FFFFFF' stroke='%23BDB5A8' stroke-width='2'/><text x='400' y='280' font-family='Cinzel, serif' font-size='24' letter-spacing='6' fill='%232C2C2C' text-anchor='middle'>TRIDIMENSIONAL</text><line x1='280' y1='305' x2='520' y2='305' stroke='%23BDB5A8' stroke-width='1.5'/><text x='400' y='340' font-family='Manrope, sans-serif' font-size='12' letter-spacing='4' fill='%238F877B' text-anchor='middle'>STUDIO & ATELIER</text><text x='400' y='520' font-family='sans-serif' font-size='13' letter-spacing='3' fill='%232C2C2C' text-anchor='middle'>ARCHITECTURAL IDENTITY SIGNAGE</text></svg>"
+  },
+  {
+    "id": "cnc-ceiling-inlays-cutouts",
+    "category": "2D CNC",
+    "manufacturing_method": "2D CNC Routing",
+    "title": "Custom Architectural Cutouts & Ceiling Inlays",
+    "description": "Factory-cut architectural components made to fit ceilings, arches, and wall recesses cleanly, avoiding noisy and inaccurate on-site cutting.",
+    "design_scope": [
+      "Circular false ceiling medallions",
+      "Curved column skins",
+      "Arched entryway borders",
+      "Layered wall recesses and cove lighting tracks"
+    ],
+    "where_to_use": [
+      "False ceiling central chandelier accents and lighting rings",
+      "Round or square column decorative cladding",
+      "Arched door frames and window trims",
+      "Layered wall recesses and accent niches"
+    ],
+    "tech_specs": {
+      "thickness": "6mm to 75mm+",
+      "materials": "HDHMR, WPC, Flexible Plywood, Calibrated MDF",
+      "finishes": "Raw machine-cut, White primer-coated, or Factory PU spray"
+    },
+    "customization": "Milled precisely to match your interior drawings, false ceiling plans, or site measurements.",
+    "image_placeholder": "data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='800' height='600' viewBox='0 0 800 600' fill='%23F7F7F7'><rect width='800' height='600' fill='%23ECE7DE'/><circle cx='400' cy='280' r='200' fill='none' stroke='%232C2C2C' stroke-width='2'/><circle cx='400' cy='280' r='160' fill='none' stroke='%23BDB5A8' stroke-width='1.5'/><circle cx='400' cy='280' r='100' fill='none' stroke='%232C2C2C' stroke-width='2'/><circle cx='400' cy='280' r='40' fill='%23DDD7CE'/><text x='400' y='540' font-family='sans-serif' font-size='13' letter-spacing='3' fill='%232C2C2C' text-anchor='middle'>PRECISION CEILING MEDALLION</text></svg>"
+  },
+  {
+    "id": "cnc-bas-relief-wall-murals",
+    "category": "3D CNC",
+    "manufacturing_method": "3D CNC Relief Milling",
+    "title": "Custom 2.5D Bas-Relief Wall Murals & Accent Panels",
+    "description": "Bas-relief carving brings flat walls into dimensional life without overwhelming your living space. Our 2.5D murals feature sculpted foreground elements with controlled depth, creating elegant shadow lines and architectural warmth.",
+    "design_scope": [
+      "Narrative storytelling and historical depictions",
+      "Spiritual compositions",
+      "Cultural heritage scenes",
+      "Modern landscape contours and topographic abstracts"
+    ],
+    "where_to_use": [
+      "Living room main feature walls",
+      "Hotel and corporate reception lobbies",
+      "Dining room focal walls",
+      "Double-height staircase accent walls"
+    ],
+    "tech_specs": {
+      "thickness": "Board thickness 18mm to 50mm+; carved relief depths up to 38mm",
+      "materials": "HDHMR, Calibrated Plywood, Solid Wood, WPC",
+      "finishes": "Raw machine-cut, Sanded white primer, or Factory PU spray"
+    },
+    "customization": "Cut to fit your exact wall elevations. Upload reference photos, site elevation drawings, or CAD files to develop the artwork.",
+    "image_placeholder": "data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='800' height='600' viewBox='0 0 800 600' fill='%23F7F7F7'><rect width='800' height='600' fill='%23E8E4DA'/><path d='M100 450 Q 250 200 400 350 T 700 250 L 700 500 L 100 500 Z' fill='%23DDD7CE'/><path d='M100 470 Q 300 280 500 410 T 700 320 L 700 500 L 100 500 Z' fill='%23C9C2B6'/><circle cx='550' cy='180' r='50' fill='%23FAF9F7'/><text x='400' y='550' font-family='sans-serif' font-size='13' letter-spacing='3' fill='%232C2C2C' text-anchor='middle'>2.5D CONTOUR BAS-RELIEF MURAL</text></svg>"
+  },
+  {
+    "id": "cnc-religious-relief-panels",
+    "category": "3D CNC",
+    "manufacturing_method": "3D CNC Relief Milling",
+    "title": "Custom 3D Religious Relief Panels & Mandir Backdrops",
+    "description": "Deeply detailed sacred relief panels sculpted specifically for modern home temples, prayer rooms, and spiritual niches.",
+    "design_scope": [
+      "Radha Krishna intimate compositions",
+      "Ram Darbar depictions",
+      "Ganesha iconography",
+      "Mahadev meditative postures",
+      "Last Supper, Jain Tirthankara, and traditional temple arch framing"
+    ],
+    "where_to_use": [
+      "Home pooja room backdrops and side feature panels",
+      "Mandir entrance thresholds and temple doors",
+      "Community prayer halls and spiritual feature walls"
+    ],
+    "tech_specs": {
+      "thickness": "Base thickness 25mm to 50mm+; deep relief carving up to 38mm depth",
+      "materials": "Interior-grade HDHMR, Moisture-resistant WPC, Teakwood, Pine, Corian, Natural Wood",
+      "finishes": "Raw machine-finished, Sanded white primer, Factory PU matte, Antique stone wash, or Gold leaf accents"
+    },
+    "customization": "Scaled to fit your exact mandir alcove or altar dimensions.",
+    "image_placeholder": "data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='800' height='600' viewBox='0 0 800 600' fill='%23F7F7F7'><rect width='800' height='600' fill='%23E9E4DC'/><path d='M250 500 L 250 250 Q 400 120 550 250 L 550 500 Z' fill='none' stroke='%23BDB5A8' stroke-width='3'/><circle cx='400' cy='300' r='90' fill='%23DDD7CE'/><text x='400' y='555' font-family='sans-serif' font-size='13' letter-spacing='3' fill='%232C2C2C' text-anchor='middle'>SACRED ARCH RELIEF PANEL</text></svg>"
+  },
+  {
+    "id": "cnc-3d-decorative-wall-panels",
+    "category": "3D CNC",
+    "manufacturing_method": "3D CNC Relief Milling",
+    "title": "Custom 3D Decorative Wall Panels",
+    "description": "Architectural wall claddings engineered to transform flat interior drywall or masonry into premium textured surfaces. CNC-milled modular panels create continuous, flowing patterns across feature walls.",
+    "design_scope": [
+      "Fluid ripple textures",
+      "Undulating wave forms",
+      "Modern ribbed slats",
+      "Sculptured dunes and asymmetric layered planes"
+    ],
+    "where_to_use": [
+      "Master bedroom backdrop walls and headboard surrounds",
+      "Living room TV and media wall backings",
+      "Corporate boardroom statement walls",
+      "Restaurant and hospitality lounge accent walls"
+    ],
+    "tech_specs": {
+      "thickness": "18mm to 75mm+ panel thickness with carved relief depths from 12mm to 40mm",
+      "materials": "Moisture-resistant HDHMR, WPC, Birch Plywood, MDF, Corian, Natural Wood",
+      "finishes": "Raw CNC sanded, Primer-coated for site painters, or Factory PU spray"
+    },
+    "customization": "Designed as modular panels with accurate joints and continuous pattern matching for seamless installation across the entire wall width.",
+    "image_placeholder": "data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='800' height='600' viewBox='0 0 800 600' fill='%23F7F7F7'><rect width='800' height='600' fill='%23EAE6DE'/><g stroke='%23C1B9AC' stroke-width='2.5' fill='none'><path d='M100 120 C 300 80, 500 160, 700 120'/><path d='M100 190 C 300 150, 500 230, 700 190'/><path d='M100 260 C 300 220, 500 300, 700 260'/><path d='M100 330 C 300 290, 500 370, 700 330'/><path d='M100 400 C 300 360, 500 440, 700 400'/><path d='M100 470 C 300 430, 500 510, 700 470'/></g><text x='400' y='550' font-family='sans-serif' font-size='13' letter-spacing='3' fill='%232C2C2C' text-anchor='middle'>3D WAVE & RIPPLE WALL CLADDING</text></svg>"
+  },
+  {
+    "id": "cnc-floral-relief-wall-art",
+    "category": "3D CNC",
+    "manufacturing_method": "3D CNC Relief Milling",
+    "title": "Custom 3D Floral Relief Wall Art & Botanical Panels",
+    "description": "Organic bas-relief carvings featuring blooming flora, flowing vines, and nature-inspired themes that bring soft, biophilic craftsmanship into modern interior spaces.",
+    "design_scope": [
+      "Heritage lotus and elephant compositions",
+      "Royal peacocks with blossoming branches",
+      "Classical acanthus leaf scrolls",
+      "Oversized tropical palms and botanical engravings"
+    ],
+    "where_to_use": [
+      "Entrance foyer focal walls",
+      "Dining room backdrop panels",
+      "Arched wall niche inlays",
+      "Powder room and master suite statement walls"
+    ],
+    "tech_specs": {
+      "thickness": "25mm to 50mm+ thickness with deep multi-level carving up to 38mm",
+      "materials": "HDHMR, WPC, MDF, Plywood, Corian, Natural Wood",
+      "finishes": "Raw sanded, Off-white matte PU, Antique patina wash, or Two-tone hand-finished detailing"
+    },
+    "customization": "Tailored to your custom frame size, arched entryway, or wall recess dimensions.",
+    "image_placeholder": "data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='800' height='600' viewBox='0 0 800 600' fill='%23F7F7F7'><rect width='800' height='600' fill='%23ECE8DF'/><g stroke='%23BDB5A8' stroke-width='2' fill='none'><path d='M400 420 C 350 350 320 280 400 180 C 480 280 450 350 400 420 Z' fill='%23DDD7CE'/><path d='M400 420 C 320 380 260 310 320 230 C 380 270 380 340 400 420 Z' fill='%23DDD7CE'/><path d='M400 420 C 480 380 540 310 480 230 C 420 270 420 340 400 420 Z' fill='%23DDD7CE'/></g><text x='400' y='540' font-family='sans-serif' font-size='13' letter-spacing='3' fill='%232C2C2C' text-anchor='middle'>3D BOTANICAL & LOTUS SCULPTURE</text></svg>"
+  },
+  {
+    "id": "cnc-geometric-parametric-wall-art",
+    "category": "3D CNC",
+    "manufacturing_method": "3D CNC Relief Milling",
+    "title": "Custom 3D Geometric Relief Panels & Parametric Wall Art",
+    "description": "Structured three-dimensional wall surfaces featuring clean lines, faceted origami planes, and mathematical parametric ribbing that interact dramatically with architectural lighting.",
+    "design_scope": [
+      "Faceted diamond pyramids",
+      "Parametric ripple waves",
+      "Interlocking 3D chevron grooves",
+      "Modern fluted geometric grids"
+    ],
+    "where_to_use": [
+      "Contemporary living room feature walls",
+      "Executive office and conference room claddings",
+      "Home theater acoustic backdrop panels",
+      "Passage and corridor accent paneling"
+    ],
+    "tech_specs": {
+      "thickness": "18mm to 50mm+ thickness; relief depths from 10mm to 35mm",
+      "materials": "HDHMR board, WPC, Calibrated Plywood",
+      "finishes": "Raw sanded, Primer-coated, or Factory PU spray"
+    },
+    "customization": "Scalable pattern grids that repeat seamlessly across single or multi-panel modular installations.",
+    "image_placeholder": "data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='800' height='600' viewBox='0 0 800 600' fill='%23F7F7F7'><rect width='800' height='600' fill='%23E7E3D8'/><g stroke='%23C1B9AC' stroke-width='1.5'><polygon points='200,150 300,250 200,350 100,250' fill='%23DDD6CA'/><polygon points='400,150 500,250 400,350 300,250' fill='%23CFCA8'/><polygon points='600,150 700,250 600,350 500,250' fill='%23DDD6CA'/><polygon points='300,250 400,350 300,450 200,350' fill='%23CBC3B4'/><polygon points='500,250 600,350 500,450 400,350' fill='%23DDD6CA'/></g><text x='400' y='540' font-family='sans-serif' font-size='13' letter-spacing='3' fill='%232C2C2C' text-anchor='middle'>PARAMETRIC FACETED GEOMETRY</text></svg>"
+  },
+  {
+    "id": "cnc-ornamental-door-panels",
+    "category": "3D CNC",
+    "manufacturing_method": "3D CNC Relief Milling",
+    "title": "Custom 3D Ornamental Door Panels & Entrance Overlays",
+    "description": "Turn entryways into sculptural focal points. Our ornamental door panels feature deep 3D carving and are supplied as full structural door slabs or as dimensional relief overlays to mount onto existing flush doors.",
+    "design_scope": [
+      "Symmetrical book-matched twin peacocks",
+      "Temple threshold carvings",
+      "Classical floral arches",
+      "Bold modern dimensional patterns"
+    ],
+    "where_to_use": [
+      "Main entrance single and double doors",
+      "Pooja room ornamental entrance doors",
+      "Master bedroom luxury doors",
+      "Executive office entrance portals"
+    ],
+    "tech_specs": {
+      "thickness": "18mm to 75mm+ (12mm–18mm for overlays; 35mm–50mm+ for solid doors)",
+      "materials": "Exterior-grade WPC, Exterior HDHMR, Seasoned Wood",
+      "finishes": "Raw machine-cut, White primer-coated, or Weather-resistant exterior PU coating"
+    },
+    "customization": "Cut precisely to your rough opening or door leaf dimensions.",
+    "image_placeholder": "data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='800' height='600' viewBox='0 0 800 600' fill='%23F7F7F7'><rect width='800' height='600' fill='%23E9E5DD'/><rect x='240' y='60' width='320' height='480' fill='none' stroke='%232C2C2C' stroke-width='2.5'/><path d='M280 200 Q 400 120 520 200 L 520 480 L 280 480 Z' fill='%23DDD7CE'/><text x='400' y='575' font-family='sans-serif' font-size='13' letter-spacing='3' fill='%232C2C2C' text-anchor='middle'>3D ORNAMENTAL ENTRANCE SLAB</text></svg>"
+  },
+  {
+    "id": "3d-printed-deity-sculptures",
+    "category": "3D Printing",
+    "manufacturing_method": "3D Printing",
+    "title": "Custom 3D Printed Deity Sculptures & Sacred Figurines",
+    "description": "Detailed devotional sculptures and sacred relief figures digitally sculpted and 3D printed with fine precision. Designed for home mandirs, altars, and showcase displays.",
+    "design_scope": [
+      "Lord Ganesha with intricate ornaments",
+      "Ram Lalla / Lord Ram archer posture",
+      "Radha Krishna divine figures",
+      "Buddha in serene meditative mudras",
+      "Customized family deity postures"
+    ],
+    "where_to_use": [
+      "Home mandir altars and pooja niches",
+      "Living room console tables and display shelves",
+      "Entrance foyer spiritual focal points",
+      "Executive office desks"
+    ],
+    "tech_specs": {
+      "thickness": "Sizes: 4 inches up to 24+ inches in height",
+      "materials": "Ultra-high detail Mono-Color Resin, Tough PLA, Cast Fibre",
+      "finishes": "Raw unpainted, Hand-painted realistic acrylic colours, Antique bronze/brass patina, or Solid matte marble-white"
+    },
+    "customization": "Sculpted to order based on your photo reference, preferred posture, temple styling, and base size.",
+    "image_placeholder": "data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='800' height='600' viewBox='0 0 800 600' fill='%23F7F7F7'><rect width='800' height='600' fill='%23ECE6DC'/><ellipse cx='400' cy='320' rx='100' ry='140' fill='%23DDD5C8'/><circle cx='400' cy='180' r='50' fill='%23D0C7B9'/><path d='M340 420 L 460 420 L 480 470 L 320 470 Z' fill='%23BDB5A8'/><text x='400' y='535' font-family='sans-serif' font-size='13' letter-spacing='3' fill='%232C2C2C' text-anchor='middle'>PRECISION RESIN SACRED FIGURINE</text></svg>"
+  },
+  {
+    "id": "3d-printed-portrait-busts",
+    "category": "3D Printing",
+    "manufacturing_method": "3D Printing",
+    "title": "Custom 3D Portrait Busts & Personalised Face Sculptures",
+    "description": "Lifelike 3D memorial busts and family portrait sculptures created from ordinary 2D photographs. Our 3D artists digitally sculpt the likeness before precision 3D printing.",
+    "design_scope": [
+      "Ancestor memorial busts",
+      "Living family portraits",
+      "Couple milestone statues",
+      "Executive profile busts and commemorative awards"
+    ],
+    "where_to_use": [
+      "Living room showcase displays",
+      "Memorial niches and remembrance walls",
+      "Personal study desks",
+      "Commemorative gifts for anniversaries and milestones"
+    ],
+    "tech_specs": {
+      "thickness": "Sizes: 5 inches (mini desk bust) to 18+ inches (life-like mantle scale)",
+      "materials": "Resin, PLA, Fibre",
+      "finishes": "RGB colour, Glossy finish, Realistic hand-painted acrylic tones, Antique bronze, Terracotta, or Classical stone white"
+    },
+    "customization": "Modelled entirely from your photographs. Customized to the required pose, clothing, expression, and base style.",
+    "image_placeholder": "data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='800' height='600' viewBox='0 0 800 600' fill='%23F7F7F7'><rect width='800' height='600' fill='%23E8E4DA'/><circle cx='400' cy='200' r='70' fill='%23DDD7CE'/><path d='M300 400 C 300 290 500 290 500 400 L 530 450 L 270 450 Z' fill='%23C9C2B6'/><rect x='340' y='450' width='120' height='40' fill='%232C2C2C'/><text x='400' y='540' font-family='sans-serif' font-size='13' letter-spacing='3' fill='%232C2C2C' text-anchor='middle'>3D PORTRAIT BUST FROM 2D PHOTOS</text></svg>"
+  },
+  {
+    "id": "3d-printed-animal-pet-sculptures",
+    "category": "3D Printing",
+    "manufacturing_method": "3D Printing",
+    "title": "Custom 3D Animal Sculptures & Pet Miniature Figurines",
+    "description": "Sculpted animal figurines and custom pet replicas featuring true-to-life fur textures, muscle definition, and dynamic poses.",
+    "design_scope": [
+      "Custom dog and cat replicas from owner photos",
+      "Majestic wildlife (lions, elephants, galloping horses)",
+      "Stylized geometric low-poly animals"
+    ],
+    "where_to_use": [
+      "Foyer console tables",
+      "Coffee table conversational centerpieces",
+      "Study desk paperweights",
+      "Personal pet memorial tributes"
+    ],
+    "tech_specs": {
+      "thickness": "Sizes: 4 inches (mini desk scale) up to 30+ inches",
+      "materials": "High-precision Mono-Color Resin, Lightweight PLA, Cast Fibre",
+      "finishes": "Realistic hand-painted fur patterns, Matte monochrome, Metallic gold/silver, or Rustic cast bronze"
+    },
+    "customization": "Share your pet's photos or chosen animal concept to customize posture, collar details, and scale.",
+    "image_placeholder": "data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='800' height='600' viewBox='0 0 800 600' fill='%23F7F7F7'><rect width='800' height='600' fill='%23E9E5DD'/><ellipse cx='380' cy='320' rx='140' ry='80' fill='%23DDD7CE'/><circle cx='500' cy='240' r='50' fill='%23C9C2B6'/><rect x='300' y='380' width='25' height='90' fill='%23C9C2B6'/><rect x='440' y='380' width='25' height='90' fill='%23C9C2B6'/><text x='400' y='540' font-family='sans-serif' font-size='13' letter-spacing='3' fill='%232C2C2C' text-anchor='middle'>CUSTOM PET & WILDLIFE SCULPTURE</text></svg>"
+  },
+  {
+    "id": "3d-printed-figurative-character-statues",
+    "category": "3D Printing",
+    "manufacturing_method": "3D Printing",
+    "title": "Custom 3D Figurative Sculptures & Character Statues",
+    "description": "Dynamic, expressive human figures, cultural dancers, and artistic character sculptures that bring human emotion and sculptural depth into interior designs.",
+    "design_scope": [
+      "Classical Indian and cultural dance forms",
+      "Mythological heroes and warriors",
+      "Contemporary anatomical studies",
+      "Stylized modern silhouettes"
+    ],
+    "where_to_use": [
+      "Luxury interior display niches",
+      "Architecture studio showcase models",
+      "Art collector display pedestals",
+      "Hotel lobby and restaurant design accents"
+    ],
+    "tech_specs": {
+      "thickness": "Sizes: 6 inches to 36+ inches in height",
+      "materials": "High-detail Mono-Color Resin, Structural PLA, Reinforced Fibre",
+      "finishes": "Solid matte gallery white, Hand-painted multi-tone acrylic, Gilded metallic leafing, or Deep patinated bronze"
+    },
+    "customization": "Fully custom digital sculpting covering pose dynamics, flowing drapery, props, and integrated base pedestals.",
+    "image_placeholder": "data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='800' height='600' viewBox='0 0 800 600' fill='%23F7F7F7'><rect width='800' height='600' fill='%23E7E3DA'/><line x1='400' y1='140' x2='400' y2='420' stroke='%23C9C2B6' stroke-width='6'/><circle cx='400' cy='120' r='35' fill='%23DDD7CE'/><path d='M320 230 Q 400 190 480 230' stroke='%232C2C2C' stroke-width='3' fill='none'/><rect x='320' y='420' width='160' height='30' fill='%232C2C2C'/><text x='400' y='520' font-family='sans-serif' font-size='13' letter-spacing='3' fill='%232C2C2C' text-anchor='middle'>FIGURATIVE ART & DANCE SCULPTURE</text></svg>"
+  },
+  {
+    "id": "3d-printed-high-relief-architectural-accents",
+    "category": "3D Printing",
+    "manufacturing_method": "3D Printing",
+    "title": "Custom 3D High-Relief Architectural Accents & Moldings",
+    "description": "Three-dimensional architectural relief details and sculptural ornament inserts featuring complex undercuts and curves that cannot be produced by standard flat cutters.",
+    "design_scope": [
+      "Ornate acanthus corbels",
+      "Dimensional floral ceiling medallions",
+      "Classical pillar capital ornaments",
+      "Sculpted frieze inserts"
+    ],
+    "where_to_use": [
+      "False ceiling centerpieces",
+      "Luxury wall panel center medallions and door pediments",
+      "Column capitals",
+      "Custom mandir structural archway reliefs"
+    ],
+    "tech_specs": {
+      "thickness": "Sizes: Modular elements from 4 inches up to large interlocking panel sections",
+      "materials": "Ultra-crisp Mono-Color Resin, Engineering-grade PLA, Lightweight Architectural Fibre",
+      "finishes": "Sanded white primer, Faux limestone, or Gold metallic highlights"
+    },
+    "customization": "Sized to match your exact ceiling recess, arch curve, or architectural drawing specifications.",
+    "image_placeholder": "data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='800' height='600' viewBox='0 0 800 600' fill='%23F7F7F7'><rect width='800' height='600' fill='%23ECE7DF'/><path d='M250 150 L 550 150 L 520 220 C 480 320 440 400 400 480 C 360 400 320 320 280 220 Z' fill='%23DDD7CE' stroke='%23BDB5A8' stroke-width='2'/><circle cx='400' cy='240' r='35' fill='%23C9C2B6'/><text x='400' y='550' font-family='sans-serif' font-size='13' letter-spacing='3' fill='%232C2C2C' text-anchor='middle'>3D ARCHITECTURAL CORBEL & MOLDING</text></svg>"
+  },
+  {
+    "id": "3d-printed-sculptural-installations",
+    "category": "3D Printing",
+    "manufacturing_method": "3D Printing",
+    "title": "Custom 3D Sculptural Installations & Feature Art Pieces",
+    "description": "Large-scale bespoke 3D sculptural centerpieces engineered for luxury residential entrances, hospitality lobbies, and commercial statement walls.",
+    "design_scope": [
+      "Fluid parametric ribbons",
+      "Brand mascot sculptures",
+      "Multi-element suspended mobiles",
+      "Large organic statement art pieces"
+    ],
+    "where_to_use": [
+      "Corporate office reception and atrium feature points",
+      "Hotel lobbies",
+      "Double-height villa foyer statements",
+      "Premium retail flagship store installations"
+    ],
+    "tech_specs": {
+      "thickness": "Sizes: Tabletop showcase sizes up to large floor-standing installations",
+      "materials": "Lightweight reinforced Fibre (FRP), Rigid PLA internal scaffolding, Ultra-detail Resin surface components",
+      "finishes": "Automotive-grade high-gloss or matte PU spray, Textured stone effect, Chrome/metallic plating, or Hand-painted custom finish"
+    },
+    "customization": "Built to order from architect 3D models, site sketches, or brand moodboards with engineering support for wall/floor mounting.",
+    "image_placeholder": "data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='800' height='600' viewBox='0 0 800 600' fill='%23F7F7F7'><rect width='800' height='600' fill='%23E8E4DA'/><path d='M200 450 C 300 200, 350 150, 450 200 C 550 250, 600 120, 620 380 C 500 480, 300 480, 200 450 Z' fill='%23DDD7CE' stroke='%232C2C2C' stroke-width='2'/><text x='400' y='550' font-family='sans-serif' font-size='13' letter-spacing='3' fill='%232C2C2C' text-anchor='middle'>LARGE-SCALE ATRIUM SCULPTURAL ART</text></svg>"
+  }
+]

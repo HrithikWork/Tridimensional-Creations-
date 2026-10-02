@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Production Capabilities & Catalog | Tridimensional Creation Pvt Ltd</title>
+    <meta name="description" content="Explore the custom fabrication catalog of Tridimensional Creation Pvt Ltd: CNC carved woodwork, 3D relief murals, and high-precision 3D printed sculptures in Guwahati." />
+    
+    <!-- OpenGraph Social Sharing -->
+    <meta property="og:title" content="Production Capabilities & Catalog | Tridimensional Creation Pvt Ltd" />
+    <meta property="og:description" content="Custom 3D sculpting, CNC routing, and 3D printing. Browse our 18 core fabrication capabilities for homeowners, creators, and businesses." />
+    <meta property="og:type" content="website" />
+    <meta name="twitter:card" content="summary_large_image" />
+
+    <!-- Google Fonts & Architectural Stylesheet -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;500;600;700&family=Inter:wght@300;400;500;600&family=Manrope:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="/style.css" />
+  </head>
+  <body>
+
+    <!-- ====================================================================
+         01. GLOBAL HEADER & STICKY NAVIGATION
+         ==================================================================== -->
+    <header class="site-header" id="site-header">
+      <div class="container nav-container">
+        <a href="index.html" class="brand-logo" aria-label="Tridimensional Creation Pvt Ltd Home">
+          <span>Tridimensional Creation</span>
+          <span class="brand-logo-sub">Pvt Ltd • Guwahati</span>
+        </a>
+
+        <nav class="nav-links" id="primary-nav">
+          <a href="index.html" class="nav-link">Home</a>
+          <a href="about.html" class="nav-link">About Us</a>
+          <a href="catalog.html" class="nav-link active">Capabilities / Catalog</a>
+          <a href="contact.html" class="nav-link">Contact</a>
+          <a href="contact.html" class="btn btn-solid btn-sm nav-cta-btn">Start Your Project</a>
+        </nav>
+
+        <button class="nav-toggle" id="nav-toggle-btn" aria-label="Toggle Navigation Menu">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="square">
+            <line x1="3" y1="6" x2="21" y2="6"></line>
+            <line x1="3" y1="12" x2="21" y2="12"></line>
+            <line x1="3" y1="18" x2="21" y2="18"></line>
+          </svg>
+        </button>
+      </div>
+    </header>
+
+    <main id="main-content">
+      <!-- ====================================================================
+           02. CATALOG HEADER & FILTER TABS
+           ==================================================================== -->
+      <section class="section section-hero" style="padding-bottom: var(--space-lg); border-bottom: 1px solid var(--color-stone-border);">
+        <div class="container">
+          <div style="max-width: 880px;">
+            <span class="eyebrow">Digital Atelier & Fabrication Index</span>
+            <h1 style="margin-bottom: var(--space-sm); font-size: clamp(2.2rem, 4.5vw, 3.25rem);">
+              Production Capabilities & Catalog
+            </h1>
+            <p class="text-lead" style="max-width: 760px; margin-bottom: var(--space-lg);">
+              Every piece manufactured in our Guwahati studio begins from your reference photo, sketch, or custom dimensions. Hand-sculpted in ZBrush and Maya, and brought to life in wood, Corian, acrylic, or resin. Select a capability below to explore options.
+            </p>
+
+            <!-- Category Filter Bar -->
+            <div style="display: flex; gap: var(--space-xs); flex-wrap: wrap; padding-top: var(--space-xs);">
+              <button class="btn btn-ghost btn-sm catalog-filter active" data-filter="all">All Capabilities (18)</button>
+              <button class="btn btn-ghost btn-sm catalog-filter" data-filter="2D CNC">2D CNC Routing (6)</button>
+              <button class="btn btn-ghost btn-sm catalog-filter" data-filter="3D CNC">3D Relief Milling (6)</button>
+              <button class="btn btn-ghost btn-sm catalog-filter" data-filter="3D Printing">3D Printing & Figurines (6)</button>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- ====================================================================
+           03. CATALOG GRID (DYNAMICALLY RENDERED FROM products.json)
+           ==================================================================== -->
+      <section class="section" style="padding-top: var(--space-xl); padding-bottom: var(--space-3xl);">
+        <div class="container">
+          <!-- Active filter / count info bar -->
+          <div style="display: flex; justify-content: space-between; align-items: baseline; margin-bottom: var(--space-lg); padding-bottom: var(--space-xs); border-bottom: 1px solid var(--color-stone-border);">
+            <span id="catalog-count-label" style="font-size: var(--text-xs); color: var(--color-charcoal-light); font-weight: 500;">
+              Showing 18 of 18 Fabrication Capabilities
+            </span>
+            <span style="font-size: var(--text-2xs); text-transform: uppercase; letter-spacing: 0.12em; color: var(--color-muted-taupe); font-weight: 600;">
+              Guwahati Studio Direct
+            </span>
+          </div>
+
+          <!-- Product Grid Container: Minimalist architectural cards rendered via main.js -->
+          <div id="catalog-grid-container" class="catalog-grid">
+            <!-- Dynamically populated from /products.json -->
+          </div>
+        </div>
+      </section>
+
+      <!-- ====================================================================
+           04. BESPOKE INQUIRY CTA STRIP
+           ==================================================================== -->
+      <section class="section" style="background-color: #F0EEE9; border-top: 1px solid var(--color-stone-border); border-bottom: 1px solid var(--color-stone-border); padding-top: var(--space-2xl); padding-bottom: var(--space-2xl);">
+        <div class="container">
+          <div style="display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: var(--space-md);">
+            <div style="max-width: 600px;">
+              <span class="eyebrow" style="margin-bottom: 4px;">Don't see your exact project?</span>
+              <h3 style="margin-bottom: 4px; font-size: clamp(1.4rem, 2.5vw, 1.85rem);">Have a unique photo or idea to sculpt?</h3>
+              <p style="font-size: var(--text-xs); color: var(--color-charcoal-light); margin: 0;">
+                We sculpt anything from scratch. Send us a reference photo or sketch on WhatsApp for instant evaluation and pricing.
+              </p>
+            </div>
+            <div>
+              <a href="contact.html" class="btn btn-solid">Turn a Photo into a Product</a>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <!-- ====================================================================
+         05. GLOBAL ARCHITECTURAL FOOTER
+         ==================================================================== -->
+    <footer class="site-footer">
+      <div class="container">
+        <div class="footer-grid">
+          <!-- Column 1: Brand Info -->
+          <div class="footer-col">
+            <a href="index.html" class="brand-logo" style="margin-bottom: var(--space-sm);">
+              <span>Tridimensional Creation</span>
+              <span class="brand-logo-sub">Pvt Ltd • Guwahati</span>
+            </a>
+            <p style="font-size: var(--text-xs); line-height: 1.7; max-width: 380px; margin-bottom: var(--space-sm);">
+              Artistic 3D sculpting, CNC routing, and 3D printing studio. Turning reference photos into custom decor, furniture, figurines, and signage for homeowners, creators, and businesses.
+            </p>
+            <p style="font-size: var(--text-2xs); color: var(--color-muted-taupe); text-transform: uppercase; letter-spacing: 0.1em;">
+              Artistic Digital Sculpting & Fabrication
+            </p>
+          </div>
+
+          <!-- Column 2: Quick Links -->
+          <div class="footer-col">
+            <h5>Navigation</h5>
+            <ul class="footer-links">
+              <li><a href="index.html" class="footer-link">Home</a></li>
+              <li><a href="about.html" class="footer-link">About the Studio</a></li>
+              <li><a href="catalog.html" class="footer-link">Capabilities & Catalog</a></li>
+              <li><a href="contact.html" class="footer-link">Contact & Studio Visit</a></li>
+              <li><a href="catalog.html#cnc-routing" class="footer-link">CNC Wood Carving</a></li>
+              <li><a href="catalog.html#3d-printing" class="footer-link">3D Printing & Figurines</a></li>
+            </ul>
+          </div>
+
+          <!-- Column 3: Contact & Studio Location -->
+          <div class="footer-col">
+            <h5>Studio Desk</h5>
+            <p style="font-size: var(--text-xs); line-height: 1.6; margin-bottom: 0.5rem;">
+              <strong>Tridimensional Creation Pvt Ltd</strong><br />
+              Mathgaria, Guwahati, Assam.<br />
+              PIN — 781020
+            </p>
+            <p style="font-size: var(--text-xs); line-height: 1.6; margin-bottom: 0.75rem;">
+              Phone: <a href="tel:+918011958307" style="color: var(--color-charcoal); font-weight: 500;">+91 80119 58307</a><br />
+              Email: <a href="mailto:tricreations.official@gmail.com" style="color: var(--color-charcoal);">tricreations.official@gmail.com</a>
+            </p>
+            <p style="font-size: var(--text-xs);">
+              <a href="https://www.instagram.com/tridimensional.creations" target="_blank" rel="noopener noreferrer" class="footer-social-link" aria-label="Visit Tridimensional Creation on Instagram">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+                  <rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect>
+                  <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path>
+                  <line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line>
+                </svg>
+                <span>@tridimensional.creations</span>
+              </a>
+            </p>
+          </div>
+        </div>
+
+        <div class="footer-bottom">
+          <p>&copy; 2024–2026 Tridimensional Creation Pvt Ltd. All rights reserved.</p>
+          <p>Artistic Digital Sculpting • CNC Carving • Precision 3D Printing.</p>
+        </div>
+      </div>
+    </footer>
+
+    <!-- Global JavaScript File -->
+    <script src="/main.js"></script>
+  </body>
+</html>

@@ -1,0 +1,6 @@
+{
+  "name": "Tridimensional Creation - CNC & 3D Fabrication Studio",
+  "description": "Artistic 3D sculpting, CNC routing, and precision 3D printing studio turning photo references and ideas into physical reality for homeowners, creators, and businesses.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
