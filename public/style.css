@@ -94,6 +94,7 @@ html {
   color: var(--text-dark);
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  overflow-x: hidden;
 }
 
 body {
@@ -110,6 +111,7 @@ body {
   min-height: 100vh;
   display: flex;
   flex-direction: column;
+  overflow-x: hidden;
 }
 
 img, svg, picture {
@@ -686,22 +688,27 @@ input[type="date"]::-webkit-calendar-picker-indicator {
 /* --------------------------------------------------------------------------
    10. MATERIAL MARQUEE & WORKFLOW STEPS
    -------------------------------------------------------------------------- */
-/* Seamless Infinite Scrolling Materials Marquee */
+/* Seamless Infinite Scrolling Materials Marquee (Full Screen Edge-to-Edge) */
 .marquee-container {
-  width: 100%;
+  width: 100vw;
+  position: relative;
+  left: 50%;
+  right: 50%;
+  margin-left: -50vw;
+  margin-right: -50vw;
   overflow: hidden;
   white-space: nowrap;
   padding: var(--space-md) 0;
   border-top: 1px solid rgba(74, 127, 167, 0.35);
   border-bottom: 1px solid rgba(74, 127, 167, 0.35);
-  position: relative;
   background-color: rgba(250, 249, 246, 0.6);
 }
 
 .marquee-track {
   display: inline-block;
   white-space: nowrap;
-  animation: scrollText 20s linear infinite;
+  animation: scrollText 22s linear infinite;
+  will-change: transform;
 }
 
 .marquee-text {
