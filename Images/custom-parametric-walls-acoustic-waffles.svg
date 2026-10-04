@@ -1,0 +1,70 @@
+<svg viewBox="0 0 800 1200" width="800" height="1200" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="balticBirch" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#F5EFE3"/>
+      <stop offset="50%" stop-color="#EADDC8"/>
+      <stop offset="100%" stop-color="#DFCAB0"/>
+    </linearGradient>
+    <linearGradient id="ribGrad" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#C2A882"/>
+      <stop offset="50%" stop-color="#8F724C"/>
+      <stop offset="100%" stop-color="#5E472A"/>
+    </linearGradient>
+    <filter id="ribDropShadow" x="-10%" y="-10%" width="120%" height="120%">
+      <feDropShadow dx="3" dy="5" stdDeviation="3" flood-color="#0A1931" flood-opacity="0.3"/>
+    </filter>
+  </defs>
+
+  <!-- Solid Backplate -->
+  <rect width="800" height="1200" fill="url(#balticBirch)"/>
+
+  <!-- Isometric Acoustic Grid Lines -->
+  <g stroke="#D6C5AD" stroke-width="1" opacity="0.5">
+    <line x1="80" y1="0" x2="80" y2="1200"/>
+    <line x1="160" y1="0" x2="160" y2="1200"/>
+    <line x1="240" y1="0" x2="240" y2="1200"/>
+    <line x1="320" y1="0" x2="320" y2="1200"/>
+    <line x1="400" y1="0" x2="400" y2="1200"/>
+    <line x1="480" y1="0" x2="480" y2="1200"/>
+    <line x1="560" y1="0" x2="560" y2="1200"/>
+    <line x1="640" y1="0" x2="640" y2="1200"/>
+    <line x1="720" y1="0" x2="720" y2="1200"/>
+  </g>
+
+  <!-- Parametric Undulating Sliced Ribs (Waffle Wave Structure) -->
+  <g filter="url(#ribDropShadow)">
+    <!-- 18 Parallel Sequential CNC Plywood Ribs forming a Sine Wave -->
+    <path d="M 80 180 Q 220 80, 400 240 T 720 160 L 720 200 Q 560 300, 400 280 T 80 220 Z" fill="#695133" stroke="#3D2D1B"/>
+    <path d="M 80 220 Q 220 120, 400 280 T 720 200 L 720 240 Q 560 340, 400 320 T 80 260 Z" fill="#785D3B" stroke="#4A3721"/>
+    <path d="M 80 260 Q 220 160, 400 320 T 720 240 L 720 280 Q 560 380, 400 360 T 80 300 Z" fill="#886A43" stroke="#543E26"/>
+    <path d="M 80 300 Q 220 200, 400 360 T 720 280 L 720 320 Q 560 420, 400 400 T 80 340 Z" fill="#99784D" stroke="#5E462C"/>
+    <path d="M 80 340 Q 220 240, 400 400 T 720 320 L 720 360 Q 560 460, 400 440 T 80 380 Z" fill="#A88556" stroke="#694E31"/>
+    <path d="M 80 380 Q 220 280, 400 440 T 720 360 L 720 400 Q 560 500, 400 480 T 80 420 Z" fill="#B89360" stroke="#755737"/>
+    <path d="M 80 420 Q 220 320, 400 480 T 720 400 L 720 440 Q 560 540, 400 520 T 80 460 Z" fill="#C59F69" stroke="#82613D"/>
+    <path d="M 80 460 Q 220 360, 400 520 T 720 440 L 720 480 Q 560 580, 400 560 T 80 500 Z" fill="#CEAA74" stroke="#8F6B43"/>
+    <path d="M 80 500 Q 220 400, 400 560 T 720 480 L 720 520 Q 560 620, 400 600 T 80 540 Z" fill="#D7B580" stroke="#9C754A"/>
+    <path d="M 80 540 Q 220 440, 400 600 T 720 520 L 720 560 Q 560 660, 400 640 T 80 580 Z" fill="#DFBF8C" stroke="#A87F50"/>
+    <path d="M 80 580 Q 220 480, 400 640 T 720 560 L 720 600 Q 560 700, 400 680 T 80 620 Z" fill="#E8C998" stroke="#B58957"/>
+    <path d="M 80 620 Q 220 520, 400 680 T 720 600 L 720 640 Q 560 740, 400 720 T 80 660 Z" fill="#EED0A3" stroke="#C2935D"/>
+    <path d="M 80 660 Q 220 560, 400 720 T 720 640 L 720 680 Q 560 780, 400 760 T 80 700 Z" fill="#F3D7AE" stroke="#CF9D64"/>
+    <path d="M 80 700 Q 220 600, 400 760 T 720 680 L 720 720 Q 560 820, 400 800 T 80 740 Z" fill="#F7DEB9" stroke="#DBA76A"/>
+    <path d="M 80 740 Q 220 640, 400 800 T 720 720 L 720 760 Q 560 860, 400 840 T 80 780 Z" fill="#FCE5C4" stroke="#E5B171"/>
+  </g>
+
+  <!-- Typography & Machine Rib Spec Notation -->
+  <text x="400" y="930" font-family="'Playfair Display', Georgia, serif" font-size="30" font-weight="700" letter-spacing="2" fill="#0A1931" text-anchor="middle">
+    PARAMETRIC WAFFLE WALLS
+  </text>
+  <text x="400" y="970" font-family="'Montserrat', sans-serif" font-size="13" font-weight="600" letter-spacing="4" fill="#4A7FA7" text-anchor="middle">
+    ALGORITHMIC ACOUSTIC RIBS & CEILING BAFFLES
+  </text>
+  <text x="400" y="1005" font-family="'Montserrat', sans-serif" font-size="11" font-weight="500" letter-spacing="2" fill="#5A6C7D" text-anchor="middle">
+    BIRCH PLYWOOD INTERLOCKING MODULAR WAVE
+  </text>
+
+  <!-- Sound Dampening Specification -->
+  <rect x="230" y="1050" width="340" height="34" fill="#EADDC8" stroke="#B58957" rx="3"/>
+  <text x="400" y="1072" font-family="'Montserrat', sans-serif" font-size="10" font-weight="600" letter-spacing="2" fill="#3D2D1B" text-anchor="middle">
+    DIFFUSION SCATTERING NRC: 0.85 CLASS A
+  </text>
+</svg>

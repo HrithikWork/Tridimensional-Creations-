@@ -1,0 +1,89 @@
+<svg viewBox="0 0 800 1200" width="800" height="1200" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="sanctuaryBg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#1A2533"/>
+      <stop offset="50%" stop-color="#101924"/>
+      <stop offset="100%" stop-color="#080E16"/>
+    </linearGradient>
+    <linearGradient id="bronzePatina" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#E5C384"/>
+      <stop offset="35%" stop-color="#A88246"/>
+      <stop offset="70%" stop-color="#5C7A64"/>
+      <stop offset="100%" stop-color="#3B2F1F"/>
+    </linearGradient>
+    <radialGradient id="spiritualAura" cx="50%" cy="38%" r="45%">
+      <stop offset="0%" stop-color="#E5C384" stop-opacity="0.35"/>
+      <stop offset="60%" stop-color="#101924" stop-opacity="0"/>
+    </radialGradient>
+    <filter id="resinGlow" x="-20%" y="-20%" width="140%" height="140%">
+      <feDropShadow dx="0" dy="6" stdDeviation="6" flood-color="#000000" flood-opacity="0.6"/>
+    </filter>
+  </defs>
+
+  <!-- Dark Slate Sanctuary Background -->
+  <rect width="800" height="1200" fill="url(#sanctuaryBg)"/>
+  <rect width="800" height="1200" fill="url(#spiritualAura)"/>
+
+  <!-- Architectural Framing & Micron Resolution Grid -->
+  <rect x="45" y="45" width="710" height="1110" fill="none" stroke="#2D3B4A" stroke-width="1.5" rx="4"/>
+  <rect x="58" y="58" width="684" height="1084" fill="none" stroke="#A88246" stroke-width="1" stroke-dasharray="6 6" opacity="0.6"/>
+
+  <!-- Sacred Idol Silhouetted Geometry (Lord Ganesha / Deity with Ornate Crown) -->
+  <g filter="url(#resinGlow)" transform="translate(0, -20)">
+    <!-- Ornate Radiant Prabhavali (Temple Halo Arch) -->
+    <circle cx="400" cy="420" r="230" fill="none" stroke="url(#bronzePatina)" stroke-width="3" stroke-dasharray="4 8"/>
+    <circle cx="400" cy="420" r="200" fill="none" stroke="#A88246" stroke-width="2"/>
+    <circle cx="400" cy="420" r="170" fill="none" stroke="#2D3B4A" stroke-width="1.5"/>
+
+    <!-- Radiant Rays of Arch -->
+    <g stroke="url(#bronzePatina)" stroke-width="2" opacity="0.75">
+      <line x1="400" y1="180" x2="400" y2="215"/>
+      <line x1="230" y1="250" x2="255" y2="275"/>
+      <line x1="570" y1="250" x2="545" y2="275"/>
+      <line x1="170" y1="420" x2="205" y2="420"/>
+      <line x1="630" y1="420" x2="595" y2="420"/>
+    </g>
+
+    <!-- Sacred Crown (Mukut) - Micron Tiered Details -->
+    <polygon points="400,210 360,310 440,310" fill="url(#bronzePatina)"/>
+    <polygon points="400,180 380,225 420,225" fill="#E5C384"/>
+    <circle cx="400" cy="170" r="10" fill="#E5C384"/>
+    <rect x="340" y="310" width="120" height="24" rx="3" fill="#A88246" stroke="#2D3B4A"/>
+
+    <!-- Divine Face & Ears (Symmetric Sacred Silhouette) -->
+    <!-- Large Ears -->
+    <path d="M 330 330 C 220 310, 190 410, 290 470 C 315 485, 335 460, 335 440 Z" fill="url(#bronzePatina)"/>
+    <path d="M 470 330 C 580 310, 610 410, 510 470 C 485 485, 465 460, 465 440 Z" fill="url(#bronzePatina)"/>
+
+    <!-- Head & Trunk Form (Vakratunda Curve) -->
+    <path d="M 340 334 C 340 334, 400 350, 460 334 C 470 410, 450 480, 430 540 C 410 600, 440 640, 470 630 C 490 620, 480 590, 460 590 C 430 590, 400 550, 410 500 C 415 470, 420 440, 420 400 C 400 400, 390 400, 380 400 C 380 440, 360 480, 340 334 Z" fill="url(#bronzePatina)"/>
+    <path d="M 370 360 L 400 375 L 430 360" fill="none" stroke="#E5C384" stroke-width="3"/>
+    <circle cx="400" cy="350" r="5" fill="#E5C384"/>
+
+    <!-- Seated Posture & Base Lotus Pedestal -->
+    <!-- Torso & Draped Silk Stole -->
+    <ellipse cx="400" cy="560" rx="90" ry="70" fill="url(#bronzePatina)"/>
+    
+    <!-- Multi-Petal Layered Lotus Throne (Padmasana Base) -->
+    <path d="M 230 730 C 270 660, 350 670, 400 700 C 450 670, 530 660, 570 730 Z" fill="url(#bronzePatina)"/>
+    <rect x="200" y="730" width="400" height="40" rx="4" fill="#3B2F1F" stroke="#A88246" stroke-width="2"/>
+    <rect x="170" y="770" width="460" height="30" rx="4" fill="#241B11" stroke="#A88246" stroke-width="1.5"/>
+  </g>
+
+  <!-- Typography & 3D Print Resolution Specs -->
+  <text x="400" y="910" font-family="'Playfair Display', Georgia, serif" font-size="28" font-weight="700" letter-spacing="2" fill="#FFFFFF" text-anchor="middle">
+    DEITY SCULPTURES & SACRED ICONS
+  </text>
+  <text x="400" y="950" font-family="'Montserrat', sans-serif" font-size="13" font-weight="600" letter-spacing="4" fill="#E5C384" text-anchor="middle">
+    ULTRA-HIGH PRECISION RESIN PRINTING
+  </text>
+  <text x="400" y="985" font-family="'Montserrat', sans-serif" font-size="11" font-weight="500" letter-spacing="2" fill="#95A6B8" text-anchor="middle">
+    50-MICRON LAYER HEIGHT • ANTIQUE BRONZE & PATINA
+  </text>
+
+  <!-- Resolution Tag -->
+  <rect x="230" y="1040" width="340" height="34" fill="#141C24" stroke="#A88246" rx="3"/>
+  <text x="400" y="1062" font-family="'Montserrat', sans-serif" font-size="10" font-weight="600" letter-spacing="2" fill="#E5C384" text-anchor="middle">
+    CUSTOM TEMPLE SACRED SCULPTING ATELIER
+  </text>
+</svg>

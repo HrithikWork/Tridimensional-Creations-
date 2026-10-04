@@ -1,0 +1,798 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>The Art of Architectural Jali: Precision CNC Lattice Cutting | Tridimensional Creation</title>
+    <meta name="description" content="Explore how high-torque CNC routing transforms solid HDHMR, wood, and acrylic into delicate, light-filtering architectural jali panels and partitions." />
+    
+    <!-- OpenGraph Social Sharing -->
+    <meta property="og:title" content="The Art of Architectural Jali: Precision CNC Lattice Cutting in Modern Interiors" />
+    <meta property="og:description" content="Technical guide on multi-axis CNC routing, tooling strategies, and finish longevity for architectural lattices." />
+    <meta property="og:type" content="article" />
+    <meta name="twitter:card" content="summary_large_image" />
+
+    <!-- Google Fonts & Master Architectural Stylesheet -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400;1,600&family=Montserrat:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="/style.css" />
+
+    <!-- Dedicated Editorial Article Styles adhering to Master Design Tokens -->
+    <style>
+      /* Main Article Layout - Centered with Restricted Width for Optimal PC Reading */
+      .article-page-wrap {
+        padding-top: var(--space-xl);
+      }
+
+      .article-reading-container {
+        max-width: 800px;
+        margin: 0 auto;
+        padding: 0 var(--space-md) var(--space-2xl);
+      }
+
+      /* Back Navigation Link at the very top */
+      .article-back-link {
+        display: inline-flex;
+        align-items: center;
+        gap: 0.5rem;
+        font-family: 'Montserrat', sans-serif;
+        font-size: var(--text-xs);
+        font-weight: 600;
+        letter-spacing: 1.2px;
+        text-transform: uppercase;
+        color: var(--brand-accent);
+        text-decoration: none;
+        margin-bottom: var(--space-lg);
+        transition: var(--transition-subtle);
+      }
+
+      .article-back-link span {
+        transition: transform 0.2s ease;
+      }
+
+      .article-back-link:hover {
+        color: var(--brand-primary);
+      }
+
+      .article-back-link:hover span {
+        transform: translateX(-4px);
+      }
+
+      /* Article Header */
+      .article-header {
+        margin-bottom: var(--space-lg);
+      }
+
+      .article-title {
+        font-family: 'Playfair Display', Georgia, serif;
+        font-size: clamp(2.2rem, 4.2vw, 3.25rem);
+        font-weight: 600;
+        color: var(--text-dark);
+        line-height: 1.25;
+        letter-spacing: -0.015em;
+        margin-bottom: var(--space-md);
+      }
+
+      .article-meta {
+        display: flex;
+        align-items: center;
+        gap: var(--space-md);
+        flex-wrap: wrap;
+        padding-bottom: var(--space-md);
+        border-bottom: 1px solid var(--color-stone-border);
+      }
+
+      .article-tag {
+        font-family: 'Montserrat', sans-serif;
+        font-size: var(--text-2xs);
+        font-weight: 600;
+        letter-spacing: 1px;
+        text-transform: uppercase;
+        color: var(--brand-primary);
+        background-color: rgba(74, 127, 167, 0.12);
+        padding: 5px 10px;
+        border-radius: 3px;
+      }
+
+      .article-date,
+      .article-reading-time {
+        font-family: 'Montserrat', sans-serif;
+        font-size: var(--text-xs);
+        color: var(--brand-accent);
+        font-weight: 500;
+      }
+
+      .article-reading-time::before {
+        content: "•";
+        margin-right: var(--space-md);
+        color: var(--brand-accent);
+      }
+
+      /* Hero Featured Image Placeholder */
+      .article-hero-wrap {
+        width: 100%;
+        aspect-ratio: 16 / 9;
+        background-color: #F6F4EF;
+        border: 1px solid var(--brand-accent);
+        border-radius: 4px;
+        overflow: hidden;
+        margin-bottom: var(--space-xl);
+        box-shadow: var(--shadow-subtle);
+        position: relative;
+      }
+
+      .article-hero-wrap svg,
+      .article-hero-wrap img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        display: block;
+      }
+
+      .article-hero-caption {
+        font-family: 'Montserrat', sans-serif;
+        font-size: var(--text-2xs);
+        color: var(--brand-accent);
+        letter-spacing: 0.5px;
+        margin-top: -1.25rem;
+        margin-bottom: var(--space-xl);
+        text-align: right;
+        font-style: italic;
+      }
+
+      /* Main Article Prose Content Area (Comfortable 800px PC measure) */
+      .article-prose {
+        width: 100%;
+        font-family: 'Montserrat', sans-serif;
+        font-size: 1.0625rem;
+        line-height: 1.85;
+        color: var(--text-dark);
+      }
+
+      .article-lead {
+        font-size: 1.25rem;
+        line-height: 1.7;
+        font-weight: 400;
+        color: var(--brand-primary);
+        margin-bottom: var(--space-lg);
+        padding-bottom: var(--space-md);
+        border-bottom: 1px solid rgba(74, 127, 167, 0.2);
+      }
+
+      .article-prose p {
+        margin-bottom: var(--space-md);
+        color: var(--text-dark);
+        opacity: 0.92;
+      }
+
+      .article-prose h2 {
+        font-family: 'Playfair Display', Georgia, serif;
+        font-size: 1.85rem;
+        font-weight: 600;
+        color: var(--text-dark);
+        line-height: 1.3;
+        margin-top: var(--space-xl);
+        margin-bottom: var(--space-sm);
+        letter-spacing: -0.01em;
+      }
+
+      .article-prose h3 {
+        font-family: 'Playfair Display', Georgia, serif;
+        font-size: 1.35rem;
+        font-weight: 600;
+        color: var(--brand-primary);
+        line-height: 1.35;
+        margin-top: var(--space-lg);
+        margin-bottom: var(--space-xs);
+      }
+
+      .article-prose blockquote {
+        margin: var(--space-lg) 0;
+        padding: var(--space-md) var(--space-lg);
+        background-color: var(--bg-card);
+        border-left: 3px solid var(--brand-primary);
+        border-radius: 0 4px 4px 0;
+        font-family: 'Playfair Display', Georgia, serif;
+        font-size: 1.2rem;
+        font-style: italic;
+        line-height: 1.6;
+        color: var(--brand-primary);
+        box-shadow: var(--shadow-subtle);
+      }
+
+      .article-prose ul,
+      .article-prose ol {
+        margin: var(--space-md) 0 var(--space-lg) 1.5rem;
+      }
+
+      .article-prose li {
+        margin-bottom: 0.5rem;
+        line-height: 1.7;
+      }
+
+      .article-prose li strong {
+        color: var(--brand-primary);
+      }
+
+      /* Atelier Callout */
+      .article-callout {
+        margin-top: var(--space-2xl);
+        padding: var(--space-lg);
+        background-color: var(--bg-card);
+        border: 1px solid var(--brand-accent);
+        border-radius: 4px;
+        box-shadow: var(--shadow-subtle);
+        text-align: center;
+      }
+
+      .article-callout h4 {
+        font-family: 'Playfair Display', Georgia, serif;
+        font-size: 1.45rem;
+        margin-bottom: var(--space-xs);
+        color: var(--text-dark);
+      }
+
+      .article-callout p {
+        font-size: var(--text-sm);
+        color: var(--text-dark);
+        margin-bottom: var(--space-md);
+        opacity: 0.85;
+      }
+
+      /* ====================================================================
+         CRITICAL UX: THE ENDLESS LOOP ("KEEP READING" / RELATED ARTICLES)
+         ==================================================================== */
+      .related-articles-section {
+        background-color: #FAF9F6;
+        border-top: 1px solid var(--color-stone-border);
+        padding: var(--space-3xl) 0 var(--space-3xl);
+        margin-top: var(--space-2xl);
+      }
+
+      .related-section-header {
+        margin-bottom: var(--space-xl);
+        display: flex;
+        align-items: flex-end;
+        justify-content: space-between;
+        flex-wrap: wrap;
+        gap: var(--space-sm);
+      }
+
+      .related-section-header h2 {
+        font-family: 'Playfair Display', Georgia, serif;
+        font-size: clamp(1.8rem, 3vw, 2.3rem);
+        margin: 0;
+        color: var(--text-dark);
+      }
+
+      .related-section-header .related-view-all {
+        font-family: 'Montserrat', sans-serif;
+        font-size: var(--text-xs);
+        font-weight: 600;
+        text-transform: uppercase;
+        letter-spacing: 1.2px;
+        color: var(--brand-primary);
+        text-decoration: none;
+        display: inline-flex;
+        align-items: center;
+        gap: 0.4rem;
+        transition: var(--transition-subtle);
+      }
+
+      .related-section-header .related-view-all:hover {
+        color: var(--brand-accent);
+        transform: translateX(2px);
+      }
+
+      /* 3-Column Responsive Grid on Desktop, 1-Column on Mobile/Tablet */
+      .related-articles-grid {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: var(--space-lg);
+      }
+
+      .related-card {
+        background-color: var(--bg-card);
+        border: 1px solid var(--brand-accent);
+        border-radius: 4px;
+        overflow: hidden;
+        display: flex;
+        flex-direction: column;
+        transition: var(--transition-subtle);
+        box-shadow: var(--shadow-subtle);
+        position: relative;
+      }
+
+      .related-card:hover {
+        transform: translateY(-4px);
+        box-shadow: var(--shadow-lift);
+        border-color: var(--brand-primary);
+      }
+
+      .related-card-media-link {
+        display: block;
+        width: 100%;
+        aspect-ratio: 16 / 10;
+        background-color: #F6F4EF;
+        overflow: hidden;
+        border-bottom: 1px solid rgba(74, 127, 167, 0.25);
+        position: relative;
+        text-decoration: none;
+      }
+
+      .related-card-media-link svg,
+      .related-card-media-link img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        display: block;
+        transition: transform 0.45s ease;
+      }
+
+      .related-card:hover .related-card-media-link svg,
+      .related-card:hover .related-card-media-link img {
+        transform: scale(1.04);
+      }
+
+      .related-card-body {
+        padding: var(--space-md);
+        display: flex;
+        flex-direction: column;
+        flex-grow: 1;
+      }
+
+      .related-card-meta {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: var(--space-xs);
+        margin-bottom: var(--space-xs);
+      }
+
+      .related-card-badge {
+        font-family: 'Montserrat', sans-serif;
+        font-size: 0.65rem;
+        font-weight: 600;
+        letter-spacing: 0.8px;
+        text-transform: uppercase;
+        color: var(--brand-primary);
+        background-color: rgba(74, 127, 167, 0.12);
+        padding: 4px 8px;
+        border-radius: 2px;
+      }
+
+      .related-card-date {
+        font-family: 'Montserrat', sans-serif;
+        font-size: 0.72rem;
+        color: var(--brand-accent);
+        font-weight: 500;
+      }
+
+      .related-card-title-link {
+        text-decoration: none;
+        color: inherit;
+        display: block;
+        margin: var(--space-xs) 0;
+      }
+
+      .related-card-title {
+        font-family: 'Playfair Display', Georgia, serif;
+        font-size: 1.15rem;
+        font-weight: 600;
+        line-height: 1.35;
+        color: var(--text-dark);
+        transition: color 0.2s ease;
+      }
+
+      .related-card-title-link:hover .related-card-title,
+      .related-card:hover .related-card-title {
+        color: var(--brand-primary);
+      }
+
+      .related-card-excerpt {
+        font-family: 'Montserrat', sans-serif;
+        font-size: var(--text-xs);
+        line-height: 1.6;
+        color: var(--text-dark);
+        opacity: 0.85;
+        margin-bottom: var(--space-md);
+        flex-grow: 1;
+      }
+
+      .related-card-action {
+        margin-top: auto;
+        padding-top: var(--space-xs);
+        border-top: 1px solid rgba(74, 127, 167, 0.15);
+      }
+
+      .related-card-link-btn {
+        display: inline-flex;
+        align-items: center;
+        gap: 0.4rem;
+        font-family: 'Montserrat', sans-serif;
+        font-size: var(--text-xs);
+        font-weight: 600;
+        letter-spacing: 1px;
+        text-transform: uppercase;
+        color: var(--brand-primary);
+        text-decoration: none;
+        transition: var(--transition-subtle);
+      }
+
+      .related-card-link-btn span {
+        transition: transform 0.2s ease;
+      }
+
+      .related-card:hover .related-card-link-btn span {
+        transform: translateX(4px);
+      }
+
+      .related-card-link-btn:hover {
+        color: var(--brand-accent);
+      }
+
+      /* Responsive Breakpoint for Related Grid */
+      @media (max-width: 920px) {
+        .related-articles-grid {
+          grid-template-columns: 1fr;
+          gap: var(--space-md);
+        }
+      }
+    </style>
+  </head>
+  <body>
+
+    <!-- ====================================================================
+         01. GLOBAL HEADER & STICKY NAVIGATION (IDENTICAL TO INDEX.HTML)
+         ==================================================================== -->
+    <header class="site-header" id="site-header">
+      <div class="container nav-container">
+        <a href="index.html" class="brand-logo" aria-label="Tridimensional Creation Pvt Ltd Home">
+          <span>Tridimensional Creation</span>
+          <span class="brand-logo-sub">Pvt Ltd • Guwahati</span>
+        </a>
+
+        <nav class="nav-links" id="primary-nav">
+          <a href="index.html" class="nav-link">Home</a>
+          <a href="about.html" class="nav-link">About Us</a>
+          <a href="catalog.html" class="nav-link">Capabilities / Catalog</a>
+          <a href="blog.html" class="nav-link active">Blog</a>
+          <a href="contact.html" class="nav-link">Contact</a>
+          <a href="contact.html" class="btn btn-solid btn-sm nav-cta-btn">Book Studio Visit</a>
+        </nav>
+
+        <button class="nav-toggle" id="nav-toggle-btn" aria-label="Toggle Navigation Menu">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="square">
+            <line x1="3" y1="6" x2="21" y2="6"></line>
+            <line x1="3" y1="12" x2="21" y2="12"></line>
+            <line x1="3" y1="18" x2="21" y2="18"></line>
+          </svg>
+        </button>
+      </div>
+    </header>
+
+    <main id="main-content" class="article-page-wrap">
+      <!-- ====================================================================
+           02. ARTICLE READING COLUMN (RESTRICTED 800PX MAX-WIDTH ON PC)
+           ==================================================================== -->
+      <div class="article-reading-container">
+
+        <!-- Back to Journal Link at the Very Top -->
+        <a href="blog.html" class="article-back-link" aria-label="Return to Journal">
+          <span>&larr;</span> Back to Journal
+        </a>
+
+        <!-- Article Header: Title & Meta -->
+        <header class="article-header">
+          <h1 class="article-title">
+            The Art of Architectural Jali: Precision CNC Lattice Cutting in Modern Interiors
+          </h1>
+          <div class="article-meta">
+            <span class="article-tag">CNC Routing</span>
+            <time class="article-date" datetime="2026-10-02">October 02, 2026</time>
+            <span class="article-reading-time">5 Min Read</span>
+          </div>
+        </header>
+
+        <!-- Large Hero/Header Image Placeholder -->
+        <div class="article-hero-wrap">
+          <svg viewBox="0 0 1200 675" width="100%" height="100%" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="none">
+            <rect width="1200" height="675" fill="#EFECE6"/>
+            <!-- Subtle architectural background grid -->
+            <g stroke="#C5BEB2" stroke-width="1" opacity="0.45">
+              <line x1="0" y1="135" x2="1200" y2="135" />
+              <line x1="0" y1="270" x2="1200" y2="270" />
+              <line x1="0" y1="405" x2="1200" y2="405" />
+              <line x1="0" y1="540" x2="1200" y2="540" />
+              <line x1="200" y1="0" x2="200" y2="675" />
+              <line x1="400" y1="0" x2="400" y2="675" />
+              <line x1="600" y1="0" x2="600" y2="675" />
+              <line x1="800" y1="0" x2="800" y2="675" />
+              <line x1="1000" y1="0" x2="1000" y2="675" />
+            </g>
+            <!-- Radiating Jali Cut Lattice Design Graphic -->
+            <g stroke="#1A3D63" stroke-width="3" fill="none" opacity="0.9">
+              <circle cx="600" cy="337" r="180" stroke="#4A7FA7" stroke-width="2.5"/>
+              <circle cx="600" cy="337" r="240" stroke="#C5BEB2" stroke-width="1.5" stroke-dasharray="6 6"/>
+              <!-- Petals -->
+              <path d="M600 157 C640 240 640 434 600 517 C560 434 560 240 600 157 Z" fill="rgba(74, 127, 167, 0.08)"/>
+              <path d="M420 337 C503 297 697 297 780 337 C697 377 503 377 420 337 Z" fill="rgba(74, 127, 167, 0.08)"/>
+              <path d="M472 209 C560 270 680 390 728 465 C640 404 520 284 472 209 Z" fill="rgba(26, 61, 99, 0.05)"/>
+              <path d="M728 209 C640 270 520 390 472 465 C560 404 680 284 728 209 Z" fill="rgba(26, 61, 99, 0.05)"/>
+              <circle cx="600" cy="337" r="28" fill="#1A3D63"/>
+              <circle cx="600" cy="337" r="10" fill="#FAF9F6"/>
+            </g>
+            <text x="600" y="610" font-family="'Montserrat', sans-serif" font-size="13" letter-spacing="4" fill="#0A1931" text-anchor="middle" font-weight="600">
+              TRIDIMENSIONAL CREATION • HIGH-TORQUE SPINDLE ROUTING ARCHIVE
+            </text>
+          </svg>
+        </div>
+        <div class="article-hero-caption">
+          Precision CNC jali lattice routing on calibrated moisture-resistant HDHMR • Guwahati Atelier
+        </div>
+
+        <!-- Main Prose Content Area (Comfortable Line Measure) -->
+        <article class="article-prose">
+          <p class="article-lead">
+            In classical Indian architecture, the <em>jali</em> was both a functional climate regulator and a sacred ornament. Today, computer numerical control (CNC) routing has liberated this heritage, allowing architects and homeowners to sculpt intricate light-filtering screens with micrometer precision.
+          </p>
+
+          <p>
+            Whether defining a pooja sanctuary, introducing visual seclusion between living and dining suites, or providing an elegant facade for wardrobe doors, CNC-cut jali panels have become an essential element in luxury residential interiors. But behind the serene visual play of light and shadow lies a rigorous manufacturing science.
+          </p>
+
+          <h2>Material Selection: Beyond Standard MDF</h2>
+          <p>
+            The most common mistake in architectural lattice work is selecting standard commercial MDF. When delicate filigree ribbons are cut into standard fiberboard, ambient moisture causes swelling, warping, and frayed edges that absorb paint unevenly.
+          </p>
+          <p>
+            At Tridimensional Creation, we engineer lattices strictly on substrate formulations tailored for dimensional stability:
+          </p>
+          <ul>
+            <li><strong>High-Density High Moisture Resistant (HDHMR):</strong> Compacted at superior pressure with polyurethane bonding, providing razor-sharp edge retention that does not swell in North-East Indian humid conditions.</li>
+            <li><strong>Wood Polymer Composite (WPC):</strong> 100% waterproof and termite-proof, ideal for bathroom privacy louvers, exterior balconies, and damp partition walls.</li>
+            <li><strong>Solid Hardwoods (Teak, Steam Beach, White Oak):</strong> Machined using multi-pass downward spirals for organic warmth and hand-finished oil finishes.</li>
+            <li><strong>Solid Surface Acrylic (Corian):</strong> Seamless, monolithic screens capable of backlit translucent radiance.</li>
+          </ul>
+
+          <blockquote>
+            “A great jali panel is not merely carved wood; it is a calculated instrument that choreographs light, air, and privacy across interior spaces.”
+          </blockquote>
+
+          <h2>Tooling Strategies & Feed-Rate Optimization</h2>
+          <p>
+            Intricate geometries like radiating leaf petals or micro-geometric Islamic stars demand precise end-mill selection. Rapid tool changeovers between roughing hoggers and 1.5mm carbide compression bits ensure that sharp inner corners are resolved without burning the substrate.
+          </p>
+          <p>
+            Our CNC routers operate under multi-zone vacuum clamping tables. By immobilizing the sheet evenly across its entire surface, vibration chatter is eliminated—ensuring every curved petal edge remains buttery smooth prior to primer application.
+          </p>
+
+          <h2>Finishing Protocols: The Factory PU Advantage</h2>
+          <p>
+            On-site manual brush painting inevitably clogs micro-details and leaves unsightly runs inside deep cutouts. To preserve the crispness of our CNC profiles, panels undergo our three-stage finishing protocol:
+          </p>
+          <ol>
+            <li><strong>High-Build Isolation Primer:</strong> Sealed under pneumatic spray to prevent grain soakage.</li>
+            <li><strong>Intermediate De-Nibbing:</strong> Hand-sanded by artisans to eliminate micro-burrs.</li>
+            <li><strong>Factory Polyurethane (PU) Coat:</strong> Applied in matte, satin, or high-gloss formulations with non-yellowing UV stabilizers.</li>
+          </ol>
+
+          <!-- Interactive Atelier Callout -->
+          <div class="article-callout">
+            <h4>Bring Your Custom Partition to Life</h4>
+            <p>
+              Have a CAD drawing, Pinterest image, or rough hand sketch? Share your room dimensions with our design team in Mathgaria, Guwahati.
+            </p>
+            <a href="contact.html" class="btn btn-solid">Commission a Custom Panel</a>
+          </div>
+        </article>
+
+      </div>
+
+      <!-- ====================================================================
+           03. CRITICAL UX: THE ENDLESS LOOP ("KEEP READING" / RELATED ARTICLES)
+           3-Column Grid linking explicitly to article.html
+           ==================================================================== -->
+      <section class="related-articles-section">
+        <div class="container">
+          <div class="related-section-header">
+            <div>
+              <span class="eyebrow">Studio Journal • More from the Atelier</span>
+              <h2>Keep Reading</h2>
+            </div>
+            <a href="blog.html" class="related-view-all">
+              View All Notes <span>&rarr;</span>
+            </a>
+          </div>
+
+          <div class="related-articles-grid">
+
+            <!-- RELATED CARD 01: 3D PRINTING & SCULPTING -->
+            <article class="related-card">
+              <a href="article.html" class="related-card-media-link" aria-label="Read article on Large-Format 3D Sculpting Workflows">
+                <svg viewBox="0 0 800 500" width="100%" height="100%" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="none">
+                  <rect width="800" height="500" fill="#E8EDF2"/>
+                  <g stroke="#4A7FA7" stroke-width="1.2" fill="none" opacity="0.75">
+                    <polygon points="400,90 280,180 320,330 480,330 520,180" stroke="#1A3D63" stroke-width="2"/>
+                    <line x1="400" y1="90" x2="400" y2="380" stroke="#1A3D63" stroke-width="1.8"/>
+                    <line x1="280" y1="180" x2="400" y2="230"/>
+                    <line x1="520" y1="180" x2="400" y2="230"/>
+                    <line x1="320" y1="330" x2="400" y2="230"/>
+                    <line x1="480" y1="330" x2="400" y2="230"/>
+                    <line x1="400" y1="90" x2="320" y2="330"/>
+                    <line x1="400" y1="90" x2="480" y2="330"/>
+                  </g>
+                  <circle cx="400" cy="230" r="5" fill="#1A3D63"/>
+                  <circle cx="400" cy="90" r="4" fill="#4A7FA7"/>
+                  <circle cx="280" cy="180" r="4" fill="#4A7FA7"/>
+                  <circle cx="520" cy="180" r="4" fill="#4A7FA7"/>
+                  <text x="400" y="450" font-family="'Montserrat', sans-serif" font-size="11" letter-spacing="3" fill="#0A1931" text-anchor="middle" font-weight="600">3D DIGITAL CLAY & RESIN</text>
+                </svg>
+              </a>
+              <div class="related-card-body">
+                <div class="related-card-meta">
+                  <span class="related-card-badge">3D Printing</span>
+                  <span class="related-card-date">Sep 18, 2026</span>
+                </div>
+                <a href="article.html" class="related-card-title-link">
+                  <h3 class="related-card-title">
+                    From Digital Clay to Physical Form: Large-Format 3D Sculpting Workflows
+                  </h3>
+                </a>
+                <p class="related-card-excerpt">
+                  An inside look at our organic sculpting pipeline—from ZBrush mesh topology to multi-part industrial resin casting and monumental decor.
+                </p>
+                <div class="related-card-action">
+                  <a href="article.html" class="related-card-link-btn" aria-label="Read full article on 3D Sculpting Workflows">
+                    Read Article <span>&rarr;</span>
+                  </a>
+                </div>
+              </div>
+            </article>
+
+            <!-- RELATED CARD 02: SUBSTRATES & ENGINEERING -->
+            <article class="related-card">
+              <a href="article.html" class="related-card-media-link" aria-label="Read article on Material Substrates">
+                <svg viewBox="0 0 800 500" width="100%" height="100%" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="none">
+                  <rect width="800" height="500" fill="#F4EFE6"/>
+                  <g opacity="0.85">
+                    <rect x="220" y="150" width="360" height="42" fill="#D8CFBE" stroke="#0A1931" stroke-width="1.5" rx="3"/>
+                    <rect x="220" y="210" width="360" height="42" fill="#C0B39F" stroke="#0A1931" stroke-width="1.5" rx="3"/>
+                    <rect x="220" y="270" width="360" height="42" fill="#A89B87" stroke="#0A1931" stroke-width="1.5" rx="3"/>
+                    <rect x="220" y="330" width="360" height="42" fill="#4A7FA7" stroke="#0A1931" stroke-width="1.5" rx="3"/>
+                  </g>
+                  <text x="400" y="450" font-family="'Montserrat', sans-serif" font-size="11" letter-spacing="3" fill="#0A1931" text-anchor="middle" font-weight="600">MATERIAL SUBSTRATE SELECTION</text>
+                </svg>
+              </a>
+              <div class="related-card-body">
+                <div class="related-card-meta">
+                  <span class="related-card-badge">Engineering</span>
+                  <span class="related-card-date">Aug 25, 2026</span>
+                </div>
+                <a href="article.html" class="related-card-title-link">
+                  <h3 class="related-card-title">
+                    Material Agnosticism: Choosing the Ideal Substrate for CNC Production
+                  </h3>
+                </a>
+                <p class="related-card-excerpt">
+                  A practical engineering comparison of moisture-resistant HDHMR, solid hardwoods, Corian, and polymers evaluated for stability.
+                </p>
+                <div class="related-card-action">
+                  <a href="article.html" class="related-card-link-btn" aria-label="Read full article on Material Substrates">
+                    Read Article <span>&rarr;</span>
+                  </a>
+                </div>
+              </div>
+            </article>
+
+            <!-- RELATED CARD 03: BESPOKE RELIEF & ACOUSTICS -->
+            <article class="related-card">
+              <a href="article.html" class="related-card-media-link" aria-label="Read article on Parametric Acoustics">
+                <svg viewBox="0 0 800 500" width="100%" height="100%" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="none">
+                  <rect width="800" height="500" fill="#EAE6DE"/>
+                  <g stroke="#1A3D63" stroke-width="2" fill="none" opacity="0.8">
+                    <path d="M 120 180 Q 260 90, 400 180 T 680 180" />
+                    <path d="M 120 230 Q 260 140, 400 230 T 680 230" stroke="#4A7FA7" stroke-width="2.5" />
+                    <path d="M 120 280 Q 260 190, 400 280 T 680 280" />
+                    <path d="M 120 330 Q 260 240, 400 330 T 680 330" stroke="#4A7FA7" stroke-width="2.5" />
+                  </g>
+                  <text x="400" y="450" font-family="'Montserrat', sans-serif" font-size="11" letter-spacing="3" fill="#0A1931" text-anchor="middle" font-weight="600">PARAMETRIC FLUTED ACOUSTICS</text>
+                </svg>
+              </a>
+              <div class="related-card-body">
+                <div class="related-card-meta">
+                  <span class="related-card-badge">Bespoke Wall Art</span>
+                  <span class="related-card-date">Aug 10, 2026</span>
+                </div>
+                <a href="article.html" class="related-card-title-link">
+                  <h3 class="related-card-title">
+                    Parametric Acoustics & Fluid Wall Paneling: Precision 3D Relief
+                  </h3>
+                </a>
+                <p class="related-card-excerpt">
+                  Engineering seamless wave surfaces and custom architectural fluting that control acoustic resonance in commercial environments.
+                </p>
+                <div class="related-card-action">
+                  <a href="article.html" class="related-card-link-btn" aria-label="Read full article on Parametric Acoustics">
+                    Read Article <span>&rarr;</span>
+                  </a>
+                </div>
+              </div>
+            </article>
+
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <!-- ====================================================================
+         04. GLOBAL ARCHITECTURAL FOOTER (IDENTICAL TO INDEX.HTML)
+         ==================================================================== -->
+    <footer class="site-footer">
+      <div class="container">
+        <div class="footer-grid">
+          <!-- Column 1: Brand Info -->
+          <div class="footer-col">
+            <a href="index.html" class="brand-logo" style="margin-bottom: var(--space-sm);">
+              <span>Tridimensional Creation</span>
+              <span class="brand-logo-sub">Pvt Ltd • Guwahati</span>
+            </a>
+            <p style="font-size: var(--text-xs); line-height: 1.7; max-width: 380px; margin-bottom: var(--space-sm);">
+              End-to-end design, digital sculpting, CNC routing, and 3D printing studio. Serving homeowners, furniture makers, contractors, and businesses across India.
+            </p>
+            <p style="font-size: var(--text-2xs); color: var(--color-muted-taupe); text-transform: uppercase; letter-spacing: 0.1em;">
+              Registered Production Entity
+            </p>
+          </div>
+
+          <!-- Column 2: Quick Links -->
+          <div class="footer-col">
+            <h5>Navigation</h5>
+            <ul class="footer-links">
+              <li><a href="index.html" class="footer-link">Home</a></li>
+              <li><a href="about.html" class="footer-link">About the Studio</a></li>
+              <li><a href="catalog.html" class="footer-link">Capabilities & Catalog</a></li>
+              <li><a href="blog.html" class="footer-link">Studio Journal & Blog</a></li>
+              <li><a href="contact.html" class="footer-link">Contact & Studio Visit</a></li>
+              <li><a href="catalog.html#cnc-routing" class="footer-link">CNC Routing Services</a></li>
+              <li><a href="catalog.html#3d-printing" class="footer-link">3D Printing Services</a></li>
+            </ul>
+          </div>
+
+          <!-- Column 3: Contact & Studio Location -->
+          <div class="footer-col">
+            <h5>Studio Desk</h5>
+            <p style="font-size: var(--text-xs); line-height: 1.6; margin-bottom: 0.5rem;">
+              <strong>Tridimensional Creation Pvt Ltd</strong><br />
+              Mathgaria, Guwahati, Assam.<br />
+              PIN: 781020
+            </p>
+            <p style="font-size: var(--text-xs); line-height: 1.6; margin-bottom: 0.75rem;">
+              Phone: <a href="tel:+918011958307" style="color: var(--color-charcoal); font-weight: 500;">+91 80119 58307</a><br />
+              Email: <a href="mailto:tricreations.official@gmail.com" style="color: var(--color-charcoal);">tricreations.official@gmail.com</a>
+            </p>
+            <p style="font-size: var(--text-xs); margin-top: 0.5rem;">
+              <a href="https://www.instagram.com/tridimensional.creations" target="_blank" rel="noopener noreferrer" class="footer-social-link" aria-label="Visit Tridimensional Creation on Instagram" style="font-family: 'Montserrat', sans-serif; color: var(--text-dark); display: inline-flex; align-items: center; gap: 0.5rem; text-decoration: none;">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+                  <rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect>
+                  <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path>
+                  <line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line>
+                </svg>
+                <span>@tridimensional.creations</span>
+              </a>
+            </p>
+          </div>
+        </div>
+
+        <div class="footer-bottom">
+          <p>&copy; 2024-2026 Tridimensional Creation Pvt Ltd. All rights reserved.</p>
+          <p>Digital Sculpting, CNC Routing & Precision 3D Printing Atelier.</p>
+        </div>
+      </div>
+    </footer>
+
+    <!-- Global JavaScript File -->
+    <script src="/main.js"></script>
+  </body>
+</html>

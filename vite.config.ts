@@ -19,6 +19,8 @@ export default defineConfig(() => {
           catalog: path.resolve(__dirname, 'catalog.html'),
           product: path.resolve(__dirname, 'product.html'),
           contact: path.resolve(__dirname, 'contact.html'),
+          blog: path.resolve(__dirname, 'blog.html'),
+          article: path.resolve(__dirname, 'article.html'),
         },
       },
     },

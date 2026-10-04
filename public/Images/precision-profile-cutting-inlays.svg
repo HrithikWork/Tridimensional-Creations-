@@ -1,0 +1,100 @@
+<svg viewBox="0 0 800 1200" width="800" height="1200" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="sandStone" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#F7F5F0"/>
+      <stop offset="50%" stop-color="#EFECE6"/>
+      <stop offset="100%" stop-color="#E5E0D6"/>
+    </linearGradient>
+    <linearGradient id="inlayBrass" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#E5CA92"/>
+      <stop offset="50%" stop-color="#C5A869"/>
+      <stop offset="100%" stop-color="#9C8245"/>
+    </linearGradient>
+    <linearGradient id="acrylicBlack" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#1E2A38"/>
+      <stop offset="100%" stop-color="#0A121A"/>
+    </linearGradient>
+    <filter id="inlayShadow" x="-10%" y="-10%" width="120%" height="120%">
+      <feDropShadow dx="1" dy="2" stdDeviation="1.5" flood-color="#0A1931" flood-opacity="0.18"/>
+    </filter>
+  </defs>
+
+  <!-- Calibrated HDHMR / Solid Board Base -->
+  <rect width="800" height="1200" fill="url(#sandStone)"/>
+
+  <!-- Blueprint CAD Construction Grid -->
+  <g stroke="#D6D0C5" stroke-width="1" opacity="0.6">
+    <line x1="100" y1="0" x2="100" y2="1200"/>
+    <line x1="200" y1="0" x2="200" y2="1200"/>
+    <line x1="300" y1="0" x2="300" y2="1200"/>
+    <line x1="400" y1="0" x2="400" y2="1200"/>
+    <line x1="500" y1="0" x2="500" y2="1200"/>
+    <line x1="600" y1="0" x2="600" y2="1200"/>
+    <line x1="700" y1="0" x2="700" y2="1200"/>
+    
+    <line x1="0" y1="200" x2="800" y2="200"/>
+    <line x1="0" y1="400" x2="800" y2="400"/>
+    <line x1="0" y1="600" x2="800" y2="600"/>
+    <line x1="0" y1="800" x2="800" y2="800"/>
+    <line x1="0" y1="1000" x2="800" y2="1000"/>
+  </g>
+
+  <!-- Sheet Outer Stock Boundary -->
+  <rect x="50" y="50" width="700" height="1100" fill="none" stroke="#B8B0A2" stroke-width="1.5" stroke-dasharray="10 6"/>
+
+  <!-- CONTROURED ARCHITECTURAL PROFILE CUTOUT (Large organic fluid shape) -->
+  <!-- Outer Profile Pocket -->
+  <path d="M120 180 Q250 100, 400 180 T680 180 L680 820 Q550 920, 400 820 T120 820 Z" 
+        fill="#FAF9F6" stroke="#1A3D63" stroke-width="2.5" filter="url(#inlayShadow)"/>
+
+  <!-- Inside Flush Inlay Pocket (Pocket Depth: 4mm) -->
+  <path d="M140 210 Q260 140, 400 210 T660 210 L660 790 Q540 880, 400 790 T140 790 Z" 
+        fill="url(#acrylicBlack)" stroke="#4A7FA7" stroke-width="1.5"/>
+
+  <!-- Embedded Flush Brass Geometries / Ribbons (Inlay Contrast) -->
+  <g filter="url(#inlayShadow)">
+    <!-- Central Brass Geometric Inlay Ribbon -->
+    <path d="M220 300 L580 300 L580 324 L220 324 Z" fill="url(#inlayBrass)"/>
+    <circle cx="400" cy="500" r="120" fill="none" stroke="url(#inlayBrass)" stroke-width="14"/>
+    <circle cx="400" cy="500" r="160" fill="none" stroke="#C5A869" stroke-width="2" stroke-dasharray="8 6"/>
+
+    <!-- Interlocking Quadrant Inlays -->
+    <rect x="350" y="450" width="100" height="100" fill="url(#inlayBrass)" rx="4"/>
+    <circle cx="400" cy="500" r="18" fill="#1E2A38"/>
+    
+    <!-- Accent Line Inlays -->
+    <path d="M220 680 L580 680 L580 704 L220 704 Z" fill="url(#inlayBrass)"/>
+  </g>
+
+  <!-- Machine Spindle Radius & Cutter Compensation Notations -->
+  <g stroke="#4A7FA7" stroke-width="1" stroke-dasharray="3 3">
+    <circle cx="120" cy="180" r="16" fill="none"/>
+    <line x1="120" y1="180" x2="160" y2="150"/>
+    <text x="170" y="152" font-family="'Montserrat', sans-serif" font-size="11" fill="#1A3D63" font-weight="600">R6.35MM COMPRESSION ENDMILL</text>
+
+    <circle cx="680" cy="820" r="16" fill="none"/>
+    <line x1="680" y1="820" x2="620" y2="850"/>
+    <text x="610" y="865" font-family="'Montserrat', sans-serif" font-size="11" fill="#1A3D63" text-anchor="end" font-weight="600">ZERO-TOLERANCE FLUSH SEAM</text>
+  </g>
+
+  <!-- Typography: Master Category Specification -->
+  <text x="400" y="930" font-family="'Playfair Display', Georgia, serif" font-size="30" font-weight="700" letter-spacing="2" fill="#0A1931" text-anchor="middle">
+    ARCHITECTURAL INLAYS
+  </text>
+  <text x="400" y="970" font-family="'Montserrat', sans-serif" font-size="13" font-weight="600" letter-spacing="4" fill="#4A7FA7" text-anchor="middle">
+    MULTI-MATERIAL CONTOURED PROFILES
+  </text>
+  <text x="400" y="1005" font-family="'Montserrat', sans-serif" font-size="11" font-weight="500" letter-spacing="2" fill="#5A6C7D" text-anchor="middle">
+    ACRYLIC, BRASS & HARDWOODS FLUSH-EMBEDDED
+  </text>
+
+  <!-- Dimensional Measure Indicators -->
+  <g stroke="#8E8578" stroke-width="1.2">
+    <line x1="80" y1="1080" x2="720" y2="1080"/>
+    <polyline points="90,1075 80,1080 90,1085"/>
+    <polyline points="710,1075 720,1080 710,1085"/>
+    <text x="400" y="1075" font-family="'Montserrat', sans-serif" font-size="10" font-weight="600" letter-spacing="2" fill="#0A1931" text-anchor="middle">
+      TOLERANCE: ±0.15MM FLUSH PROFILE REGISTER
+    </text>
+  </g>
+</svg>

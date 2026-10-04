@@ -1,0 +1,88 @@
+<svg viewBox="0 0 800 1200" width="800" height="1200" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="galleryDark" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#191F28"/>
+      <stop offset="50%" stop-color="#11161E"/>
+      <stop offset="100%" stop-color="#090D13"/>
+    </linearGradient>
+    <linearGradient id="sculptureGold" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#FCEFD2"/>
+      <stop offset="35%" stop-color="#E5C384"/>
+      <stop offset="70%" stop-color="#B8934A"/>
+      <stop offset="100%" stop-color="#735722"/>
+    </linearGradient>
+    <filter id="floatShadow" x="-20%" y="-20%" width="140%" height="140%">
+      <feDropShadow dx="3" dy="8" stdDeviation="6" flood-color="#000000" flood-opacity="0.6"/>
+    </filter>
+  </defs>
+
+  <!-- Gallery Dark Display Background -->
+  <rect width="800" height="1200" fill="url(#galleryDark)"/>
+
+  <!-- Precision Framing & Multi-Axis Boundary -->
+  <rect x="45" y="45" width="710" height="1110" fill="none" stroke="#263342" stroke-width="1.5" rx="4"/>
+  <rect x="58" y="58" width="684" height="1084" fill="none" stroke="#B8934A" stroke-width="1" stroke-dasharray="4 6" opacity="0.5"/>
+
+  <!-- Complex Undercut Dynamic Silhouette (Bharatanatyam / Classical Dancer Silhouetted Form) -->
+  <g filter="url(#floatShadow)" transform="translate(0, -20)">
+    <!-- Swirling Ribbon / Floating Overhanging Geometries (Extreme Undercuts) -->
+    <path d="M 220 300 C 180 180, 320 140, 400 240 C 480 340, 620 220, 580 380 C 540 540, 680 580, 600 700 C 520 820, 280 820, 200 680 C 120 540, 260 420, 220 300 Z" 
+          fill="none" stroke="url(#sculptureGold)" stroke-width="3" opacity="0.65"/>
+
+    <path d="M 280 340 C 240 220, 360 180, 420 280 C 480 380, 580 300, 540 440 C 500 580, 600 640, 520 720" 
+          fill="none" stroke="#E5C384" stroke-width="1.5" stroke-dasharray="8 6"/>
+
+    <!-- Central Classical Sculptural Form (Poised Dynamic Dance Pose) -->
+    <!-- Head with Ornate Bun & Headdress -->
+    <circle cx="400" cy="270" r="30" fill="url(#sculptureGold)"/>
+    <ellipse cx="400" cy="250" rx="20" ry="12" fill="#FCEFD2"/>
+    <polygon points="400,215 390,240 410,240" fill="#E5C384"/>
+
+    <!-- Slender Neck & Graceful Torso Curve -->
+    <path d="M 390 295 C 385 360, 360 420, 375 490 C 390 540, 420 540, 425 490 C 430 420, 415 360, 410 295 Z" 
+          fill="url(#sculptureGold)"/>
+
+    <!-- Outstretched Raised Expressive Arms (Hasta Mudra) -->
+    <path d="M 380 340 C 280 310, 220 250, 190 200 C 185 190, 210 190, 225 215 C 265 270, 320 330, 385 355 Z" 
+          fill="url(#sculptureGold)"/>
+    <path d="M 420 340 C 520 320, 580 280, 620 220 C 630 210, 610 200, 595 225 C 555 280, 490 330, 415 355 Z" 
+          fill="url(#sculptureGold)"/>
+
+    <!-- Dynamic Flowing Silk Pleats & Fan Fanfare Skirt (Multi-layer Undercuts) -->
+    <g fill="url(#sculptureGold)" stroke="#735722" stroke-width="1">
+      <polygon points="400,500 310,640 330,640 400,510"/>
+      <polygon points="400,500 330,650 355,650 400,510"/>
+      <polygon points="400,500 355,660 380,660 400,510"/>
+      <polygon points="400,500 380,665 405,665 400,510"/>
+      <polygon points="400,500 405,665 430,660 400,510"/>
+      <polygon points="400,500 430,650 455,650 400,510"/>
+      <polygon points="400,500 455,640 480,640 400,510"/>
+    </g>
+
+    <!-- Poised Crossed Legs / Aramandi Stance -->
+    <path d="M 370 540 C 330 580, 280 620, 270 700 C 290 710, 320 680, 350 630 L 380 570 Z" fill="url(#sculptureGold)"/>
+    <path d="M 430 540 C 470 580, 520 620, 530 700 C 510 710, 480 680, 450 630 L 420 570 Z" fill="url(#sculptureGold)"/>
+
+    <!-- Floating Pedestal / Cantilever Gallery Base -->
+    <rect x="260" y="730" width="280" height="24" rx="3" fill="#B8934A" stroke="#FCEFD2" stroke-width="1.5"/>
+    <rect x="220" y="754" width="360" height="36" rx="4" fill="#1C2430" stroke="#B8934A" stroke-width="2"/>
+    <rect x="180" y="790" width="440" height="20" rx="3" fill="#0E141D" stroke="#263342"/>
+  </g>
+
+  <!-- Typography & Additive Undercut Notation -->
+  <text x="400" y="910" font-family="'Playfair Display', Georgia, serif" font-size="28" font-weight="700" letter-spacing="2" fill="#FFFFFF" text-anchor="middle">
+    DYNAMIC ARTISTIC SCULPTURES
+  </text>
+  <text x="400" y="950" font-family="'Montserrat', sans-serif" font-size="13" font-weight="600" letter-spacing="4" fill="#E5C384" text-anchor="middle">
+    COMPLEX UNDERCUTS & FLOATING GEOMETRIES
+  </text>
+  <text x="400" y="985" font-family="'Montserrat', sans-serif" font-size="11" font-weight="500" letter-spacing="2" fill="#95A6B8" text-anchor="middle">
+    HIGH-FIDELITY PHOTOPOLYMER • METALLIC GILDED LEAFING
+  </text>
+
+  <!-- Gallery Formats Tag -->
+  <rect x="220" y="1040" width="360" height="34" fill="#191F28" stroke="#B8934A" rx="3"/>
+  <text x="400" y="1062" font-family="'Montserrat', sans-serif" font-size="10" font-weight="600" letter-spacing="2" fill="#FCEFD2" text-anchor="middle">
+    COLLECTOR EDITIONS & ARCHITECTURAL ACCENTS
+  </text>
+</svg>

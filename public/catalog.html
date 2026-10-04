@@ -4,24 +4,98 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Production Capabilities & Catalog | Tridimensional Creation Pvt Ltd</title>
-    <meta name="description" content="Explore the custom fabrication catalog of Tridimensional Creation Pvt Ltd: CNC carved woodwork, 3D relief murals, and high-precision 3D printed sculptures in Guwahati." />
+    <meta name="description" content="Explore custom 2D CNC, 3D CNC, and Additive 3D Printing fabrication: architectural jali cutting, V-carved signage, 3D bas-relief murals, parametric wave walls, and sacred deity sculptures in Guwahati, Assam." />
     
     <!-- OpenGraph Social Sharing -->
     <meta property="og:title" content="Production Capabilities & Catalog | Tridimensional Creation Pvt Ltd" />
-    <meta property="og:description" content="Custom 3D sculpting, CNC routing, and 3D printing. Browse our 18 core fabrication capabilities for homeowners, creators, and businesses." />
+    <meta property="og:description" content="Explore our 3 core atelier disciplines: 2D CNC routing, 3D relief milling, and precision 3D additive printing in Guwahati." />
     <meta property="og:type" content="website" />
     <meta name="twitter:card" content="summary_large_image" />
 
     <!-- Google Fonts & Architectural Stylesheet -->
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;500;600;700&family=Inter:wght@300;400;500;600&family=Manrope:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400;1,600&family=Montserrat:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
     <link rel="stylesheet" href="/style.css" />
+
+    <!-- Embedded Architectural Grid Styles -->
+    <style>
+      .catalog-master-hero {
+        padding-top: var(--space-xl);
+        padding-bottom: var(--space-lg);
+        border-bottom: 1px solid var(--color-stone-border);
+      }
+
+      .catalog-master-intro {
+        max-width: 860px;
+      }
+
+      .catalog-section-wrap {
+        padding: var(--space-2xl) 0 var(--space-3xl);
+      }
+
+      .category-header-block {
+        margin-bottom: var(--space-2xl);
+        padding-bottom: var(--space-md);
+        border-bottom: 1px solid var(--color-stone-border);
+      }
+
+      .category-eyebrow {
+        font-family: 'Montserrat', sans-serif;
+        font-size: var(--text-2xs);
+        font-weight: 600;
+        letter-spacing: 2px;
+        text-transform: uppercase;
+        color: var(--brand-primary);
+        display: block;
+        margin-bottom: var(--space-xs);
+      }
+
+      .category-title {
+        font-family: 'Playfair Display', Georgia, serif;
+        font-size: clamp(2rem, 3.8vw, 2.75rem);
+        font-weight: 600;
+        color: var(--text-dark);
+        line-height: 1.25;
+        letter-spacing: -0.015em;
+        margin-bottom: var(--space-xs);
+      }
+
+      .category-description {
+        font-family: 'Montserrat', sans-serif;
+        font-size: var(--text-sm);
+        line-height: 1.7;
+        color: var(--text-dark);
+        opacity: 0.88;
+        max-width: 780px;
+      }
+
+      /* 3-Column Responsive Grid on Desktop, 1 Column on Mobile */
+      .catalog-grid-3col {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: var(--space-xl);
+      }
+
+      .category-divider {
+        height: 1px;
+        background: var(--color-stone-border);
+        margin: var(--space-3xl) 0;
+        border: none;
+      }
+
+      @media (max-width: 860px) {
+        .catalog-grid-3col {
+          grid-template-columns: 1fr;
+          gap: var(--space-lg);
+        }
+      }
+    </style>
   </head>
   <body>
 
     <!-- ====================================================================
-         01. GLOBAL HEADER & STICKY NAVIGATION
+         01. GLOBAL HEADER & STICKY NAVIGATION (IDENTICAL TO INDEX.HTML)
          ==================================================================== -->
     <header class="site-header" id="site-header">
       <div class="container nav-container">
@@ -34,8 +108,9 @@
           <a href="index.html" class="nav-link">Home</a>
           <a href="about.html" class="nav-link">About Us</a>
           <a href="catalog.html" class="nav-link active">Capabilities / Catalog</a>
+          <a href="blog.html" class="nav-link">Blog</a>
           <a href="contact.html" class="nav-link">Contact</a>
-          <a href="contact.html" class="btn btn-solid btn-sm nav-cta-btn">Start Your Project</a>
+          <a href="contact.html" class="btn btn-solid btn-sm nav-cta-btn">Book Studio Visit</a>
         </nav>
 
         <button class="nav-toggle" id="nav-toggle-btn" aria-label="Toggle Navigation Menu">
@@ -50,75 +125,94 @@
 
     <main id="main-content">
       <!-- ====================================================================
-           02. CATALOG HEADER & FILTER TABS
+           02. EDITORIAL HERO & CATALOG INTRODUCTION
            ==================================================================== -->
-      <section class="section section-hero" style="padding-bottom: var(--space-lg); border-bottom: 1px solid var(--color-stone-border);">
+      <section class="section section-hero catalog-master-hero">
         <div class="container">
-          <div style="max-width: 880px;">
-            <span class="eyebrow">Digital Atelier & Fabrication Index</span>
-            <h1 style="margin-bottom: var(--space-sm); font-size: clamp(2.2rem, 4.5vw, 3.25rem);">
+          <div class="catalog-master-intro">
+            <span class="eyebrow">Digital Atelier & Production Schedule</span>
+            <h1 style="margin-bottom: var(--space-sm); font-size: clamp(2.2rem, 4.2vw, 3.25rem); letter-spacing: -0.015em;">
               Production Capabilities & Catalog
             </h1>
-            <p class="text-lead" style="max-width: 760px; margin-bottom: var(--space-lg);">
-              Every piece manufactured in our Guwahati studio begins from your reference photo, sketch, or custom dimensions. Hand-sculpted in ZBrush and Maya, and brought to life in wood, Corian, acrylic, or resin. Select a capability below to explore options.
+            <p class="text-lead" style="max-width: 780px;">
+              Engineered fabrication solutions for architects, interior designers, and bespoke creators. Structured across three master production disciplines machined directly in our Guwahati atelier.
             </p>
-
-            <!-- Category Filter Bar -->
-            <div style="display: flex; gap: var(--space-xs); flex-wrap: wrap; padding-top: var(--space-xs);">
-              <button class="btn btn-ghost btn-sm catalog-filter active" data-filter="all">All Capabilities (18)</button>
-              <button class="btn btn-ghost btn-sm catalog-filter" data-filter="2D CNC">2D CNC Routing (6)</button>
-              <button class="btn btn-ghost btn-sm catalog-filter" data-filter="3D CNC">3D Relief Milling (6)</button>
-              <button class="btn btn-ghost btn-sm catalog-filter" data-filter="3D Printing">3D Printing & Figurines (6)</button>
-            </div>
           </div>
         </div>
       </section>
 
       <!-- ====================================================================
-           03. CATALOG GRID (DYNAMICALLY RENDERED FROM products.json)
+           03. CATALOG CATEGORIES CONTAINER
            ==================================================================== -->
-      <section class="section" style="padding-top: var(--space-xl); padding-bottom: var(--space-3xl);">
+      <section class="section catalog-section-wrap">
         <div class="container">
-          <!-- Active filter / count info bar -->
-          <div style="display: flex; justify-content: space-between; align-items: baseline; margin-bottom: var(--space-lg); padding-bottom: var(--space-xs); border-bottom: 1px solid var(--color-stone-border);">
-            <span id="catalog-count-label" style="font-size: var(--text-xs); color: var(--color-charcoal-light); font-weight: 500;">
-              Showing 18 of 18 Fabrication Capabilities
-            </span>
-            <span style="font-size: var(--text-2xs); text-transform: uppercase; letter-spacing: 0.12em; color: var(--color-muted-taupe); font-weight: 600;">
-              Guwahati Studio Direct
-            </span>
+          
+          <!-- ================================================================
+               CATEGORY 01: 2D CNC ROUTER WORKS (FLAT & CUT-THROUGH)
+               ================================================================ -->
+          <div class="category-header-block">
+            <span class="category-eyebrow">Category 01 • High-Torque Multi-Axis Machining</span>
+            <h2 class="category-title">
+              2D CNC Router Works (Flat & Cut-Through)
+            </h2>
+            <p class="category-description">
+              Subtractive precision milling across planar rigid substrates—including moisture-resistant HDHMR, solid hardwoods, Corian, and acrylic. Engineered for crisp architectural filigree, high-contrast V-carved typography, and zero-tolerance flush inlays.
+            </p>
           </div>
 
-          <!-- Product Grid Container: Minimalist architectural cards rendered via main.js -->
-          <div id="catalog-grid-container" class="catalog-grid">
-            <!-- Dynamically populated from /products.json -->
+          <!-- 3-Column Responsive Grid (3 Desktop, 1 Mobile) for 2D CNC -->
+          <div id="cnc-2d-catalog-grid" class="catalog-grid-3col">
+            <!-- Dynamic JavaScript Logic: Fetches & Populates 2D Items from products.json -->
           </div>
-        </div>
-      </section>
 
-      <!-- ====================================================================
-           04. BESPOKE INQUIRY CTA STRIP
-           ==================================================================== -->
-      <section class="section" style="background-color: #F0EEE9; border-top: 1px solid var(--color-stone-border); border-bottom: 1px solid var(--color-stone-border); padding-top: var(--space-2xl); padding-bottom: var(--space-2xl);">
-        <div class="container">
-          <div style="display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: var(--space-md);">
-            <div style="max-width: 600px;">
-              <span class="eyebrow" style="margin-bottom: 4px;">Don't see your exact project?</span>
-              <h3 style="margin-bottom: 4px; font-size: clamp(1.4rem, 2.5vw, 1.85rem);">Have a unique photo or idea to sculpt?</h3>
-              <p style="font-size: var(--text-xs); color: var(--color-charcoal-light); margin: 0;">
-                We sculpt anything from scratch. Send us a reference photo or sketch on WhatsApp for instant evaluation and pricing.
-              </p>
-            </div>
-            <div>
-              <a href="contact.html" class="btn btn-solid">Turn a Photo into a Product</a>
-            </div>
+          <!-- Category Separator -->
+          <hr class="category-divider" />
+
+          <!-- ================================================================
+               CATEGORY 02: 3D CNC ROUTER WORKS (DEPTH, RELIEF & CONTOURS)
+               ================================================================ -->
+          <div class="category-header-block">
+            <span class="category-eyebrow">Category 02 • Sculptural Relief & Multi-Depth Contours</span>
+            <h2 class="category-title">
+              3D CNC Router Works (Depth, Relief & Contours)
+            </h2>
+            <p class="category-description">
+              Multi-axis ball-nose and endmill contour sculpting across solid boards and thick hardwood slabs. Delivering multi-depth bas-relief architectural murals, organic parametric wave walls, and continuous fluted textured cladding.
+            </p>
           </div>
+
+          <!-- 3-Column Responsive Grid (3 Desktop, 1 Mobile) for 3D CNC -->
+          <div id="cnc-3d-catalog-grid" class="catalog-grid-3col">
+            <!-- Dynamic JavaScript Logic: Fetches & Populates 3D Items from products.json -->
+          </div>
+
+          <!-- Category Separator -->
+          <hr class="category-divider" />
+
+          <!-- ================================================================
+               CATEGORY 03: 3D PRINTING (ADDITIVE MANUFACTURING)
+               ================================================================ -->
+          <div class="category-header-block">
+            <span class="category-eyebrow">Category 03 • Photopolymer & Additive Synthesis</span>
+            <h2 class="category-title">
+              3D Printing (Additive Manufacturing)
+            </h2>
+            <p class="category-description">
+              High-fidelity additive manufacturing capturing microscopic surface textures, organic undercuts, and floating sculptural elements. Engineered in tough photopolymer resin and fiber composites for sacred temple icons, lifelike memorial busts, and complex gallery art pieces.
+            </p>
+          </div>
+
+          <!-- 3-Column Responsive Grid (3 Desktop, 1 Mobile) for 3D Printing -->
+          <div id="printing-3d-catalog-grid" class="catalog-grid-3col">
+            <!-- Dynamic JavaScript Logic: Fetches & Populates 3D Printing Items from products.json -->
+          </div>
+
         </div>
       </section>
     </main>
 
     <!-- ====================================================================
-         05. GLOBAL ARCHITECTURAL FOOTER
+         04. GLOBAL ARCHITECTURAL FOOTER (IDENTICAL TO INDEX.HTML)
          ==================================================================== -->
     <footer class="site-footer">
       <div class="container">
@@ -130,10 +224,10 @@
               <span class="brand-logo-sub">Pvt Ltd • Guwahati</span>
             </a>
             <p style="font-size: var(--text-xs); line-height: 1.7; max-width: 380px; margin-bottom: var(--space-sm);">
-              Artistic 3D sculpting, CNC routing, and 3D printing studio. Turning reference photos into custom decor, furniture, figurines, and signage for homeowners, creators, and businesses.
+              End-to-end design, digital sculpting, CNC routing, and 3D printing studio. Serving homeowners, furniture makers, contractors, and businesses across India.
             </p>
             <p style="font-size: var(--text-2xs); color: var(--color-muted-taupe); text-transform: uppercase; letter-spacing: 0.1em;">
-              Artistic Digital Sculpting & Fabrication
+              Registered Production Entity
             </p>
           </div>
 
@@ -144,9 +238,11 @@
               <li><a href="index.html" class="footer-link">Home</a></li>
               <li><a href="about.html" class="footer-link">About the Studio</a></li>
               <li><a href="catalog.html" class="footer-link">Capabilities & Catalog</a></li>
+              <li><a href="blog.html" class="footer-link">Studio Journal & Blog</a></li>
               <li><a href="contact.html" class="footer-link">Contact & Studio Visit</a></li>
-              <li><a href="catalog.html#cnc-routing" class="footer-link">CNC Wood Carving</a></li>
-              <li><a href="catalog.html#3d-printing" class="footer-link">3D Printing & Figurines</a></li>
+              <li><a href="catalog.html#2d-cnc" class="footer-link">2D CNC Router Works</a></li>
+              <li><a href="catalog.html#3d-cnc" class="footer-link">3D CNC Router Works</a></li>
+              <li><a href="catalog.html#3d-printing" class="footer-link">3D Printing Services</a></li>
             </ul>
           </div>
 
@@ -156,14 +252,14 @@
             <p style="font-size: var(--text-xs); line-height: 1.6; margin-bottom: 0.5rem;">
               <strong>Tridimensional Creation Pvt Ltd</strong><br />
               Mathgaria, Guwahati, Assam.<br />
-              PIN — 781020
+              PIN: 781020
             </p>
             <p style="font-size: var(--text-xs); line-height: 1.6; margin-bottom: 0.75rem;">
               Phone: <a href="tel:+918011958307" style="color: var(--color-charcoal); font-weight: 500;">+91 80119 58307</a><br />
               Email: <a href="mailto:tricreations.official@gmail.com" style="color: var(--color-charcoal);">tricreations.official@gmail.com</a>
             </p>
-            <p style="font-size: var(--text-xs);">
-              <a href="https://www.instagram.com/tridimensional.creations" target="_blank" rel="noopener noreferrer" class="footer-social-link" aria-label="Visit Tridimensional Creation on Instagram">
+            <p style="font-size: var(--text-xs); margin-top: 0.5rem;">
+              <a href="https://www.instagram.com/tridimensional.creations" target="_blank" rel="noopener noreferrer" class="footer-social-link" aria-label="Visit Tridimensional Creation on Instagram" style="font-family: 'Montserrat', sans-serif; color: var(--text-dark); display: inline-flex; align-items: center; gap: 0.5rem; text-decoration: none;">
                 <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
                   <rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect>
                   <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path>
@@ -176,13 +272,77 @@
         </div>
 
         <div class="footer-bottom">
-          <p>&copy; 2024–2026 Tridimensional Creation Pvt Ltd. All rights reserved.</p>
-          <p>Artistic Digital Sculpting • CNC Carving • Precision 3D Printing.</p>
+          <p>&copy; 2024-2026 Tridimensional Creation Pvt Ltd. All rights reserved.</p>
+          <p>Digital Sculpting, CNC Routing & Precision 3D Printing Atelier.</p>
         </div>
       </div>
     </footer>
 
     <!-- Global JavaScript File -->
     <script src="/main.js"></script>
+
+    <!-- Dynamic Fetch & Render Logic for the 3 Master Categories -->
+    <script>
+      document.addEventListener('DOMContentLoaded', async function () {
+        const grid2d = document.getElementById('cnc-2d-catalog-grid');
+        const grid3d = document.getElementById('cnc-3d-catalog-grid');
+        const gridPrinting = document.getElementById('printing-3d-catalog-grid');
+
+        try {
+          const response = await fetch('/products.json');
+          if (!response.ok) {
+            throw new Error('Failed to load products.json (Status: ' + response.status + ')');
+          }
+          const products = await response.json();
+
+          // Filter by exact category keys
+          const items2D = products.filter(function (item) {
+            return item.category === '2D CNC Router Works';
+          });
+
+          const items3D = products.filter(function (item) {
+            return item.category === '3D CNC Router Works (Depth, Relief & Contours)';
+          });
+
+          const itemsPrinting = products.filter(function (item) {
+            return item.category === '3D Printing (Additive Manufacturing)';
+          });
+
+          // Helper function to render cards into a grid container
+          function renderCategoryGrid(container, items) {
+            if (!container) return;
+            container.innerHTML = '';
+
+            items.forEach(function (product) {
+              const cardAnchor = document.createElement('a');
+              cardAnchor.href = 'product.html?id=' + encodeURIComponent(product.id);
+              cardAnchor.className = 'product-card';
+              cardAnchor.setAttribute('aria-label', product.title);
+
+              cardAnchor.innerHTML = `
+                <div class="product-card-image-wrap">
+                  <img 
+                    src="${product.image_placeholder}" 
+                    alt="${product.title}" 
+                    class="product-card-image"
+                    loading="lazy"
+                  />
+                </div>
+                <span class="product-card-title">${product.title}</span>
+              `;
+
+              container.appendChild(cardAnchor);
+            });
+          }
+
+          renderCategoryGrid(grid2d, items2D);
+          renderCategoryGrid(grid3d, items3D);
+          renderCategoryGrid(gridPrinting, itemsPrinting);
+
+        } catch (err) {
+          console.error('Error fetching catalog specifications:', err);
+        }
+      });
+    </script>
   </body>
 </html>

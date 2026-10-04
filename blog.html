@@ -1,0 +1,650 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Studio Journal & Engineering Notes | Tridimensional Creation Pvt Ltd</title>
+    <meta name="description" content="Technical fabrication guides, material insights, and computational sculpting articles from Tridimensional Creation's atelier in Guwahati." />
+    
+    <!-- OpenGraph Social Sharing -->
+    <meta property="og:title" content="Studio Journal | Tridimensional Creation Pvt Ltd" />
+    <meta property="og:description" content="Architectural insights into precision CNC routing, organic digital clay sculpting, and additive 3D manufacturing." />
+    <meta property="og:type" content="website" />
+    <meta name="twitter:card" content="summary_large_image" />
+
+    <!-- Google Fonts & Architectural Stylesheet -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400;1,600&family=Montserrat:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="/style.css" />
+
+    <!-- Embedded Page-Specific CSS for Compact High-Volume Architectural Grid -->
+    <style>
+      .blog-page-hero {
+        padding-bottom: var(--space-lg);
+        border-bottom: 1px solid var(--color-stone-border);
+      }
+
+      .blog-page-intro {
+        max-width: 860px;
+      }
+
+      .blog-grid-section {
+        padding: var(--space-xl) 0 var(--space-3xl);
+      }
+
+      /* Compact 3-Column Architectural Grid */
+      .blog-architectural-grid {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: var(--space-md);
+      }
+
+      .blog-post-card {
+        background-color: var(--bg-card);
+        border: 1px solid var(--color-stone-border);
+        border-radius: 6px;
+        overflow: hidden;
+        display: flex;
+        flex-direction: column;
+        transition: var(--transition-subtle);
+        box-shadow: var(--shadow-subtle);
+        position: relative;
+        height: 100%;
+      }
+
+      .blog-post-card:hover {
+        transform: translateY(-3px);
+        box-shadow: var(--shadow-lift);
+        border-color: #6B1326;
+      }
+
+      /* Shorter landscape 16:9 aspect ratio with fixed max-height */
+      .blog-card-media-link {
+        display: block;
+        width: 100%;
+        aspect-ratio: 16 / 9;
+        max-height: 200px;
+        background-color: #F8F6F6;
+        overflow: hidden;
+        border-bottom: 1px solid rgba(107, 19, 38, 0.12);
+        position: relative;
+        text-decoration: none;
+      }
+
+      .blog-card-media-link svg,
+      .blog-card-media-link img {
+        width: 100%;
+        height: 100%;
+        max-height: 200px;
+        object-fit: cover;
+        display: block;
+        transition: transform 0.45s ease;
+      }
+
+      .blog-post-card:hover .blog-card-media-link svg,
+      .blog-post-card:hover .blog-card-media-link img {
+        transform: scale(1.03);
+      }
+
+      /* Compact Typography and Inner Spacing */
+      .blog-post-content {
+        padding: 1.15rem 1.25rem 1.25rem;
+        display: flex;
+        flex-direction: column;
+        flex-grow: 1;
+      }
+
+      .blog-meta-bar {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: var(--space-xs);
+        margin-bottom: 0.5rem;
+      }
+
+      .blog-badge {
+        font-family: 'Montserrat', sans-serif;
+        font-size: var(--text-2xs);
+        font-weight: 700;
+        letter-spacing: 1px;
+        text-transform: uppercase;
+        color: #6B1326;
+        background-color: #F6EBED;
+        padding: 4px 8px;
+        border-radius: 3px;
+      }
+
+      .blog-timestamp {
+        font-family: 'Montserrat', sans-serif;
+        font-size: var(--text-2xs);
+        color: var(--brand-accent);
+        font-weight: 500;
+      }
+
+      .blog-heading-link {
+        text-decoration: none;
+        color: inherit;
+        display: block;
+        margin-bottom: 0.35rem;
+      }
+
+      .blog-heading-title {
+        font-family: 'Playfair Display', Georgia, serif;
+        font-size: 1.125rem;
+        font-weight: 700;
+        color: #6B1326;
+        line-height: 1.35;
+        transition: color 0.2s ease;
+        margin: 0;
+      }
+
+      .blog-heading-link:hover .blog-heading-title,
+      .blog-post-card:hover .blog-heading-title {
+        color: var(--brand-accent);
+      }
+
+      /* Line Clamping for Equal Height Uniformity */
+      .blog-summary {
+        font-family: 'Montserrat', sans-serif;
+        font-size: var(--text-xs);
+        line-height: 1.55;
+        color: #6B1326;
+        opacity: 0.88;
+        margin-top: 0.35rem;
+        margin-bottom: var(--space-md);
+        flex-grow: 1;
+        display: -webkit-box;
+        -webkit-line-clamp: 2;
+        -webkit-box-orient: vertical;
+        overflow: hidden;
+        text-overflow: ellipsis;
+      }
+
+      .blog-action-row {
+        margin-top: auto;
+        padding-top: 0.75rem;
+        border-top: 1px solid rgba(107, 19, 38, 0.12);
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+      }
+
+      .btn-read-article {
+        display: inline-flex;
+        align-items: center;
+        gap: 0.4rem;
+        font-family: 'Montserrat', sans-serif;
+        font-size: var(--text-2xs);
+        font-weight: 700;
+        letter-spacing: 1px;
+        text-transform: uppercase;
+        color: #6B1326;
+        text-decoration: none;
+        transition: var(--transition-subtle);
+      }
+
+      .btn-read-article span {
+        transition: transform 0.25s ease;
+      }
+
+      .blog-post-card:hover .btn-read-article span {
+        transform: translateX(4px);
+      }
+
+      .btn-read-article:hover {
+        color: var(--brand-accent);
+      }
+
+      .reading-estimate {
+        font-family: 'Montserrat', sans-serif;
+        font-size: var(--text-2xs);
+        letter-spacing: 0.5px;
+        color: var(--brand-accent);
+        font-weight: 500;
+      }
+
+      /* Compact Pagination Component */
+      .blog-pagination {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 0.5rem;
+        margin-top: var(--space-2xl);
+        padding-top: var(--space-lg);
+        border-top: 1px solid var(--color-stone-border);
+      }
+
+      .pagination-item {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        min-width: 2.35rem;
+        height: 2.35rem;
+        padding: 0 0.85rem;
+        font-family: 'Montserrat', sans-serif;
+        font-size: var(--text-xs);
+        font-weight: 600;
+        letter-spacing: 0.5px;
+        color: #6B1326;
+        background-color: var(--bg-card);
+        border: 1px solid var(--color-stone-border);
+        border-radius: 4px;
+        text-decoration: none;
+        transition: var(--transition-subtle);
+      }
+
+      .pagination-item:hover:not(.current) {
+        background-color: #F6EBED;
+        border-color: #6B1326;
+        color: #6B1326;
+      }
+
+      .pagination-item.current {
+        background-color: #6B1326 !important;
+        color: #FFFFFF !important;
+        border-color: #6B1326 !important;
+        cursor: default;
+      }
+
+      .pagination-item.next-page {
+        gap: 0.35rem;
+        padding: 0 1rem;
+      }
+
+      /* Responsive Breakpoint: 2 Columns on Tablet, 1 Column on Mobile */
+      @media (max-width: 1024px) {
+        .blog-architectural-grid {
+          grid-template-columns: repeat(2, 1fr);
+          gap: var(--space-md);
+        }
+      }
+
+      @media (max-width: 640px) {
+        .blog-architectural-grid {
+          grid-template-columns: 1fr;
+          gap: var(--space-md);
+        }
+        .blog-post-content {
+          padding: 1rem;
+        }
+      }
+    </style>
+  </head>
+  <body>
+
+    <!-- ====================================================================
+         01. GLOBAL HEADER & STICKY NAVIGATION (IDENTICAL TO INDEX.HTML)
+         ==================================================================== -->
+    <header class="site-header" id="site-header">
+      <div class="container nav-container">
+        <a href="index.html" class="brand-logo" aria-label="Tridimensional Creation Pvt Ltd Home">
+          <span>Tridimensional Creation</span>
+          <span class="brand-logo-sub">Pvt Ltd • Guwahati</span>
+        </a>
+
+        <nav class="nav-links" id="primary-nav">
+          <a href="index.html" class="nav-link">Home</a>
+          <a href="about.html" class="nav-link">About Us</a>
+          <a href="catalog.html" class="nav-link">Capabilities / Catalog</a>
+          <a href="blog.html" class="nav-link active">Blog</a>
+          <a href="contact.html" class="nav-link">Contact</a>
+          <a href="contact.html" class="btn btn-solid btn-sm nav-cta-btn">Book Studio Visit</a>
+        </nav>
+
+        <button class="nav-toggle" id="nav-toggle-btn" aria-label="Toggle Navigation Menu">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="square">
+            <line x1="3" y1="6" x2="21" y2="6"></line>
+            <line x1="3" y1="12" x2="21" y2="12"></line>
+            <line x1="3" y1="18" x2="21" y2="18"></line>
+          </svg>
+        </button>
+      </div>
+    </header>
+
+    <main id="main-content">
+      <!-- ====================================================================
+           02. EDITORIAL HERO & PAGE TITLE
+           ==================================================================== -->
+      <section class="section section-hero blog-page-hero">
+        <div class="container">
+          <div class="blog-page-intro">
+            <span class="eyebrow">Studio Journal • Computational Design & Precision Production</span>
+            <h1 style="margin-bottom: var(--space-sm); font-size: clamp(2.2rem, 4.2vw, 3.25rem); letter-spacing: -0.015em;">
+              Notes from the Atelier
+            </h1>
+            <p class="text-lead" style="max-width: 780px;">
+              Technical deep-dives into subtractive CNC milling, organic ZBrush digital sculpting, material tolerances, and industrial 3D printing workflows in Guwahati, Assam.
+            </p>
+          </div>
+        </div>
+      </section>
+
+      <!-- ====================================================================
+           03. B2B ARCHITECTURAL BLOG GRID (COMPACT HIGH-VOLUME 3-COL GRID)
+           ==================================================================== -->
+      <section class="section blog-grid-section">
+        <div class="container">
+          <div class="blog-architectural-grid">
+            
+            <!-- CARD 01: CNC ROUTING & JALI ARCHITECTURE -->
+            <article class="blog-post-card">
+              <a href="article.html" class="blog-card-media-link" aria-label="Read article on Architectural Jali">
+                <svg viewBox="0 0 800 450" width="100%" height="100%" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="none">
+                  <rect width="800" height="450" fill="#EFECE6"/>
+                  <g stroke="#C5BEB2" stroke-width="1.5" opacity="0.6">
+                    <line x1="100" y1="0" x2="100" y2="450" />
+                    <line x1="200" y1="0" x2="200" y2="450" />
+                    <line x1="300" y1="0" x2="300" y2="450" />
+                    <line x1="400" y1="0" x2="400" y2="450" />
+                    <line x1="500" y1="0" x2="500" y2="450" />
+                    <line x1="600" y1="0" x2="600" y2="450" />
+                    <line x1="700" y1="0" x2="700" y2="450" />
+                  </g>
+                  <g stroke="#6B1326" stroke-width="2.5" fill="none" opacity="0.85">
+                    <circle cx="400" cy="225" r="120" stroke="#8E2D40" stroke-width="2"/>
+                    <path d="M400 105 C430 165 430 285 400 345 C370 285 370 165 400 105 Z" />
+                    <path d="M280 225 C340 195 460 195 520 225 C460 255 340 255 280 225 Z" />
+                    <circle cx="400" cy="225" r="16" fill="#6B1326"/>
+                  </g>
+                  <text x="400" y="410" font-family="'Montserrat', sans-serif" font-size="11" letter-spacing="3" fill="#6B1326" text-anchor="middle" font-weight="600">CNC LATTICE & JALI GEOMETRY</text>
+                </svg>
+              </a>
+              <div class="blog-post-content">
+                <div class="blog-meta-bar">
+                  <span class="blog-badge">CNC Routing</span>
+                  <time class="blog-timestamp" datetime="2026-10-02">Oct 02, 2026</time>
+                </div>
+                <a href="article.html" class="blog-heading-link">
+                  <h2 class="blog-heading-title">
+                    The Art of Architectural Jali: Precision CNC Lattice Cutting in Modern Interiors
+                  </h2>
+                </a>
+                <p class="blog-summary">
+                  How multi-axis CNC routing transforms calibrated HDHMR and solid hardwoods into delicate, light-filtering architectural partitions, temple backdrops, and privacy facades.
+                </p>
+                <div class="blog-action-row">
+                  <a href="article.html" class="btn-read-article" aria-label="Read full article on Architectural Jali">
+                    Read Article <span>&rarr;</span>
+                  </a>
+                  <span class="reading-estimate">5 Min</span>
+                </div>
+              </div>
+            </article>
+
+            <!-- CARD 02: 3D PRINTING & DIGITAL SCULPTING -->
+            <article class="blog-post-card">
+              <a href="article.html" class="blog-card-media-link" aria-label="Read article on 3D Sculpting Workflows">
+                <svg viewBox="0 0 800 450" width="100%" height="100%" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="none">
+                  <rect width="800" height="450" fill="#E8EDF2"/>
+                  <g stroke="#8E2D40" stroke-width="1.2" fill="none" opacity="0.75">
+                    <polygon points="400,80 290,165 330,305 470,305 510,165" stroke="#6B1326" stroke-width="2"/>
+                    <line x1="400" y1="80" x2="400" y2="350" stroke="#6B1326" stroke-width="1.8"/>
+                    <line x1="290" y1="165" x2="400" y2="210"/>
+                    <line x1="510" y1="165" x2="400" y2="210"/>
+                    <line x1="330" y1="305" x2="400" y2="210"/>
+                    <line x1="470" y1="305" x2="400" y2="210"/>
+                  </g>
+                  <circle cx="400" cy="210" r="5" fill="#6B1326"/>
+                  <circle cx="400" cy="80" r="4" fill="#8E2D40"/>
+                  <circle cx="290" cy="165" r="4" fill="#8E2D40"/>
+                  <circle cx="510" cy="165" r="4" fill="#8E2D40"/>
+                  <text x="400" y="410" font-family="'Montserrat', sans-serif" font-size="11" letter-spacing="3" fill="#6B1326" text-anchor="middle" font-weight="600">ORGANIC DIGITAL CLAY & RESIN</text>
+                </svg>
+              </a>
+              <div class="blog-post-content">
+                <div class="blog-meta-bar">
+                  <span class="blog-badge">3D Printing</span>
+                  <time class="blog-timestamp" datetime="2026-09-18">Sep 18, 2026</time>
+                </div>
+                <a href="article.html" class="blog-heading-link">
+                  <h2 class="blog-heading-title">
+                    From Digital Clay to Physical Form: Large-Format 3D Sculpting Workflows
+                  </h2>
+                </a>
+                <p class="blog-summary">
+                  An inside look at our organic sculpting pipeline—from ZBrush mesh topology to multi-part industrial resin casting and FRP reinforced monumental architectural decor.
+                </p>
+                <div class="blog-action-row">
+                  <a href="article.html" class="btn-read-article" aria-label="Read full article on 3D Sculpting Workflows">
+                    Read Article <span>&rarr;</span>
+                  </a>
+                  <span class="reading-estimate">7 Min</span>
+                </div>
+              </div>
+            </article>
+
+            <!-- CARD 03: SUBSTRATES & FINISH LONGEVITY -->
+            <article class="blog-post-card">
+              <a href="article.html" class="blog-card-media-link" aria-label="Read article on Material Substrates">
+                <svg viewBox="0 0 800 450" width="100%" height="100%" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="none">
+                  <rect width="800" height="450" fill="#F4EFE6"/>
+                  <g opacity="0.85">
+                    <rect x="230" y="110" width="340" height="40" fill="#D8CFBE" stroke="#6B1326" stroke-width="1.5" rx="3"/>
+                    <rect x="230" y="165" width="340" height="40" fill="#C0B39F" stroke="#6B1326" stroke-width="1.5" rx="3"/>
+                    <rect x="230" y="220" width="340" height="40" fill="#A89B87" stroke="#6B1326" stroke-width="1.5" rx="3"/>
+                    <rect x="230" y="275" width="340" height="40" fill="#8E2D40" stroke="#6B1326" stroke-width="1.5" rx="3"/>
+                  </g>
+                  <text x="400" y="135" font-family="'Montserrat', sans-serif" font-size="10" letter-spacing="2" fill="#6B1326" text-anchor="middle" font-weight="600">FACTORY PU MATTE LACQUER</text>
+                  <text x="400" y="190" font-family="'Montserrat', sans-serif" font-size="10" letter-spacing="2" fill="#6B1326" text-anchor="middle" font-weight="600">ISOLATION EPOXY PRIMER</text>
+                  <text x="400" y="245" font-family="'Montserrat', sans-serif" font-size="10" letter-spacing="2" fill="#6B1326" text-anchor="middle" font-weight="600">CALIBRATED HIGH-DENSITY HDHMR</text>
+                  <text x="400" y="300" font-family="'Montserrat', sans-serif" font-size="10" letter-spacing="2" fill="#FFFFFF" text-anchor="middle" font-weight="600">INTERNAL STRUCTURAL STEEL</text>
+                  <text x="400" y="410" font-family="'Montserrat', sans-serif" font-size="11" letter-spacing="3" fill="#6B1326" text-anchor="middle" font-weight="600">MATERIAL AGNOSTICISM & SUBSTRATES</text>
+                </svg>
+              </a>
+              <div class="blog-post-content">
+                <div class="blog-meta-bar">
+                  <span class="blog-badge">Materials</span>
+                  <time class="blog-timestamp" datetime="2026-08-25">Aug 25, 2026</time>
+                </div>
+                <a href="article.html" class="blog-heading-link">
+                  <h2 class="blog-heading-title">
+                    Material Agnosticism: Choosing the Ideal Substrate for CNC & Hybrid Production
+                  </h2>
+                </a>
+                <p class="blog-summary">
+                  A practical engineering comparison of moisture-resistant HDHMR, solid hardwoods, Corian, WPC, and polymers evaluated for tensile stability and paint longevity.
+                </p>
+                <div class="blog-action-row">
+                  <a href="article.html" class="btn-read-article" aria-label="Read full article on Material Agnosticism">
+                    Read Article <span>&rarr;</span>
+                  </a>
+                  <span class="reading-estimate">6 Min</span>
+                </div>
+              </div>
+            </article>
+
+            <!-- CARD 04: BESPOKE SCULPTURAL FURNITURE & ACOUSTICS -->
+            <article class="blog-post-card">
+              <a href="article.html" class="blog-card-media-link" aria-label="Read article on Parametric Wall Art">
+                <svg viewBox="0 0 800 450" width="100%" height="100%" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="none">
+                  <rect width="800" height="450" fill="#EAE6DE"/>
+                  <g stroke="#6B1326" stroke-width="2" fill="none" opacity="0.8">
+                    <path d="M 120 160 Q 260 70, 400 160 T 680 160" />
+                    <path d="M 120 200 Q 260 110, 400 200 T 680 200" stroke="#8E2D40" stroke-width="2.5" />
+                    <path d="M 120 240 Q 260 150, 400 240 T 680 240" />
+                    <path d="M 120 280 Q 260 190, 400 280 T 680 280" stroke="#8E2D40" stroke-width="2.5" />
+                  </g>
+                  <circle cx="260" cy="135" r="5" fill="#6B1326"/>
+                  <circle cx="540" cy="255" r="5" fill="#6B1326"/>
+                  <text x="400" y="410" font-family="'Montserrat', sans-serif" font-size="11" letter-spacing="3" fill="#6B1326" text-anchor="middle" font-weight="600">PARAMETRIC FLUTING & ACOUSTIC RIBS</text>
+                </svg>
+              </a>
+              <div class="blog-post-content">
+                <div class="blog-meta-bar">
+                  <span class="blog-badge">Acoustics</span>
+                  <time class="blog-timestamp" datetime="2026-08-10">Aug 10, 2026</time>
+                </div>
+                <a href="article.html" class="blog-heading-link">
+                  <h2 class="blog-heading-title">
+                    Parametric Acoustics & Fluid Wall Paneling: Precision 3D Relief Carving
+                  </h2>
+                </a>
+                <p class="blog-summary">
+                  Engineering seamless wave surfaces and custom architectural fluting that control acoustic resonance while creating arresting tactile feature walls in commercial environments.
+                </p>
+                <div class="blog-action-row">
+                  <a href="article.html" class="btn-read-article" aria-label="Read full article on Parametric Acoustics">
+                    Read Article <span>&rarr;</span>
+                  </a>
+                  <span class="reading-estimate">4 Min</span>
+                </div>
+              </div>
+            </article>
+
+            <!-- CARD 05: V-CARVED SIGNAGE & EMBOSSED TYPOGRAPHY -->
+            <article class="blog-post-card">
+              <a href="article.html" class="blog-card-media-link" aria-label="Read article on V-Carve Signage">
+                <svg viewBox="0 0 800 450" width="100%" height="100%" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="none">
+                  <rect width="800" height="450" fill="#1C050B"/>
+                  <rect x="50" y="40" width="700" height="370" rx="8" fill="none" stroke="#8E2D40" stroke-width="2" stroke-dasharray="6,4"/>
+                  <text x="400" y="210" font-family="'Playfair Display', serif" font-size="34" font-weight="800" fill="#F6EBED" letter-spacing="4" text-anchor="middle">ATELIER EST. 2024</text>
+                  <text x="400" y="260" font-family="'Montserrat', sans-serif" font-size="12" font-weight="600" fill="#DFCDD1" letter-spacing="6" text-anchor="middle">PRECISION V-CARVED BRANDING</text>
+                  <line x1="280" y1="285" x2="520" y2="285" stroke="#DFCDD1" stroke-width="1.5"/>
+                  <text x="400" y="380" font-family="'Montserrat', sans-serif" font-size="10" letter-spacing="3" fill="#8E2D40" text-anchor="middle" font-weight="600">ZERO TOLERANCE VECTOR MILLING</text>
+                </svg>
+              </a>
+              <div class="blog-post-content">
+                <div class="blog-meta-bar">
+                  <span class="blog-badge">CNC Routing</span>
+                  <time class="blog-timestamp" datetime="2026-07-28">Jul 28, 2026</time>
+                </div>
+                <a href="article.html" class="blog-heading-link">
+                  <h2 class="blog-heading-title">
+                    Precision V-Carve Typography: Dimensional Branding in Hardwoods & Corian
+                  </h2>
+                </a>
+                <p class="blog-summary">
+                  Utilizing specialized angled router bits to cut varying depths into solid architectural slabs, delivering crisp shadow lines and lasting corporate prestige.
+                </p>
+                <div class="blog-action-row">
+                  <a href="article.html" class="btn-read-article" aria-label="Read full article on V-Carve Typography">
+                    Read Article <span>&rarr;</span>
+                  </a>
+                  <span class="reading-estimate">5 Min</span>
+                </div>
+              </div>
+            </article>
+
+            <!-- CARD 06: SACRED ICONOGRAPHY IN ULTRA-HIGH RESIN -->
+            <article class="blog-post-card">
+              <a href="article.html" class="blog-card-media-link" aria-label="Read article on Sacred Resin Sculptures">
+                <svg viewBox="0 0 800 450" width="100%" height="100%" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="none">
+                  <rect width="800" height="450" fill="#F7F3F4"/>
+                  <circle cx="400" cy="200" r="110" fill="none" stroke="#6B1326" stroke-width="2"/>
+                  <circle cx="400" cy="200" r="80" fill="none" stroke="#8E2D40" stroke-width="1.5" stroke-dasharray="5,5"/>
+                  <polygon points="400,120 440,180 400,240 360,180" fill="#6B1326" opacity="0.85"/>
+                  <polygon points="400,160 460,220 400,280 340,220" fill="none" stroke="#8E2D40" stroke-width="1.5"/>
+                  <text x="400" y="380" font-family="'Montserrat', sans-serif" font-size="11" letter-spacing="3" fill="#6B1326" text-anchor="middle" font-weight="600">HIGH-FIDELITY SACRED RESIN CASTING</text>
+                </svg>
+              </a>
+              <div class="blog-post-content">
+                <div class="blog-meta-bar">
+                  <span class="blog-badge">3D Printing</span>
+                  <time class="blog-timestamp" datetime="2026-07-14">Jul 14, 2026</time>
+                </div>
+                <a href="article.html" class="blog-heading-link">
+                  <h2 class="blog-heading-title">
+                    Sacred Iconography in High-Resolution Resin: Mandir Statues & Intricate Details
+                  </h2>
+                </a>
+                <p class="blog-summary">
+                  Achieving micro-millimeter fidelity in spiritual figurines, deity jewelry, and mandir shrines through advanced photopolymer stereolithography techniques.
+                </p>
+                <div class="blog-action-row">
+                  <a href="article.html" class="btn-read-article" aria-label="Read full article on Sacred Resin Sculptures">
+                    Read Article <span>&rarr;</span>
+                  </a>
+                  <span class="reading-estimate">6 Min</span>
+                </div>
+              </div>
+            </article>
+
+          </div>
+
+          <!-- ================================================================
+               04. COMPACT EDITORIAL PAGINATION COMPONENT
+               ================================================================ -->
+          <nav class="blog-pagination" aria-label="Journal pagination">
+            <span class="pagination-item current" aria-current="page">1</span>
+            <a href="blog.html?page=2" class="pagination-item" aria-label="Page 2">2</a>
+            <a href="blog.html?page=3" class="pagination-item" aria-label="Page 3">3</a>
+            <a href="blog.html?page=2" class="pagination-item next-page" aria-label="Next page">
+              Next <span>&rarr;</span>
+            </a>
+          </nav>
+
+        </div>
+      </section>
+    </main>
+
+    <!-- ====================================================================
+         04. GLOBAL ARCHITECTURAL FOOTER (IDENTICAL TO INDEX.HTML)
+         ==================================================================== -->
+    <footer class="site-footer">
+      <div class="container">
+        <div class="footer-grid">
+          <!-- Column 1: Brand Info -->
+          <div class="footer-col">
+            <a href="index.html" class="brand-logo" style="margin-bottom: var(--space-sm);">
+              <span>Tridimensional Creation</span>
+              <span class="brand-logo-sub">Pvt Ltd • Guwahati</span>
+            </a>
+            <p style="font-size: var(--text-xs); line-height: 1.7; max-width: 380px; margin-bottom: var(--space-sm);">
+              End-to-end design, digital sculpting, CNC routing, and 3D printing studio. Serving homeowners, furniture makers, contractors, and businesses across India.
+            </p>
+            <p style="font-size: var(--text-2xs); color: var(--color-muted-taupe); text-transform: uppercase; letter-spacing: 0.1em;">
+              Registered Production Entity
+            </p>
+          </div>
+
+          <!-- Column 2: Quick Links -->
+          <div class="footer-col">
+            <h5>Navigation</h5>
+            <ul class="footer-links">
+              <li><a href="index.html" class="footer-link">Home</a></li>
+              <li><a href="about.html" class="footer-link">About the Studio</a></li>
+              <li><a href="catalog.html" class="footer-link">Capabilities & Catalog</a></li>
+              <li><a href="blog.html" class="footer-link">Studio Journal & Blog</a></li>
+              <li><a href="contact.html" class="footer-link">Contact & Studio Visit</a></li>
+              <li><a href="catalog.html#cnc-routing" class="footer-link">CNC Routing Services</a></li>
+              <li><a href="catalog.html#3d-printing" class="footer-link">3D Printing Services</a></li>
+            </ul>
+          </div>
+
+          <!-- Column 3: Contact & Studio Location -->
+          <div class="footer-col">
+            <h5>Studio Desk</h5>
+            <p style="font-size: var(--text-xs); line-height: 1.6; margin-bottom: 0.5rem;">
+              <strong>Tridimensional Creation Pvt Ltd</strong><br />
+              Mathgaria, Guwahati, Assam.<br />
+              PIN: 781020
+            </p>
+            <p style="font-size: var(--text-xs); line-height: 1.6; margin-bottom: 0.75rem;">
+              Phone: <a href="tel:+918011958307" style="color: var(--color-charcoal); font-weight: 500;">+91 80119 58307</a><br />
+              Email: <a href="mailto:tricreations.official@gmail.com" style="color: var(--color-charcoal);">tricreations.official@gmail.com</a>
+            </p>
+            <p style="font-size: var(--text-xs); margin-top: 0.5rem;">
+              <a href="https://www.instagram.com/tridimensional.creations" target="_blank" rel="noopener noreferrer" class="footer-social-link" aria-label="Visit Tridimensional Creation on Instagram" style="font-family: 'Montserrat', sans-serif; color: var(--text-dark); display: inline-flex; align-items: center; gap: 0.5rem; text-decoration: none;">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+                  <rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect>
+                  <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path>
+                  <line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line>
+                </svg>
+                <span>@tridimensional.creations</span>
+              </a>
+            </p>
+          </div>
+        </div>
+
+        <div class="footer-bottom">
+          <p>&copy; 2024-2026 Tridimensional Creation Pvt Ltd. All rights reserved.</p>
+          <p>Digital Sculpting, CNC Routing & Precision 3D Printing Atelier.</p>
+        </div>
+      </div>
+    </footer>
+
+    <!-- Global JavaScript File -->
+    <script src="/main.js"></script>
+  </body>
+</html>

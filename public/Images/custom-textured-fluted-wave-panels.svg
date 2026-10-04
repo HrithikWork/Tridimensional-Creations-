@@ -1,0 +1,72 @@
+<svg viewBox="0 0 800 1200" width="800" height="1200" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="wallPanelBg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#F9F8F5"/>
+      <stop offset="50%" stop-color="#F1ECE2"/>
+      <stop offset="100%" stop-color="#E5DECf"/>
+    </linearGradient>
+    <linearGradient id="fluteHighlight" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#FFFFFF" stop-opacity="0.9"/>
+      <stop offset="50%" stop-color="#DFD7C7" stop-opacity="0.3"/>
+      <stop offset="100%" stop-color="#8A7A65" stop-opacity="0.6"/>
+    </linearGradient>
+    <filter id="fluteShadow" x="-10%" y="-10%" width="120%" height="120%">
+      <feDropShadow dx="2" dy="2" stdDeviation="1.5" flood-color="#0A1931" flood-opacity="0.15"/>
+    </filter>
+  </defs>
+
+  <!-- Solid Moisture-Resistant HDHMR Cladding -->
+  <rect width="800" height="1200" fill="url(#wallPanelBg)"/>
+
+  <!-- Perimeter Chamfer -->
+  <rect x="50" y="50" width="700" height="1100" fill="none" stroke="#CCC2B2" stroke-width="1.5" stroke-dasharray="6 4"/>
+
+  <!-- Repeating Fluted & Ribbed Textures (Continuous Rhythms) -->
+  <g filter="url(#fluteShadow)">
+    <!-- Vertical Reeded Flutes on Left Side -->
+    <g fill="#EADDC8" stroke="#A69781" stroke-width="1.5">
+      <rect x="80" y="140" width="22" height="700" rx="11" fill="url(#fluteHighlight)"/>
+      <rect x="110" y="140" width="22" height="700" rx="11" fill="url(#fluteHighlight)"/>
+      <rect x="140" y="140" width="22" height="700" rx="11" fill="url(#fluteHighlight)"/>
+      <rect x="170" y="140" width="22" height="700" rx="11" fill="url(#fluteHighlight)"/>
+      <rect x="200" y="140" width="22" height="700" rx="11" fill="url(#fluteHighlight)"/>
+      <rect x="230" y="140" width="22" height="700" rx="11" fill="url(#fluteHighlight)"/>
+      <rect x="260" y="140" width="22" height="700" rx="11" fill="url(#fluteHighlight)"/>
+      <rect x="290" y="140" width="22" height="700" rx="11" fill="url(#fluteHighlight)"/>
+    </g>
+
+    <!-- Flowing Continuous Dune / Wave Slats Transitioning across panel -->
+    <path d="M 330 140 Q 500 240, 720 180 L 720 220 Q 500 280, 330 180 Z" fill="#DDD1BC" stroke="#9E8D74" stroke-width="1.5"/>
+    <path d="M 330 200 Q 500 300, 720 240 L 720 280 Q 500 340, 330 240 Z" fill="#D5C7AF" stroke="#948268" stroke-width="1.5"/>
+    <path d="M 330 260 Q 500 360, 720 300 L 720 340 Q 500 400, 330 300 Z" fill="#CEBEA3" stroke="#8A775C" stroke-width="1.5"/>
+    <path d="M 330 320 Q 500 420, 720 360 L 720 400 Q 500 460, 330 360 Z" fill="#C5B497" stroke="#7F6C50" stroke-width="1.5"/>
+    <path d="M 330 380 Q 500 480, 720 420 L 720 460 Q 500 520, 330 420 Z" fill="#BDAB8C" stroke="#756246" stroke-width="1.5"/>
+    <path d="M 330 440 Q 500 540, 720 480 L 720 520 Q 500 580, 330 480 Z" fill="#B4A180" stroke="#6C593E" stroke-width="1.5"/>
+    <path d="M 330 500 Q 500 600, 720 540 L 720 580 Q 500 640, 330 540 Z" fill="#AB9875" stroke="#614E34" stroke-width="1.5"/>
+    <path d="M 330 560 Q 500 660, 720 600 L 720 640 Q 500 700, 330 600 Z" fill="#A28E6A" stroke="#58452C" stroke-width="1.5"/>
+    <path d="M 330 620 Q 500 720, 720 660 L 720 700 Q 500 760, 330 660 Z" fill="#9A8560" stroke="#4E3D25" stroke-width="1.5"/>
+    <path d="M 330 680 Q 500 780, 720 720 L 720 760 Q 500 820, 330 720 Z" fill="#917C56" stroke="#463620" stroke-width="1.5"/>
+    <path d="M 330 740 Q 500 840, 720 780 L 720 820 Q 500 880, 330 780 Z" fill="#88734D" stroke="#3D2E1A" stroke-width="1.5"/>
+  </g>
+
+  <!-- Typography: Product Specification -->
+  <text x="400" y="930" font-family="'Playfair Display', Georgia, serif" font-size="30" font-weight="700" letter-spacing="2" fill="#0A1931" text-anchor="middle">
+    FLUTED & WAVE WALL CLADDING
+  </text>
+  <text x="400" y="970" font-family="'Montserrat', sans-serif" font-size="13" font-weight="600" letter-spacing="4" fill="#4A7FA7" text-anchor="middle">
+    CONTINUOUS REPEATING RHYTHMS & SLATS
+  </text>
+  <text x="400" y="1005" font-family="'Montserrat', sans-serif" font-size="11" font-weight="500" letter-spacing="2" fill="#5A6C7D" text-anchor="middle">
+    SEAMLESS SHIP-LAP JOINERY • TV BACKINGS & HEADBOARDS
+  </text>
+
+  <!-- Joint Matching Spec -->
+  <g stroke="#9E8D74" stroke-width="1.2">
+    <line x1="120" y1="1080" x2="680" y2="1080"/>
+    <polyline points="130,1075 120,1080 130,1085"/>
+    <polyline points="670,1075 680,1080 670,1085"/>
+    <text x="400" y="1075" font-family="'Montserrat', sans-serif" font-size="10" font-weight="600" letter-spacing="2" fill="#0A1931" text-anchor="middle">
+      ACCURATE PATTERN MATCHING ACROSS CONSECUTIVE SHEETS
+    </text>
+  </g>
+</svg>

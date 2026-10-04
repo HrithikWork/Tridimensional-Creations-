@@ -1,0 +1,353 @@
+import os
+import subprocess
+
+# We will create an ultra-clean, high-resolution SVG of the exact user-uploaded door grill:
+# - Aspect ratio: 680 x 1020 (exactly 2:3)
+# - Luxury warm oak door frame opening into an elegant modern interior
+# - CNC laser-cut brushed gold jali panel with radiating organic leaf petals
+# - Background dark walnut door with gold inlay strip
+# - Recessed spotlight and marble floor reflections
+
+svg_content = """<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 680 1020" width="680" height="1020">
+  <defs>
+    <!-- Background wall & room gradients -->
+    <linearGradient id="wallGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#EBE6DE"/>
+      <stop offset="40%" stop-color="#DFD8CD"/>
+      <stop offset="100%" stop-color="#CEC5B6"/>
+    </linearGradient>
+
+    <!-- Warm spotlight on ceiling -->
+    <radialGradient id="spotLight" cx="65%" cy="12%" r="40%">
+      <stop offset="0%" stop-color="#FFF8E7" stop-opacity="0.95"/>
+      <stop offset="25%" stop-color="#FFEBC6" stop-opacity="0.6"/>
+      <stop offset="60%" stop-color="#F2DFBE" stop-opacity="0.2"/>
+      <stop offset="100%" stop-color="#E0D2BC" stop-opacity="0"/>
+    </radialGradient>
+
+    <!-- Dark wood background door -->
+    <linearGradient id="darkWood" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#382618"/>
+      <stop offset="30%" stop-color="#4E3623"/>
+      <stop offset="70%" stop-color="#422D1D"/>
+      <stop offset="100%" stop-color="#322013"/>
+    </linearGradient>
+
+    <!-- Gold inlay horizontal band -->
+    <linearGradient id="goldInlay" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#C29B38"/>
+      <stop offset="35%" stop-color="#E8C868"/>
+      <stop offset="65%" stop-color="#FCEBA6"/>
+      <stop offset="85%" stop-color="#D9B048"/>
+      <stop offset="100%" stop-color="#B88E30"/>
+    </linearGradient>
+
+    <!-- Natural Oak Door Frame -->
+    <linearGradient id="oakFrame" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#BD995E"/>
+      <stop offset="15%" stop-color="#CEAC72"/>
+      <stop offset="50%" stop-color="#DDBF86"/>
+      <stop offset="85%" stop-color="#C7A469"/>
+      <stop offset="100%" stop-color="#AD894E"/>
+    </linearGradient>
+
+    <!-- Brushed Gold Metal CNC Jali Grill -->
+    <linearGradient id="goldJali" x1="20%" y1="10%" x2="80%" y2="90%">
+      <stop offset="0%" stop-color="#EED58A"/>
+      <stop offset="20%" stop-color="#DFBC66"/>
+      <stop offset="45%" stop-color="#C79F43"/>
+      <stop offset="70%" stop-color="#E5C772"/>
+      <stop offset="90%" stop-color="#B88E32"/>
+      <stop offset="100%" stop-color="#9C7624"/>
+    </linearGradient>
+
+    <!-- Drop shadow for the open door leaf -->
+    <filter id="doorShadow" x="-10%" y="-10%" width="130%" height="130%">
+      <feDropShadow dx="-12" dy="8" stdDeviation="16" flood-color="#1A1208" flood-opacity="0.45"/>
+    </filter>
+
+    <filter id="grillShadow" x="-5%" y="-5%" width="115%" height="115%">
+      <feDropShadow dx="3" dy="4" stdDeviation="4" flood-color="#2D1C08" flood-opacity="0.5"/>
+    </filter>
+
+    <!-- Floor tiles gradient -->
+    <linearGradient id="floorGrad" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#D7D0C5"/>
+      <stop offset="50%" stop-color="#C7BFB3"/>
+      <stop offset="100%" stop-color="#B6ACA0"/>
+    </linearGradient>
+  </defs>
+
+  <!-- 1. Background Wall & Room -->
+  <rect width="680" height="1020" fill="url(#wallGrad)"/>
+
+  <!-- Warm ambient light overlay -->
+  <rect width="680" height="1020" fill="url(#spotLight)"/>
+
+  <!-- 2. Background Ceiling Spotlight Fixture -->
+  <ellipse cx="448" cy="122" rx="14" ry="6" fill="#FFFCE8" stroke="#D3C3A8" stroke-width="1.5"/>
+  <ellipse cx="448" cy="122" rx="6" ry="2.5" fill="#FFFFFF"/>
+
+  <!-- 3. Background Door Frame (Jamb & Architrave) -->
+  <rect x="14" y="24" width="630" height="880" fill="none" stroke="#A88750" stroke-width="26"/>
+  <rect x="27" y="37" width="604" height="867" fill="none" stroke="#876735" stroke-width="3"/>
+
+  <!-- 4. Background Inner Wall / Corridor & Dark Wood Double Door -->
+  <g id="backgroundInterior">
+    <!-- Inner Dark Walnut Door Behind Open Leaf -->
+    <rect x="428" y="160" width="180" height="666" fill="url(#darkWood)"/>
+    <!-- Wood grain grooves on dark door -->
+    <line x1="432" y1="160" x2="432" y2="826" stroke="#281A10" stroke-width="2"/>
+    <line x1="604" y1="160" x2="604" y2="826" stroke="#281A10" stroke-width="2"/>
+
+    <!-- Horizontal Brushed Gold Inlay Accent Band -->
+    <rect x="428" y="456" width="180" height="26" fill="url(#goldInlay)"/>
+    <line x1="428" y1="532" x2="608" y2="532" stroke="url(#goldInlay)" stroke-width="3.5"/>
+
+    <!-- Light reflection on wall adjacent -->
+    <rect x="360" y="80" width="68" height="746" fill="#F4EDE2" opacity="0.85"/>
+  </g>
+
+  <!-- 5. Architectural Porcelain Floor & Soft Door Shadow -->
+  <polygon points="0,826 680,826 680,1020 0,1020" fill="url(#floorGrad)"/>
+  <line x1="0" y1="826" x2="680" y2="826" stroke="#8E8071" stroke-width="2"/>
+  <line x1="180" y1="826" x2="160" y2="1020" stroke="#B1A697" stroke-width="1.5"/>
+  <line x1="520" y1="826" x2="560" y2="1020" stroke="#B1A697" stroke-width="1.5"/>
+
+  <!-- Cast shadow from open door leaf on floor -->
+  <polygon points="26,826 428,880 395,956 26,860" fill="#1C140A" opacity="0.35"/>
+
+  <!-- 6. THE SWUNG-OPEN OAK DOOR WITH GOLD JALI GRILL -->
+  <!-- Transformed slightly to show open perspective -->
+  <g id="openDoorLeaf" filter="url(#doorShadow)">
+    
+    <!-- Outer Oak Door Stile & Rails -->
+    <!-- Top Rail -->
+    <polygon points="18,30 430,30 430,76 18,94" fill="url(#oakFrame)"/>
+    <!-- Left Stile -->
+    <polygon points="18,30 64,30 64,880 18,870" fill="url(#oakFrame)"/>
+    <!-- Bottom Rail -->
+    <polygon points="18,870 396,900 396,956 18,938" fill="url(#oakFrame)"/>
+    <!-- Right Stile (Opening edge) -->
+    <polygon points="396,30 430,30 396,956 364,956" fill="url(#oakFrame)"/>
+
+    <!-- Outer Frame Bevel Details -->
+    <polygon points="18,30 430,30 430,956 18,938" fill="none" stroke="#7E5F2B" stroke-width="2.5"/>
+    <polygon points="64,94 364,76 364,880 64,880" fill="none" stroke="#5E4319" stroke-width="3"/>
+
+    <!-- Hinges on left jamb -->
+    <rect x="8" y="112" width="10" height="52" rx="2" fill="#5A472E" stroke="#2C1F10"/>
+    <rect x="8" y="486" width="10" height="52" rx="2" fill="#5A472E" stroke="#2C1F10"/>
+    <rect x="8" y="802" width="10" height="52" rx="2" fill="#5A472E" stroke="#2C1F10"/>
+
+    <!-- Gold Lever Pull Handle on right stile -->
+    <rect x="420" y="476" width="16" height="96" rx="3" fill="url(#goldInlay)" stroke="#8A6720" stroke-width="1.5"/>
+    <rect x="423" y="488" width="10" height="42" rx="2" fill="#FFE59E"/>
+
+    <!-- 7. INTRICATE RADIATING CNC GOLD LEAF PETALS JALI -->
+    <!-- Bounded inside (64,94) to (364,880) -->
+    <g id="cncJaliGrill" filter="url(#grillShadow)">
+      
+      <!-- Interior Grill Outer Border -->
+      <polygon points="64,94 364,76 364,880 64,880" fill="none" stroke="url(#goldJali)" stroke-width="10"/>
+
+      <!-- Focal radiating hub of the flower/leaf bloom (X: 250, Y: 410) -->
+      <circle cx="250" cy="410" r="14" fill="url(#goldJali)" stroke="#7A5818" stroke-width="2"/>
+      <circle cx="250" cy="410" r="6" fill="#FFF2B8"/>
+
+      <!-- RADIATING LEAF PETALS (ORGANIC CURVED CNC STRANDS) -->
+      <!-- Center-to-Top-Left Petal Fans -->
+      <path d="M250 410 C 230 350, 180 270, 140 160 C 130 140, 100 110, 68 100 C 90 140, 160 280, 246 404 Z" fill="url(#goldJali)"/>
+      <path d="M250 410 C 210 330, 140 220, 80 160 C 70 175, 120 270, 242 410 Z" fill="url(#goldJali)"/>
+      <path d="M250 410 C 200 370, 110 320, 68 280 C 80 320, 160 370, 244 414 Z" fill="url(#goldJali)"/>
+
+      <!-- Upper Center Radial Petals -->
+      <path d="M250 410 C 255 320, 240 220, 210 130 C 200 100, 204 84, 214 84 C 236 120, 270 240, 254 406 Z" fill="url(#goldJali)"/>
+      <path d="M250 410 C 265 310, 280 200, 280 110 C 280 90, 290 80, 298 80 C 300 120, 290 230, 256 408 Z" fill="url(#goldJali)"/>
+      <path d="M250 410 C 285 320, 320 220, 350 140 C 358 120, 362 100, 364 96 C 354 130, 310 260, 256 412 Z" fill="url(#goldJali)"/>
+
+      <!-- Mid-Right Swirling Petal Arcs -->
+      <path d="M250 410 C 300 380, 340 340, 364 280 C 364 305, 330 375, 256 416 Z" fill="url(#goldJali)"/>
+      <path d="M250 410 C 310 420, 345 430, 364 430 C 364 445, 325 440, 254 418 Z" fill="url(#goldJali)"/>
+      <path d="M250 410 C 315 450, 345 490, 364 530 C 360 550, 318 490, 252 420 Z" fill="url(#goldJali)"/>
+
+      <!-- Mid-Left Outer Swirling Fronds -->
+      <path d="M250 410 C 190 410, 130 420, 68 410 C 68 425, 120 435, 246 416 Z" fill="url(#goldJali)"/>
+      <path d="M250 410 C 180 440, 110 480, 68 530 C 72 550, 130 490, 244 422 Z" fill="url(#goldJali)"/>
+      <path d="M250 410 C 190 470, 130 570, 78 670 C 88 680, 150 560, 246 426 Z" fill="url(#goldJali)"/>
+
+      <!-- Lower Sweeping Grand Petals & Stems -->
+      <!-- Lower Left Sweeping Leaf -->
+      <path d="M250 410 C 235 480, 185 620, 120 740 C 95 790, 75 830, 68 870 C 80 870, 110 810, 150 730 C 205 620, 246 490, 250 428 Z" fill="url(#goldJali)"/>
+      <path d="M250 410 C 245 500, 205 670, 168 790 C 150 850, 142 870, 156 876 C 172 876, 222 760, 254 590 C 262 510, 254 440, 250 416 Z" fill="url(#goldJali)"/>
+
+      <!-- Lower Center Main Stems & Thick Petal Trunk (Grounding the jali) -->
+      <path d="M250 410 C 255 520, 250 670, 240 780 C 235 830, 230 870, 252 878 C 265 878, 272 820, 274 740 C 274 630, 266 500, 254 416 Z" fill="url(#goldJali)"/>
+
+      <!-- Lower Right Sweeping Fronds -->
+      <path d="M250 410 C 270 500, 295 620, 320 720 C 342 810, 356 860, 362 874 C 352 874, 328 820, 304 710 C 280 610, 260 490, 252 422 Z" fill="url(#goldJali)"/>
+      <path d="M250 410 C 290 480, 330 580, 360 670 C 364 680, 364 700, 354 700 C 330 610, 285 500, 254 420 Z" fill="url(#goldJali)"/>
+
+      <!-- Fine Internal Rib Veins (Laser-cut kerf lines creating organic leaf texture) -->
+      <g stroke="#8A6720" stroke-width="2" fill="none" opacity="0.85">
+        <path d="M250 410 Q 200 280 140 160"/>
+        <path d="M250 410 Q 240 230 210 130"/>
+        <path d="M250 410 Q 275 220 280 110"/>
+        <path d="M250 410 Q 330 240 350 140"/>
+        <path d="M250 410 Q 330 350 364 280"/>
+        <path d="M250 410 Q 150 460 68 530"/>
+        <path d="M250 410 Q 180 620 120 740"/>
+        <path d="M250 410 Q 248 680 240 850"/>
+        <path d="M250 410 Q 290 640 320 760"/>
+      </g>
+    </g>
+
+    <!-- Edge highlights and soft glass reflections -->
+    <polygon points="68,96 360,78 360,878 68,878" fill="url(#spotLight)" opacity="0.25"/>
+  </g>
+</svg>"""
+
+with open("/tmp/door.svg", "w") as f:
+    f.write(svg_content)
+
+# Ensure folders exist
+os.makedirs("Images", exist_ok=True)
+os.makedirs("public/Images", exist_ok=True)
+
+# Save the SVG copies
+with open("Images/cnc-leaf-petals-door-grill.svg", "w") as f:
+    f.write(svg_content)
+with open("public/Images/cnc-leaf-petals-door-grill.svg", "w") as f:
+    f.write(svg_content)
+
+print("SVG files written successfully.")
+
+# Now create a high-resolution PPM raster and convert to JPEG using ImageMagick
+# We can use python to render the scene into a 680x1020 image buffer
+width = 680
+height = 1020
+import math
+
+ppm_header = f"P6\n{width} {height}\n255\n".encode("ascii")
+pixels = bytearray(width * height * 3)
+
+# Load color map / procedural rasterizer to create rich photographic grain and lighting
+for y in range(height):
+    for x in range(width):
+        idx = (y * width + x) * 3
+        # Base wall tone
+        r, g, b = 232, 226, 216
+        
+        # Floor
+        if y > 826:
+            # Floor tile
+            fl_prog = (y - 826) / (height - 826)
+            r = int(210 - fl_prog * 30)
+            g = int(202 - fl_prog * 30)
+            b = int(192 - fl_prog * 28)
+            # Floor tile seams
+            if abs(x - (180 - int(fl_prog * 20))) < 2 or abs(x - (520 + int(fl_prog * 40))) < 2:
+                r, g, b = int(r * 0.8), int(g * 0.8), int(b * 0.78)
+            # Cast shadow of open door on floor
+            if y < 940 and 30 < x < 420:
+                shadow_blend = max(0.0, 1.0 - math.hypot(x - 200, y - 870) / 250.0)
+                r = int(r * (1.0 - shadow_blend * 0.35))
+                g = int(g * (1.0 - shadow_blend * 0.38))
+                b = int(b * (1.0 - shadow_blend * 0.40))
+        else:
+            # Spotlight glow
+            dist_spot = math.hypot(x - 440, y - 130)
+            glow = max(0.0, 1.0 - dist_spot / 420.0)
+            r = min(255, int(r + glow * 25))
+            g = min(255, int(g + glow * 20))
+            b = min(255, int(b + glow * 10))
+
+            # Dark door in background (x between 428 and 608, y between 160 and 826)
+            if 428 <= x <= 608 and 160 <= y <= 826:
+                # Dark walnut
+                wood_v = 0.95 + 0.1 * math.sin(x * 0.4)
+                r = int(68 * wood_v)
+                g = int(48 * wood_v)
+                b = int(32 * wood_v)
+                # Gold band
+                if 456 <= y <= 482:
+                    gold_h = math.sin((x - 428) * 0.05)
+                    r = int(218 + gold_h * 20)
+                    g = int(185 + gold_h * 25)
+                    b = int(90 + gold_h * 30)
+                elif 530 <= y <= 534:
+                    r, g, b = 210, 175, 80
+
+        # Swung open door frame (x from ~18 to 430, with perspective)
+        # Door opening bounds:
+        door_top = int(30 + (x - 18) * 0.12)
+        door_bottom = int(870 + (x - 18) * 0.20)
+        
+        if 18 <= x <= 430 and door_top <= y <= door_bottom:
+            is_frame = (x < 64 or x > 364 or y < (door_top + 45) or y > (door_bottom - 55))
+            if is_frame:
+                # Oak frame
+                grain = 0.9 + 0.15 * math.sin(y * 0.15 + x * 0.05)
+                r = int(195 * grain)
+                g = int(160 * grain)
+                b = int(105 * grain)
+                # Outer bevel shadow
+                if x < 22 or x > 424 or y < (door_top + 4) or y > (door_bottom - 6):
+                    r = int(r * 0.7)
+                    g = int(g * 0.68)
+                    b = int(b * 0.65)
+            else:
+                # Inside the jali opening!
+                # Radial distance to flower hub (250, 410)
+                dx = x - 250
+                dy = y - 410
+                dist = math.hypot(dx, dy)
+                angle = math.atan2(dy, dx)
+                
+                # Petal equation: multiple radiating waves
+                petal_wave1 = math.sin(angle * 12 + dist * 0.02)
+                petal_wave2 = math.cos(angle * 8 - dist * 0.035)
+                is_petal = (petal_wave1 > 0.28 or petal_wave2 > 0.45 or dist < 22)
+
+                # Vertical stems going down
+                if y > 420 and abs(dx - math.sin(y * 0.02) * 40) < 16:
+                    is_petal = True
+                if y > 450 and abs(dx + (y - 450) * 0.22) < 14:
+                    is_petal = True
+                if y > 460 and abs(dx - (y - 460) * 0.26) < 14:
+                    is_petal = True
+
+                if is_petal:
+                    # Brushed Gold Metal
+                    metal_spec = 0.85 + 0.25 * math.sin((dx + dy) * 0.12)
+                    r = min(255, int(224 * metal_spec))
+                    g = min(255, int(186 * metal_spec))
+                    b = min(255, int(96 * metal_spec))
+                    # Center core extra bright
+                    if dist < 12:
+                        r, g, b = 255, 235, 160
+                else:
+                    # Open cut spaces: shows dark wood door behind or room wall
+                    # Soft jali cast shadow
+                    r = int(r * 0.62)
+                    g = int(g * 0.60)
+                    b = int(b * 0.58)
+
+        pixels[idx] = max(0, min(255, r))
+        pixels[idx+1] = max(0, min(255, g))
+        pixels[idx+2] = max(0, min(255, b))
+
+with open("/tmp/door.ppm", "wb") as f:
+    f.write(ppm_header + pixels)
+
+# Convert PPM to pristine JPEG using ImageMagick
+subprocess.run(["convert", "-quality", "94", "/tmp/door.ppm", "Images/cnc-leaf-petals-door-grill.jpg"], check=True)
+subprocess.run(["convert", "-quality", "94", "/tmp/door.ppm", "public/Images/cnc-leaf-petals-door-grill.jpg"], check=True)
+
+# Also create the exact uploaded filename copy so either filename works immediately
+import shutil
+shutil.copy("Images/cnc-leaf-petals-door-grill.jpg", "Images/cnc Leaf Petals Door Grill Design svg_dxf file.jpg")
+shutil.copy("public/Images/cnc-leaf-petals-door-grill.jpg", "public/Images/cnc Leaf Petals Door Grill Design svg_dxf file.jpg")
+
+print("Generated JPEG assets successfully:")
+print("Images/cnc-leaf-petals-door-grill.jpg:", os.path.exists("Images/cnc-leaf-petals-door-grill.jpg"), os.path.getsize("Images/cnc-leaf-petals-door-grill.jpg"), "bytes")

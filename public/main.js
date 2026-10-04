@@ -177,6 +177,7 @@
                 alt="${product.title}" 
                 class="product-card-image"
                 loading="lazy"
+                onerror="this.onerror=null; if(this.src.includes('cnc-leaf')) this.src='/Images/cnc-leaf-petals-door-grill.svg';"
               />
             </div>
             <span class="product-card-title">${product.title}</span>
