@@ -1535,3 +1535,329 @@ footer,
     padding: 1rem;
   }
 }
+
+/* ============================================================================
+   GLOBAL MOTION, SCROLL ANIMATIONS & HOVER DYNAMICS SYSTEM
+   ============================================================================ */
+
+/* 1. SCROLL REVEAL BASE STATES */
+.animate-on-scroll,
+.fade-in,
+.slide-up {
+  opacity: 0;
+  transition: opacity 0.6s cubic-bezier(0.16, 1, 0.3, 1),
+              transform 0.6s cubic-bezier(0.16, 1, 0.3, 1);
+  will-change: opacity, transform;
+}
+
+/* Specific initial transforms */
+.animate-on-scroll {
+  transform: translateY(24px);
+}
+
+.slide-up {
+  transform: translateY(32px);
+}
+
+.fade-in {
+  transform: translateY(0);
+}
+
+/* Active In-View State triggered by animations.js IntersectionObserver */
+.animate-on-scroll.is-visible,
+.fade-in.is-visible,
+.slide-up.is-visible {
+  opacity: 1 !important;
+  transform: translateY(0) scale(1) !important;
+}
+
+/* Stagger delay helpers for child grids and cards */
+.delay-100 { transition-delay: 100ms; }
+.delay-200 { transition-delay: 200ms; }
+.delay-300 { transition-delay: 300ms; }
+.delay-400 { transition-delay: 400ms; }
+
+/* 2. HOVER DYNAMICS (Tactile Scaling & Elevated Shadows) */
+
+/* Gallery Cards Hover */
+.gallery-card,
+.gallery-item {
+  transition: transform 0.35s cubic-bezier(0.16, 1, 0.3, 1),
+              box-shadow 0.35s cubic-bezier(0.16, 1, 0.3, 1),
+              border-color 0.35s ease;
+}
+
+.gallery-card:hover,
+.gallery-item:hover {
+  transform: scale(1.02) translateY(-3px);
+  box-shadow: 0 14px 30px rgba(107, 19, 38, 0.12),
+              0 6px 12px rgba(26, 26, 26, 0.06);
+}
+
+/* Blog Cards Hover */
+.blog-post-card {
+  transition: transform 0.35s cubic-bezier(0.16, 1, 0.3, 1),
+              box-shadow 0.35s cubic-bezier(0.16, 1, 0.3, 1),
+              border-color 0.35s ease;
+}
+
+.blog-post-card:hover {
+  transform: scale(1.02) translateY(-3px);
+  box-shadow: 0 14px 28px rgba(107, 19, 38, 0.1),
+              0 4px 10px rgba(26, 26, 26, 0.05);
+  border-color: #6B1326;
+}
+
+/* Interactive Buttons Hover */
+.btn-primary,
+.btn-secondary,
+.btn-tertiary,
+.btn-outline,
+.filter-btn,
+.gallery-tab-btn {
+  transition: transform 0.25s cubic-bezier(0.16, 1, 0.3, 1),
+              box-shadow 0.25s cubic-bezier(0.16, 1, 0.3, 1),
+              background-color 0.25s ease,
+              color 0.25s ease,
+              border-color 0.25s ease;
+}
+
+.btn-primary:hover,
+.btn-secondary:hover,
+.btn-outline:hover {
+  transform: scale(1.02) translateY(-2px);
+  box-shadow: 0 8px 18px rgba(107, 19, 38, 0.22);
+}
+
+.btn-primary:active,
+.btn-secondary:active {
+  transform: scale(0.99) translateY(0);
+}
+
+/* 3. IMAGE STANDARDIZATION & CONTAINER STYLES */
+.responsive-img,
+img.responsive-img,
+.gallery-card img,
+.blog-card-media img,
+.product-card-media img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  transition: transform 0.5s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+/* Smooth zoom effect inside image containers on hover */
+.img-container,
+.gallery-image-wrap,
+.blog-card-media {
+  overflow: hidden;
+  position: relative;
+}
+
+.img-container:hover .responsive-img,
+.gallery-card:hover .gallery-image-wrap img,
+.blog-post-card:hover .blog-card-media img {
+  transform: scale(1.04);
+}
+
+/* Respect user's reduced motion preferences */
+@media (prefers-reduced-motion: reduce) {
+  .animate-on-scroll,
+  .fade-in,
+  .slide-up {
+    opacity: 1 !important;
+    transform: none !important;
+    transition: none !important;
+  }
+
+  .gallery-card:hover,
+  .gallery-item:hover,
+  .blog-post-card:hover,
+  .btn-primary:hover,
+  .btn-secondary:hover {
+    transform: none !important;
+  }
+}
+
+/* ==========================================================================
+   INFINITE SCROLLING IMAGE CAROUSEL (MARQUEE SHOWCASE)
+   Warm cream / off-white background (#FAFAFA / #F7F3F4)
+   ========================================================================== */
+.infinite-marquee-section {
+  width: 100%;
+  overflow: hidden;
+  background-color: var(--bg-alabaster, #FAFAFA);
+  padding: 2.5rem 0;
+  position: relative;
+  border-top: 1px solid var(--color-stone-border, #DFCDD1);
+  border-bottom: 1px solid var(--color-stone-border, #DFCDD1);
+  margin-top: var(--space-md, 1.5rem);
+}
+
+.marquee-viewport {
+  width: 100%;
+  overflow: hidden;
+  position: relative;
+  display: flex;
+  mask-image: linear-gradient(to right, transparent 0%, black 5%, black 95%, transparent 100%);
+  -webkit-mask-image: linear-gradient(to right, transparent 0%, black 5%, black 95%, transparent 100%);
+}
+
+.marquee-track {
+  display: flex;
+  align-items: center;
+  gap: 1.5rem;
+  width: max-content;
+  flex-shrink: 0;
+  /* Smooth horizontal pan from left to right continuously */
+  animation: marquee-scroll-ltr 36s linear infinite;
+  will-change: transform;
+}
+
+/* Pause completely on hover */
+.marquee-track:hover,
+.marquee-viewport:hover .marquee-track {
+  animation-play-state: paused;
+}
+
+.marquee-slide {
+  flex-shrink: 0;
+  display: flex;
+  align-items: center;
+}
+
+/* Image styles: locked height (300px), object-fit: cover, subtle border-radius & box-shadow */
+.marquee-slide img {
+  height: 300px;
+  width: auto;
+  min-width: 260px;
+  max-width: 460px;
+  object-fit: cover;
+  border-radius: 8px;
+  box-shadow: 0 6px 20px rgba(107, 19, 38, 0.08), 0 2px 6px rgba(0, 0, 0, 0.04);
+  border: 1px solid rgba(223, 205, 209, 0.6);
+  display: block;
+  user-select: none;
+  pointer-events: auto;
+  transition: transform 0.3s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.3s ease;
+}
+
+.marquee-slide img:hover {
+  transform: translateY(-4px) scale(1.02);
+  box-shadow: 0 12px 28px rgba(107, 19, 38, 0.14);
+}
+
+/* @keyframes animation panning the track smoothly from left to right continuously */
+@keyframes marquee-scroll-ltr {
+  0% {
+    transform: translateX(-50%);
+  }
+  100% {
+    transform: translateX(0%);
+  }
+}
+
+/* Respect user's reduced motion preferences */
+@media (prefers-reduced-motion: reduce) {
+  .marquee-track {
+    animation: none;
+    overflow-x: auto;
+  }
+}
+
+/* ==========================================================================
+   FOUNDATION / ORIGIN STORY TWO-COLUMN REFACTOR
+   ========================================================================== */
+.foundation-section {
+  background-color: var(--bg-alabaster, #FAFAFA);
+  position: relative;
+}
+
+.foundation-grid {
+  display: grid;
+  grid-template-columns: 55% 45%;
+  gap: clamp(2rem, 4vw, 3.5rem);
+  align-items: stretch;
+}
+
+.foundation-text-col {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  text-align: left;
+}
+
+.foundation-header {
+  margin-bottom: var(--space-md, 1.5rem);
+}
+
+.foundation-header .eyebrow {
+  margin-bottom: 0.5rem;
+  display: inline-block;
+}
+
+.foundation-title {
+  font-family: var(--font-heading, 'Playfair Display', serif);
+  font-size: clamp(2rem, 3.5vw, 2.5rem);
+  font-weight: 800;
+  line-height: 1.25;
+  color: var(--text-dark, #6B1326);
+  margin: 0;
+}
+
+.foundation-body {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-md, 1.5rem);
+  font-size: 1.05rem;
+  line-height: 1.85;
+  color: var(--text-dark, #6B1326);
+}
+
+.foundation-body p {
+  color: var(--text-dark, #6B1326);
+  margin-bottom: 0;
+}
+
+.foundation-blockquote {
+  margin: 0;
+  padding-left: var(--space-md, 1.5rem);
+  border-left: 3px solid var(--brand-primary, #6B1326);
+  font-style: italic;
+  color: var(--color-charcoal-deep, #4A0B19);
+  line-height: 1.85;
+  background: transparent;
+}
+
+.foundation-image-col {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  min-height: 380px;
+  display: flex;
+}
+
+.foundation-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 8px;
+  box-shadow: 0 10px 30px rgba(107, 19, 38, 0.08);
+  border: 1px solid var(--color-stone-border, #DFCDD1);
+  display: block;
+}
+
+/* Responsive behavior: single column on mobile screens (max-width: 768px) */
+@media (max-width: 768px) {
+  .foundation-grid {
+    grid-template-columns: 1fr;
+    gap: 2rem;
+  }
+
+  .foundation-image-col {
+    min-height: 300px;
+    height: 320px;
+  }
+}
+
