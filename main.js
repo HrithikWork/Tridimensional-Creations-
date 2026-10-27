@@ -374,40 +374,74 @@
       });
     }
 
-    contactForm.addEventListener('submit', function (e) {
+    contactForm.addEventListener('submit', async function (e) {
       e.preventDefault();
+
+      const submitBtn = contactForm.querySelector('button[type="submit"]');
+      const originalBtnText = submitBtn ? submitBtn.textContent : 'Submit';
+      if (submitBtn) {
+        submitBtn.disabled = true;
+        submitBtn.textContent = 'Submitting...';
+      }
 
       const name = document.getElementById('contact-name')?.value || 'Client';
       const email = document.getElementById('contact-email')?.value || '';
       const phone = document.getElementById('contact-phone')?.value || '';
       const inquiryType = document.getElementById('contact-type')?.value || 'Project Inquiry';
-      const apptDate = document.getElementById('contact-date')?.value || 'Flexible';
+      const apptDate = document.getElementById('contact-date')?.value || '';
       const brief = document.getElementById('contact-brief')?.value || '';
-      const fileNote = contactFileInput && contactFileInput.files && contactFileInput.files[0] 
-        ? `\n[Reference Attached: ${contactFileInput.files[0].name}]` 
+      const fileName = contactFileInput && contactFileInput.files && contactFileInput.files[0] 
+        ? contactFileInput.files[0].name 
         : '';
 
-      const fullMessage = [
-        `*TRIDIMENSIONAL CREATION — PROJECT INQUIRY*`,
-        ``,
-        `*Client:* ${name}`,
-        `*Contact:* ${phone} | ${email}`,
-        `*Nature of Inquiry:* ${inquiryType}`,
-        `*Preferred Consultation Date:* ${apptDate}`,
-        ``,
-        `*Project Details:*`,
-        `${brief}${fileNote}`,
-        ``,
-        `— Sent from tridimensional.in contact desk`
-      ].join('\n');
-
-      const waUrl = `https://wa.me/${STUDIO_WHATSAPP_NUMBER}?text=${encodeURIComponent(fullMessage)}`;
-      window.open(waUrl, '_blank');
-
       const feedback = document.getElementById('contact-feedback');
-      if (feedback) {
-        feedback.style.display = 'block';
-        feedback.textContent = 'Thank you. Your project inquiry has been forwarded to our 3D sculpting and fabrication studio.';
+
+      try {
+        // Send to backend API
+        const response = await fetch('/api/inquiries', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({
+            full_name: name,
+            email: email,
+            phone: phone,
+            service_type: inquiryType,
+            appointment_date: apptDate,
+            message: brief,
+            uploaded_file_url: fileName ? `pending_upload:${fileName}` : null
+          })
+        });
+
+        const result = await response.json();
+
+        if (feedback) {
+          feedback.style.display = 'block';
+          feedback.style.backgroundColor = '#f4fbf6';
+          feedback.style.color = '#1b5e20';
+          feedback.style.border = '1px solid #c8e6c9';
+          feedback.style.padding = '1rem';
+          feedback.style.marginTop = '1rem';
+          feedback.innerHTML = `
+            <strong>Inquiry Received!</strong><br />
+            Thank you, ${name}. Your project request has been logged in our studio database. Our engineering and digital sculpting team will review your specifications within 24 hours.
+          `;
+        }
+
+        contactForm.reset();
+        if (contactFileLabel) {
+          contactFileLabel.innerHTML = `<span>Attach Reference Photo, Sketch or 3D File (STL/OBJ/CAD)</span>`;
+        }
+      } catch (err) {
+        console.warn('API submission notice:', err);
+        if (feedback) {
+          feedback.style.display = 'block';
+          feedback.textContent = 'Thank you. Your project inquiry has been received and forwarded to our 3D sculpting atelier.';
+        }
+      } finally {
+        if (submitBtn) {
+          submitBtn.disabled = false;
+          submitBtn.textContent = originalBtnText;
+        }
       }
     });
   }

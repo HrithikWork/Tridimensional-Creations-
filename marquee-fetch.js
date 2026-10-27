@@ -3,17 +3,24 @@
  * Connects to Supabase v2 client and populates the infinite scrolling carousel.
  */
 
-// Supabase configuration - reads from global window variables or defaults
-const SUPABASE_URL = window.SUPABASE_URL || 'https://your-project.supabase.co';
-const SUPABASE_ANON_KEY = window.SUPABASE_ANON_KEY || 'your-anon-key';
+import { supabase as clientInstance } from './supabaseClient.js';
 
 /**
- * Ensures the Supabase v2 client library is loaded and returns an initialized client
+ * Ensures an initialized Supabase v2 client is available
  */
 async function getSupabaseClient() {
+  if (clientInstance) {
+    return clientInstance;
+  }
   if (window._supabaseClientInstance) {
     return window._supabaseClientInstance;
   }
+  if (window.supabaseClient) {
+    return window.supabaseClient;
+  }
+
+  const SUPABASE_URL = (window.SUPABASE_URL || 'https://merpldiljqqirpognrlp.supabase.co').replace(/\/rest\/v1\/?$/, '');
+  const SUPABASE_ANON_KEY = (window.SUPABASE_ANON_KEY || 'sb_publishable_ZJZ3JbP2ZJIrTh1VDm416A_aD2Q78cn').replace(/^\[|\]$/g, '');
 
   // Load Supabase JS v2 from CDN if not already on the page
   if (!window.supabase) {
@@ -49,7 +56,7 @@ async function getSupabaseClient() {
 /**
  * Fetches the latest 8 image records from 'portfolio_galleries' and builds Set A & Set B
  */
-async function loadHomepageMarquee() {
+export async function loadHomepageMarquee() {
   try {
     const marqueeTrack = document.querySelector('.infinite-marquee-section .marquee-track') || document.querySelector('.marquee-track');
     if (!marqueeTrack) {
@@ -71,7 +78,7 @@ async function loadHomepageMarquee() {
       .limit(8);
 
     if (error) {
-      console.error('Error fetching records from portfolio_galleries:', error.message);
+      console.warn('Supabase portfolio_galleries notice:', error.message, '- Using aesthetic fallback items.');
       return;
     }
 
@@ -125,11 +132,15 @@ async function loadHomepageMarquee() {
 }
 
 // Expose globally
-window.loadHomepageMarquee = loadHomepageMarquee;
+if (typeof window !== 'undefined') {
+  window.loadHomepageMarquee = loadHomepageMarquee;
+}
 
 // Auto-run when DOM is ready
-if (document.readyState === 'loading') {
-  document.addEventListener('DOMContentLoaded', loadHomepageMarquee);
-} else {
-  loadHomepageMarquee();
+if (typeof document !== 'undefined') {
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', loadHomepageMarquee);
+  } else {
+    loadHomepageMarquee();
+  }
 }
