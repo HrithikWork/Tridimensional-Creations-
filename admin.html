@@ -1,0 +1,1209 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Studio Admin Desk | Tridimensional Creation Pvt Ltd</title>
+    <meta name="description" content="Master production admin dashboard for Tridimensional Creation Pvt Ltd. Manage customer quote inquiries, 3D/CNC portfolio galleries, catalog capabilities, blogs, and site assets." />
+    <meta name="robots" content="noindex, nofollow" />
+
+    <!-- Google Fonts & Architectural Stylesheet -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;0,800;1,400;1,700&family=Montserrat:wght@300;400;500;600;700;800&family=Inter:wght@400;500;600&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="/style.css" />
+
+    <style>
+      :root {
+        --admin-primary: #6B1326;
+        --admin-primary-dark: #520E1D;
+        --admin-accent: #8E2D40;
+        --admin-bg: #F8F6F6;
+        --admin-card: #FFFFFF;
+        --admin-border: #E8D8DB;
+        --admin-text: #2D141A;
+        --admin-muted: #7A5C64;
+        --admin-success: #1E6B37;
+        --admin-warning: #945B09;
+        --admin-info: #1B5E8C;
+      }
+
+      body {
+        background-color: var(--admin-bg);
+        color: var(--admin-text);
+        font-family: 'Montserrat', sans-serif;
+        margin: 0;
+        padding: 0;
+        min-height: 100vh;
+      }
+
+      /* Admin Top Navigation */
+      .admin-topbar {
+        background-color: #FFFFFF;
+        border-bottom: 1px solid var(--admin-border);
+        padding: 0.85rem 1.75rem;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        position: sticky;
+        top: 0;
+        z-index: 50;
+        box-shadow: 0 2px 8px rgba(107, 19, 38, 0.04);
+      }
+
+      .admin-brand {
+        display: flex;
+        align-items: center;
+        gap: 0.75rem;
+        text-decoration: none;
+        color: var(--admin-primary);
+      }
+
+      .admin-brand h1 {
+        font-family: 'Playfair Display', Georgia, serif;
+        font-size: 1.25rem;
+        font-weight: 700;
+        margin: 0;
+        line-height: 1.2;
+      }
+
+      .admin-brand span {
+        font-family: 'Montserrat', sans-serif;
+        font-size: 0.6875rem;
+        letter-spacing: 1.5px;
+        text-transform: uppercase;
+        color: var(--admin-muted);
+        display: block;
+      }
+
+      .admin-user-nav {
+        display: flex;
+        align-items: center;
+        gap: 1.25rem;
+      }
+
+      .admin-user-pill {
+        display: inline-flex;
+        align-items: center;
+        gap: 0.5rem;
+        font-size: 0.75rem;
+        background: #FDF9FA;
+        border: 1px solid var(--admin-border);
+        padding: 0.4rem 0.85rem;
+        border-radius: 4px;
+        color: var(--admin-primary);
+        font-weight: 600;
+      }
+
+      .admin-user-dot {
+        width: 8px;
+        height: 8px;
+        border-radius: 50%;
+        background-color: #2ECC71;
+        box-shadow: 0 0 0 2px rgba(46, 204, 113, 0.2);
+      }
+
+      /* Auth Gate Modal / Screen */
+      .auth-gate-wrapper {
+        min-height: calc(100vh - 80px);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        padding: 2rem 1rem;
+      }
+
+      .auth-card {
+        background-color: #FFFFFF;
+        border: 1px solid var(--admin-border);
+        border-radius: 8px;
+        box-shadow: 0 16px 40px rgba(107, 19, 38, 0.08);
+        width: 100%;
+        max-width: 440px;
+        padding: 2.5rem 2rem;
+      }
+
+      .auth-card-header {
+        text-align: center;
+        margin-bottom: 2rem;
+      }
+
+      .auth-card-header h2 {
+        font-family: 'Playfair Display', Georgia, serif;
+        font-size: 1.75rem;
+        color: var(--admin-primary);
+        margin: 0 0 0.5rem 0;
+      }
+
+      .auth-card-header p {
+        font-size: 0.8125rem;
+        color: var(--admin-muted);
+        margin: 0;
+      }
+
+      /* Master Tabs Navigation */
+      .admin-tabs-nav {
+        display: flex;
+        gap: 0.5rem;
+        border-bottom: 1px solid var(--admin-border);
+        padding: 0 1.75rem;
+        background-color: #FFFFFF;
+        overflow-x: auto;
+      }
+
+      .admin-tab-btn {
+        background: none;
+        border: none;
+        padding: 1rem 1.25rem;
+        font-family: 'Montserrat', sans-serif;
+        font-size: 0.8125rem;
+        font-weight: 600;
+        letter-spacing: 0.5px;
+        color: var(--admin-muted);
+        cursor: pointer;
+        display: inline-flex;
+        align-items: center;
+        gap: 0.5rem;
+        border-bottom: 3px solid transparent;
+        transition: all 0.2s ease;
+        white-space: nowrap;
+      }
+
+      .admin-tab-btn:hover {
+        color: var(--admin-primary);
+        background-color: #FAF5F6;
+      }
+
+      .admin-tab-btn.active {
+        color: var(--admin-primary);
+        border-bottom-color: var(--admin-primary);
+        background-color: #FAF5F6;
+      }
+
+      .admin-tab-count {
+        font-size: 0.6875rem;
+        background-color: #F0E2E5;
+        color: var(--admin-primary);
+        padding: 2px 7px;
+        border-radius: 10px;
+        font-weight: 700;
+      }
+
+      /* Admin Content Layout */
+      .admin-main-container {
+        max-width: 1440px;
+        margin: 0 auto;
+        padding: 2rem 1.75rem;
+      }
+
+      .admin-tab-pane {
+        display: none;
+      }
+
+      .admin-tab-pane.active {
+        display: block;
+        animation: fadeIn 0.25s ease-out;
+      }
+
+      @keyframes fadeIn {
+        from { opacity: 0; transform: translateY(4px); }
+        to { opacity: 1; transform: translateY(0); }
+      }
+
+      /* Modern Panels & Cards */
+      .admin-panel {
+        background-color: #FFFFFF;
+        border: 1px solid var(--admin-border);
+        border-radius: 6px;
+        padding: 1.75rem;
+        margin-bottom: 2rem;
+        box-shadow: 0 2px 8px rgba(0, 0, 0, 0.02);
+      }
+
+      .admin-panel-title-bar {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        margin-bottom: 1.5rem;
+        padding-bottom: 0.75rem;
+        border-bottom: 1px solid var(--admin-border);
+      }
+
+      .admin-panel-title-bar h3 {
+        font-family: 'Playfair Display', Georgia, serif;
+        font-size: 1.35rem;
+        color: var(--admin-primary);
+        margin: 0;
+      }
+
+      /* Drag & Drop File Zone */
+      .drop-zone {
+        border: 2px dashed var(--admin-border);
+        border-radius: 6px;
+        padding: 1.75rem 1.25rem;
+        text-align: center;
+        background-color: #FAF8F8;
+        cursor: pointer;
+        transition: all 0.2s ease;
+        position: relative;
+        margin-bottom: 1rem;
+      }
+
+      .drop-zone:hover, .drop-zone.dragover {
+        border-color: var(--admin-primary);
+        background-color: #F8ECEE;
+      }
+
+      .drop-zone-icon {
+        color: var(--admin-primary);
+        margin-bottom: 0.5rem;
+      }
+
+      .drop-zone-text {
+        font-size: 0.8125rem;
+        font-weight: 600;
+        color: var(--admin-text);
+        margin-bottom: 0.25rem;
+      }
+
+      .drop-zone-sub {
+        font-size: 0.6875rem;
+        color: var(--admin-muted);
+      }
+
+      .preview-thumbnail-wrap {
+        display: none;
+        align-items: center;
+        gap: 1rem;
+        padding: 0.75rem;
+        background: #FFFFFF;
+        border: 1px solid var(--admin-border);
+        border-radius: 4px;
+        margin-top: 0.75rem;
+      }
+
+      .preview-thumbnail-img {
+        width: 70px;
+        height: 70px;
+        object-fit: cover;
+        border-radius: 4px;
+        border: 1px solid var(--admin-border);
+      }
+
+      /* Form Controls */
+      .form-grid-2 {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 1.25rem;
+      }
+
+      .form-grid-3 {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 1.25rem;
+      }
+
+      .admin-form-group {
+        display: flex;
+        flex-direction: column;
+        gap: 0.35rem;
+        margin-bottom: 1rem;
+      }
+
+      .admin-label {
+        font-size: 0.75rem;
+        font-weight: 700;
+        text-transform: uppercase;
+        letter-spacing: 0.75px;
+        color: var(--admin-primary);
+      }
+
+      .admin-input, .admin-select, .admin-textarea {
+        font-family: 'Montserrat', sans-serif;
+        font-size: 0.875rem;
+        padding: 0.7rem 0.85rem;
+        border: 1px solid var(--admin-border);
+        border-radius: 4px;
+        background-color: #FFFFFF;
+        color: var(--admin-text);
+        transition: border-color 0.2s ease, box-shadow 0.2s ease;
+      }
+
+      .admin-input:focus, .admin-select:focus, .admin-textarea:focus {
+        outline: none;
+        border-color: var(--admin-primary);
+        box-shadow: 0 0 0 3px rgba(107, 19, 38, 0.1);
+      }
+
+      .admin-textarea {
+        resize: vertical;
+        min-height: 90px;
+        line-height: 1.5;
+      }
+
+      /* Action Buttons */
+      .admin-btn {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        gap: 0.45rem;
+        font-family: 'Montserrat', sans-serif;
+        font-size: 0.8125rem;
+        font-weight: 700;
+        letter-spacing: 0.5px;
+        padding: 0.75rem 1.35rem;
+        border-radius: 4px;
+        cursor: pointer;
+        border: none;
+        text-decoration: none;
+        transition: all 0.2s ease;
+      }
+
+      .admin-btn-primary {
+        background-color: var(--admin-primary);
+        color: #FFFFFF;
+      }
+
+      .admin-btn-primary:hover {
+        background-color: var(--admin-primary-dark);
+        transform: translateY(-1px);
+        box-shadow: 0 4px 12px rgba(107, 19, 38, 0.18);
+      }
+
+      .admin-btn-secondary {
+        background-color: #FFFFFF;
+        color: var(--admin-primary);
+        border: 1px solid var(--admin-border);
+      }
+
+      .admin-btn-secondary:hover {
+        background-color: #FAF5F6;
+        border-color: var(--admin-primary);
+      }
+
+      .admin-btn-sm {
+        padding: 0.4rem 0.75rem;
+        font-size: 0.75rem;
+      }
+
+      .admin-btn-danger {
+        background-color: #FFF0F2;
+        color: #C0392B;
+        border: 1px solid #FADBD8;
+      }
+
+      .admin-btn-danger:hover {
+        background-color: #C0392B;
+        color: #FFFFFF;
+      }
+
+      .admin-btn-success {
+        background-color: #25D366;
+        color: #FFFFFF;
+      }
+
+      .admin-btn-success:hover {
+        background-color: #1EBE5D;
+      }
+
+      /* Data Tables */
+      .admin-table-wrapper {
+        width: 100%;
+        overflow-x: auto;
+        border: 1px solid var(--admin-border);
+        border-radius: 6px;
+        background-color: #FFFFFF;
+      }
+
+      .admin-table {
+        width: 100%;
+        border-collapse: collapse;
+        font-size: 0.8125rem;
+        text-align: left;
+      }
+
+      .admin-table th {
+        background-color: #FAF6F7;
+        color: var(--admin-primary);
+        font-weight: 700;
+        text-transform: uppercase;
+        letter-spacing: 0.75px;
+        font-size: 0.6875rem;
+        padding: 0.9rem 1rem;
+        border-bottom: 1px solid var(--admin-border);
+        white-space: nowrap;
+      }
+
+      .admin-table td {
+        padding: 0.85rem 1rem;
+        border-bottom: 1px solid #F0E6E8;
+        vertical-align: middle;
+      }
+
+      .admin-table tr:hover td {
+        background-color: #FCF9FA;
+      }
+
+      /* Status Badges */
+      .status-pill {
+        display: inline-block;
+        padding: 3px 8px;
+        border-radius: 12px;
+        font-size: 0.6875rem;
+        font-weight: 700;
+        text-transform: uppercase;
+        letter-spacing: 0.5px;
+      }
+
+      .status-new { background-color: #E8F4FD; color: #1B5E8C; }
+      .status-reviewed { background-color: #FEF9E7; color: #945B09; }
+      .status-production { background-color: #F4ECF7; color: #6C3483; }
+      .status-completed { background-color: #EAFAF1; color: #1E6B37; }
+
+      .source-badge {
+        font-size: 0.6875rem;
+        font-weight: 600;
+        padding: 2px 6px;
+        border-radius: 3px;
+        background: #F0E2E5;
+        color: var(--admin-primary);
+      }
+
+      /* Feedback Toast */
+      .admin-toast {
+        position: fixed;
+        bottom: 24px;
+        right: 24px;
+        padding: 1rem 1.5rem;
+        background-color: var(--admin-primary);
+        color: #FFFFFF;
+        border-radius: 6px;
+        box-shadow: 0 8px 24px rgba(0, 0, 0, 0.18);
+        font-size: 0.875rem;
+        font-weight: 600;
+        z-index: 9999;
+        display: none;
+        animation: slideUp 0.3s ease;
+      }
+
+      @keyframes slideUp {
+        from { transform: translateY(20px); opacity: 0; }
+        to { transform: translateY(0); opacity: 1; }
+      }
+
+      @media (max-width: 900px) {
+        .form-grid-2, .form-grid-3 {
+          grid-template-columns: 1fr;
+        }
+        .admin-topbar {
+          flex-direction: column;
+          gap: 0.75rem;
+          align-items: flex-start;
+        }
+      }
+    </style>
+  </head>
+  <body>
+
+    <!-- ====================================================================
+         01. GLOBAL ADMIN TOPBAR
+         ==================================================================== -->
+    <header class="admin-topbar">
+      <a href="index.html" class="admin-brand">
+        <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+          <path d="M12 2L2 7l10 5 10-5-10-5z"></path>
+          <path d="M2 17l10 5 10-5"></path>
+          <path d="M2 12l10 5 10-5"></path>
+        </svg>
+        <div>
+          <h1>Tridimensional Creation</h1>
+          <span>Studio Master Admin Desk</span>
+        </div>
+      </a>
+
+      <div class="admin-user-nav" id="admin-user-nav" style="display: none;">
+        <span class="admin-user-pill">
+          <span class="admin-user-dot"></span>
+          <span id="admin-user-email">admin@tridimensional.in</span>
+        </span>
+        <a href="index.html" target="_blank" class="admin-btn admin-btn-secondary admin-btn-sm">
+          View Live Website
+        </a>
+        <button id="admin-logout-btn" class="admin-btn admin-btn-danger admin-btn-sm">
+          Log Out
+        </button>
+      </div>
+    </header>
+
+    <!-- ====================================================================
+         02. VIEW 1: AUTHENTICATION GATE
+         ==================================================================== -->
+    <section class="auth-gate-wrapper" id="auth-gate-section">
+      <div class="auth-card">
+        <div class="auth-card-header">
+          <span style="font-size: 0.6875rem; font-weight: 700; letter-spacing: 1.5px; text-transform: uppercase; color: var(--admin-primary); display: block; margin-bottom: 0.25rem;">
+            Secured Access
+          </span>
+          <h2>Studio Desk Sign-In</h2>
+          <p>Authenticate with your administrative credentials to manage inquiries, catalog products, and media assets.</p>
+        </div>
+
+        <form id="admin-login-form">
+          <div class="admin-form-group">
+            <label class="admin-label" for="login-email">Admin Email</label>
+            <input 
+              type="email" 
+              id="login-email" 
+              class="admin-input" 
+              placeholder="e.g., admin@tridimensional.in" 
+              required 
+            />
+          </div>
+
+          <div class="admin-form-group" style="margin-bottom: 1.5rem;">
+            <label class="admin-label" for="login-password">Password</label>
+            <input 
+              type="password" 
+              id="login-password" 
+              class="admin-input" 
+              placeholder="••••••••••••" 
+              required 
+            />
+          </div>
+
+          <button type="submit" id="login-submit-btn" class="admin-btn admin-btn-primary" style="width: 100%;">
+            Sign In to Studio Desk
+          </button>
+        </form>
+
+        <div id="auth-error-notice" style="display: none; margin-top: 1rem; padding: 0.75rem; background-color: #FDF2F4; border: 1px solid #F5C6CB; border-radius: 4px; color: #721C24; font-size: 0.75rem; line-height: 1.4;">
+        </div>
+
+        <div style="margin-top: 1.5rem; padding-top: 1.25rem; border-top: 1px solid var(--admin-border); text-align: center;">
+          <p style="font-size: 0.75rem; color: var(--admin-muted); margin-bottom: 0.5rem;">
+            Testing setup or first-time deployment?
+          </p>
+          <button id="admin-bypass-btn" type="button" class="admin-btn admin-btn-secondary admin-btn-sm" style="width: 100%;">
+            Enter with Studio Desk Session
+          </button>
+        </div>
+      </div>
+    </section>
+
+    <!-- ====================================================================
+         03. VIEW 2: 5-TAB MASTER DASHBOARD
+         ==================================================================== -->
+    <div id="admin-dashboard-wrapper" style="display: none;">
+      <!-- Master Tabs Bar -->
+      <nav class="admin-tabs-nav">
+        <button class="admin-tab-btn active" data-tab="tab-inquiries">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path>
+            <polyline points="22,6 12,13 2,6"></polyline>
+          </svg>
+          Customer Inquiries
+          <span class="admin-tab-count" id="count-inquiries">0</span>
+        </button>
+
+        <button class="admin-tab-btn" data-tab="tab-portfolio">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <rect x="3" y="3" width="18" height="18" rx="2" ry="2"></rect>
+            <circle cx="8.5" cy="8.5" r="1.5"></circle>
+            <polyline points="21 15 16 10 5 21"></polyline>
+          </svg>
+          Portfolio Galleries
+          <span class="admin-tab-count" id="count-portfolio">0</span>
+        </button>
+
+        <button class="admin-tab-btn" data-tab="tab-catalog">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <line x1="8" y1="6" x2="21" y2="6"></line>
+            <line x1="8" y1="12" x2="21" y2="12"></line>
+            <line x1="8" y1="18" x2="21" y2="18"></line>
+            <line x1="3" y1="6" x2="3.01" y2="6"></line>
+            <line x1="3" y1="12" x2="3.01" y2="12"></line>
+            <line x1="3" y1="18" x2="3.01" y2="18"></line>
+          </svg>
+          18 Catalog Capabilities
+          <span class="admin-tab-count" id="count-catalog">0</span>
+        </button>
+
+        <button class="admin-tab-btn" data-tab="tab-blogs">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path>
+            <polyline points="14 2 14 8 20 8"></polyline>
+            <line x1="16" y1="13" x2="8" y2="13"></line>
+            <line x1="16" y1="17" x2="8" y2="17"></line>
+            <polyline points="10 9 9 9 8 9"></polyline>
+          </svg>
+          Blog & Articles
+          <span class="admin-tab-count" id="count-blogs">0</span>
+        </button>
+
+        <button class="admin-tab-btn" data-tab="tab-assets">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <polygon points="12 2 2 7 12 12 22 7 12 2"></polygon>
+            <polyline points="2 17 12 22 22 17"></polyline>
+            <polyline points="2 12 12 17 22 12"></polyline>
+          </svg>
+          Home & About Assets
+          <span class="admin-tab-count" id="count-assets">0</span>
+        </button>
+      </nav>
+
+      <main class="admin-main-container">
+        <!-- ================================================================
+             TAB 1: CUSTOMER INQUIRIES & UPLOADS
+             ================================================================ -->
+        <section class="admin-tab-pane active" id="tab-inquiries">
+          <div class="admin-panel">
+            <div class="admin-panel-title-bar">
+              <div>
+                <h3>Customer Inquiries & Custom Specifications</h3>
+                <p style="font-size: 0.8125rem; color: var(--admin-muted); margin: 4px 0 0 0;">
+                  Live submissions from <code>product.html</code> (Quote Specifications) and <code>contact.html</code> (Studio Appointments).
+                </p>
+              </div>
+              <div style="display: flex; gap: 0.5rem; align-items: center;">
+                <input 
+                  type="text" 
+                  id="inquiries-search" 
+                  class="admin-input" 
+                  placeholder="Search by client, phone, or email..." 
+                  style="width: 260px;" 
+                />
+                <button id="refresh-inquiries-btn" class="admin-btn admin-btn-secondary admin-btn-sm">
+                  Refresh
+                </button>
+              </div>
+            </div>
+
+            <!-- Inquiries Data Table -->
+            <div class="admin-table-wrapper">
+              <table class="admin-table" id="inquiries-table">
+                <thead>
+                  <tr>
+                    <th>Date</th>
+                    <th>Source</th>
+                    <th>Client Name</th>
+                    <th>Contact Details</th>
+                    <th>Inquiry / Product Scope</th>
+                    <th>Dimensions (X • Y • Z)</th>
+                    <th>Customer File</th>
+                    <th>Status</th>
+                    <th>Actions</th>
+                  </tr>
+                </thead>
+                <tbody id="inquiries-tbody">
+                  <tr>
+                    <td colspan="9" style="text-align: center; padding: 2rem; color: var(--admin-muted);">
+                      Loading customer inquiries from Supabase...
+                    </td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+        </section>
+
+        <!-- ================================================================
+             TAB 2: PORTFOLIO GALLERIES
+             ================================================================ -->
+        <section class="admin-tab-pane" id="tab-portfolio">
+          <div class="admin-panel">
+            <div class="admin-panel-title-bar">
+              <div>
+                <h3 id="portfolio-form-heading">Add Portfolio Showcase Item</h3>
+                <p style="font-size: 0.8125rem; color: var(--admin-muted); margin: 4px 0 0 0;">
+                  Target bucket: <code>gallery-images</code>. Renders dynamically across <code>gallery.html</code> and dedicated sub-galleries.
+                </p>
+              </div>
+              <button id="cancel-portfolio-edit-btn" class="admin-btn admin-btn-secondary admin-btn-sm" style="display: none;">
+                Cancel Edit
+              </button>
+            </div>
+
+            <form id="portfolio-form">
+              <input type="hidden" id="portfolio-edit-id" value="" />
+
+              <!-- Drag & Drop Zone -->
+              <div class="drop-zone" id="portfolio-drop-zone">
+                <input type="file" id="portfolio-file-input" accept="image/*" style="display: none;" />
+                <div class="drop-zone-icon">
+                  <svg width="36" height="36" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8">
+                    <rect x="3" y="3" width="18" height="18" rx="2" ry="2"></rect>
+                    <circle cx="8.5" cy="8.5" r="1.5"></circle>
+                    <polyline points="21 15 16 10 5 21"></polyline>
+                  </svg>
+                </div>
+                <div class="drop-zone-text">Click or drag & drop high-resolution project photo here</div>
+                <div class="drop-zone-sub">Uploads to <code>gallery-images</code> bucket (PNG, JPG, WEBP)</div>
+
+                <div class="preview-thumbnail-wrap" id="portfolio-preview-wrap">
+                  <img src="" alt="Preview" class="preview-thumbnail-img" id="portfolio-preview-img" />
+                  <div style="text-align: left;">
+                    <span id="portfolio-preview-name" style="font-size: 0.75rem; font-weight: 600; display: block;"></span>
+                    <span id="portfolio-preview-status" style="font-size: 0.6875rem; color: var(--admin-success);">Ready to upload</span>
+                  </div>
+                </div>
+              </div>
+
+              <div class="form-grid-3">
+                <div class="admin-form-group">
+                  <label class="admin-label" for="portfolio-title">Project Title *</label>
+                  <input type="text" id="portfolio-title" class="admin-input" placeholder="e.g., Geometric Statement Wall Clock" required />
+                </div>
+
+                <div class="admin-form-group">
+                  <label class="admin-label" for="portfolio-category">Discipline Category *</label>
+                  <select id="portfolio-category" class="admin-select" required>
+                    <option value="2D CNC Router Works">2D CNC Router Works</option>
+                    <option value="3D CNC Router Works">3D CNC Router Works</option>
+                    <option value="3D Printing">3D Printing</option>
+                    <option value="Architectural Decor">Architectural Decor</option>
+                    <option value="Bespoke Furniture">Bespoke Furniture</option>
+                    <option value="Retail & Commercial">Retail & Commercial</option>
+                    <option value="Fine Art & Sculptures">Fine Art & Sculptures</option>
+                  </select>
+                </div>
+
+                <div class="admin-form-group">
+                  <label class="admin-label" for="portfolio-subgallery">Target Gallery Page *</label>
+                  <select id="portfolio-subgallery" class="admin-select" required>
+                    <option value="all">Main Gallery (gallery.html)</option>
+                    <option value="decor">Home Decor (gallery-decor.html)</option>
+                    <option value="furniture">Furniture (gallery-furniture.html)</option>
+                    <option value="retail">Retail Displays (gallery-retail.html)</option>
+                    <option value="art">Fine Art & Sculptures (gallery-art.html)</option>
+                  </select>
+                </div>
+              </div>
+
+              <div class="form-grid-2">
+                <div class="admin-form-group">
+                  <label class="admin-label" for="portfolio-caption">Short Architectural Caption</label>
+                  <input type="text" id="portfolio-caption" class="admin-input" placeholder="e.g., Precision CNC pocketing with hand-inlaid polished brass indices." />
+                </div>
+
+                <div class="admin-form-group">
+                  <label class="admin-label" for="portfolio-specs">Technical Specs Chip</label>
+                  <input type="text" id="portfolio-specs" class="admin-input" placeholder="e.g., 18mm HDHMR • PU White Satin Finish" />
+                </div>
+              </div>
+
+              <div style="display: flex; gap: 0.75rem; justify-content: flex-end; margin-top: 1rem;">
+                <button type="submit" id="portfolio-submit-btn" class="admin-btn admin-btn-primary">
+                  Save to Portfolio
+                </button>
+              </div>
+            </form>
+          </div>
+
+          <!-- Existing Portfolio Grid -->
+          <div class="admin-panel">
+            <div class="admin-panel-title-bar">
+              <h3>Live Portfolio Records (<span id="portfolio-count-label">0</span>)</h3>
+              <input type="text" id="portfolio-search" class="admin-input" placeholder="Filter portfolio..." style="width: 220px;" />
+            </div>
+
+            <div class="admin-table-wrapper">
+              <table class="admin-table">
+                <thead>
+                  <tr>
+                    <th>Photo</th>
+                    <th>Title</th>
+                    <th>Category</th>
+                    <th>Target Page</th>
+                    <th>Specs</th>
+                    <th>Actions</th>
+                  </tr>
+                </thead>
+                <tbody id="portfolio-tbody">
+                  <tr>
+                    <td colspan="6" style="text-align: center; padding: 2rem; color: var(--admin-muted);">
+                      Loading portfolio items...
+                    </td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+        </section>
+
+        <!-- ================================================================
+             TAB 3: 18 CATALOG CAPABILITIES
+             ================================================================ -->
+        <section class="admin-tab-pane" id="tab-catalog">
+          <div class="admin-panel">
+            <div class="admin-panel-title-bar">
+              <div>
+                <h3 id="catalog-form-heading">Manage Fabrication Capability</h3>
+                <p style="font-size: 0.8125rem; color: var(--admin-muted); margin: 4px 0 0 0;">
+                  Target bucket: <code>catalog-images</code>. Governs <code>catalog.html</code> and detailed technical specification pages.
+                </p>
+              </div>
+              <div style="display: flex; gap: 0.5rem;">
+                <button id="seed-catalog-btn" class="admin-btn admin-btn-secondary admin-btn-sm">
+                  Seed 18 Default Catalog Products
+                </button>
+                <button id="cancel-catalog-edit-btn" class="admin-btn admin-btn-secondary admin-btn-sm" style="display: none;">
+                  Cancel Edit
+                </button>
+              </div>
+            </div>
+
+            <form id="catalog-form">
+              <input type="hidden" id="catalog-edit-id" value="" />
+
+              <!-- Drag & Drop Zone -->
+              <div class="drop-zone" id="catalog-drop-zone">
+                <input type="file" id="catalog-file-input" accept="image/*" style="display: none;" />
+                <div class="drop-zone-icon">
+                  <svg width="36" height="36" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8">
+                    <path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"></path>
+                    <polyline points="3.27 6.96 12 12.01 20.73 6.96"></polyline>
+                    <line x1="12" y1="22.08" x2="12" y2="12"></line>
+                  </svg>
+                </div>
+                <div class="drop-zone-text">Click or drag product capability rendering / sample photo here</div>
+                <div class="drop-zone-sub">Uploads to <code>catalog-images</code> bucket</div>
+
+                <div class="preview-thumbnail-wrap" id="catalog-preview-wrap">
+                  <img src="" alt="Preview" class="preview-thumbnail-img" id="catalog-preview-img" />
+                  <div style="text-align: left;">
+                    <span id="catalog-preview-name" style="font-size: 0.75rem; font-weight: 600; display: block;"></span>
+                    <span id="catalog-preview-status" style="font-size: 0.6875rem; color: var(--admin-success);">Ready to upload</span>
+                  </div>
+                </div>
+              </div>
+
+              <div class="form-grid-3">
+                <div class="admin-form-group">
+                  <label class="admin-label" for="catalog-slug">URL Slug *</label>
+                  <input type="text" id="catalog-slug" class="admin-input" placeholder="e.g., cnc-jali-cutting-panels" required />
+                </div>
+
+                <div class="admin-form-group">
+                  <label class="admin-label" for="catalog-category">Pillar Category *</label>
+                  <select id="catalog-category" class="admin-select" required>
+                    <option value="2D CNC Router Works">2D CNC Router Works</option>
+                    <option value="3D CNC Router Works (Depth, Relief & Contours)">3D CNC Router Works (Depth, Relief & Contours)</option>
+                    <option value="3D Printing (Additive Manufacturing)">3D Printing (Additive Manufacturing)</option>
+                  </select>
+                </div>
+
+                <div class="admin-form-group">
+                  <label class="admin-label" for="catalog-title">Product Title *</label>
+                  <input type="text" id="catalog-title" class="admin-input" placeholder="e.g., Custom CNC Jali Cutting Panels" required />
+                </div>
+              </div>
+
+              <div class="admin-form-group">
+                <label class="admin-label" for="catalog-description">Overview Description *</label>
+                <textarea id="catalog-description" class="admin-textarea" placeholder="Comprehensive description of the architectural or machining capability..." required></textarea>
+              </div>
+
+              <div class="form-grid-2">
+                <div class="admin-form-group">
+                  <label class="admin-label" for="catalog-design-scope">Design Scope (One entry per line) *</label>
+                  <textarea id="catalog-design-scope" class="admin-textarea" placeholder="Traditional temple lattices&#10;Modern geometric grids&#10;Organic floral motifs" required></textarea>
+                </div>
+
+                <div class="admin-form-group">
+                  <label class="admin-label" for="catalog-where-to-use">Where To Use (One entry per line) *</label>
+                  <textarea id="catalog-where-to-use" class="admin-textarea" placeholder="Pooja room backdrops&#10;Living room privacy dividers&#10;False ceiling screens" required></textarea>
+                </div>
+              </div>
+
+              <div class="form-grid-3">
+                <div class="admin-form-group">
+                  <label class="admin-label" for="catalog-thickness">Thickness Specs</label>
+                  <input type="text" id="catalog-thickness" class="admin-input" placeholder="e.g., 6mm to 75mm+" />
+                </div>
+
+                <div class="admin-form-group">
+                  <label class="admin-label" for="catalog-materials">Materials Specs</label>
+                  <input type="text" id="catalog-materials" class="admin-input" placeholder="e.g., HDHMR, WPC, MDF, Teak Hardwood" />
+                </div>
+
+                <div class="admin-form-group">
+                  <label class="admin-label" for="catalog-finishes">Finishes Specs</label>
+                  <input type="text" id="catalog-finishes" class="admin-input" placeholder="e.g., Raw, PU White Sealer, Duco" />
+                </div>
+              </div>
+
+              <div class="admin-form-group">
+                <label class="admin-label" for="catalog-customization">Customization Note</label>
+                <input type="text" id="catalog-customization" class="admin-input" placeholder="e.g., Made to your exact wall or frame measurements." />
+              </div>
+
+              <div style="display: flex; gap: 0.75rem; justify-content: flex-end; margin-top: 1rem;">
+                <button type="submit" id="catalog-submit-btn" class="admin-btn admin-btn-primary">
+                  Save Catalog Capability
+                </button>
+              </div>
+            </form>
+          </div>
+
+          <!-- Existing Catalog Items -->
+          <div class="admin-panel">
+            <div class="admin-panel-title-bar">
+              <h3>Fabrication Capabilities (<span id="catalog-count-label">0</span>)</h3>
+              <input type="text" id="catalog-search" class="admin-input" placeholder="Filter capabilities..." style="width: 220px;" />
+            </div>
+
+            <div class="admin-table-wrapper">
+              <table class="admin-table">
+                <thead>
+                  <tr>
+                    <th>Image</th>
+                    <th>Title</th>
+                    <th>Pillar Category</th>
+                    <th>Slug</th>
+                    <th>Materials</th>
+                    <th>Actions</th>
+                  </tr>
+                </thead>
+                <tbody id="catalog-tbody">
+                  <tr>
+                    <td colspan="6" style="text-align: center; padding: 2rem; color: var(--admin-muted);">
+                      Loading catalog capabilities...
+                    </td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+        </section>
+
+        <!-- ================================================================
+             TAB 4: BLOG & ARTICLE PUBLISHER
+             ================================================================ -->
+        <section class="admin-tab-pane" id="tab-blogs">
+          <div class="admin-panel">
+            <div class="admin-panel-title-bar">
+              <div>
+                <h3 id="blog-form-heading">Publish Studio Journal Article</h3>
+                <p style="font-size: 0.8125rem; color: var(--admin-muted); margin: 4px 0 0 0;">
+                  Target bucket: <code>blog-images</code>. Renders on <code>blog.html</code> and detailed reads on <code>article.html</code>.
+                </p>
+              </div>
+              <button id="cancel-blog-edit-btn" class="admin-btn admin-btn-secondary admin-btn-sm" style="display: none;">
+                Cancel Edit
+              </button>
+            </div>
+
+            <form id="blog-form">
+              <input type="hidden" id="blog-edit-id" value="" />
+
+              <!-- Drag & Drop Zone -->
+              <div class="drop-zone" id="blog-drop-zone">
+                <input type="file" id="blog-file-input" accept="image/*" style="display: none;" />
+                <div class="drop-zone-icon">
+                  <svg width="36" height="36" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8">
+                    <path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"></path>
+                    <path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"></path>
+                  </svg>
+                </div>
+                <div class="drop-zone-text">Click or drag editorial cover photograph here</div>
+                <div class="drop-zone-sub">Uploads to <code>blog-images</code> bucket (16:9 recommended)</div>
+
+                <div class="preview-thumbnail-wrap" id="blog-preview-wrap">
+                  <img src="" alt="Preview" class="preview-thumbnail-img" id="blog-preview-img" />
+                  <div style="text-align: left;">
+                    <span id="blog-preview-name" style="font-size: 0.75rem; font-weight: 600; display: block;"></span>
+                    <span id="blog-preview-status" style="font-size: 0.6875rem; color: var(--admin-success);">Ready to upload</span>
+                  </div>
+                </div>
+              </div>
+
+              <div class="form-grid-3">
+                <div class="admin-form-group">
+                  <label class="admin-label" for="blog-title">Article Title *</label>
+                  <input type="text" id="blog-title" class="admin-input" placeholder="e.g., From 2D Sketch to 5-Axis CNC Milling" required />
+                </div>
+
+                <div class="admin-form-group">
+                  <label class="admin-label" for="blog-category">Category Badge *</label>
+                  <select id="blog-category" class="admin-select" required>
+                    <option value="CNC Engineering">CNC Engineering</option>
+                    <option value="3D Sculpting">3D Sculpting</option>
+                    <option value="Material Guide">Material Guide</option>
+                    <option value="Architectural Design">Architectural Design</option>
+                    <option value="Studio Case Study">Studio Case Study</option>
+                  </select>
+                </div>
+
+                <div class="admin-form-group">
+                  <label class="admin-label" for="blog-reading-time">Reading Time Estimate</label>
+                  <input type="text" id="blog-reading-time" class="admin-input" placeholder="e.g., 5 min read" value="5 min read" />
+                </div>
+              </div>
+
+              <div class="form-grid-2">
+                <div class="admin-form-group">
+                  <label class="admin-label" for="blog-author">Author Name</label>
+                  <input type="text" id="blog-author" class="admin-input" value="K. Sanjeev Singha" required />
+                </div>
+
+                <div class="admin-form-group">
+                  <label class="admin-label" for="blog-summary">Short Card Summary *</label>
+                  <input type="text" id="blog-summary" class="admin-input" placeholder="Concise overview snippet for blog cards..." required />
+                </div>
+              </div>
+
+              <div class="admin-form-group">
+                <label class="admin-label" for="blog-content">Full Article Body (Structured HTML / Multi-paragraph Prose) *</label>
+                <textarea id="blog-content" class="admin-textarea" style="min-height: 200px;" placeholder="<p>Write your detailed article body here. Supports standard paragraphs, subheadings, and blockquotes.</p>" required></textarea>
+              </div>
+
+              <div style="display: flex; gap: 0.75rem; justify-content: flex-end; margin-top: 1rem;">
+                <button type="submit" id="blog-submit-btn" class="admin-btn admin-btn-primary">
+                  Publish Article
+                </button>
+              </div>
+            </form>
+          </div>
+
+          <!-- Existing Articles Table -->
+          <div class="admin-panel">
+            <div class="admin-panel-title-bar">
+              <h3>Published Studio Journal Articles (<span id="blogs-count-label">0</span>)</h3>
+            </div>
+
+            <div class="admin-table-wrapper">
+              <table class="admin-table">
+                <thead>
+                  <tr>
+                    <th>Cover</th>
+                    <th>Title</th>
+                    <th>Category</th>
+                    <th>Author</th>
+                    <th>Date</th>
+                    <th>Actions</th>
+                  </tr>
+                </thead>
+                <tbody id="blogs-tbody">
+                  <tr>
+                    <td colspan="6" style="text-align: center; padding: 2rem; color: var(--admin-muted);">
+                      Loading published articles...
+                    </td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+        </section>
+
+        <!-- ================================================================
+             TAB 5: HOME & ABOUT PAGE ASSETS
+             ================================================================ -->
+        <section class="admin-tab-pane" id="tab-assets">
+          <div class="admin-panel">
+            <div class="admin-panel-title-bar">
+              <div>
+                <h3 id="asset-form-heading">Upload Page Visual Asset</h3>
+                <p style="font-size: 0.8125rem; color: var(--admin-muted); margin: 4px 0 0 0;">
+                  Target bucket: <code>site-assets</code>. Manages marquee slides on <code>index.html</code> and the foundation photo on <code>about.html</code>.
+                </p>
+              </div>
+              <button id="cancel-asset-edit-btn" class="admin-btn admin-btn-secondary admin-btn-sm" style="display: none;">
+                Cancel Edit
+              </button>
+            </div>
+
+            <form id="asset-form">
+              <input type="hidden" id="asset-edit-id" value="" />
+
+              <!-- Drag & Drop Zone -->
+              <div class="drop-zone" id="asset-drop-zone">
+                <input type="file" id="asset-file-input" accept="image/*" style="display: none;" />
+                <div class="drop-zone-icon">
+                  <svg width="36" height="36" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8">
+                    <polygon points="12 2 2 7 12 12 22 7 12 2"></polygon>
+                    <polyline points="2 17 12 22 22 17"></polyline>
+                    <polyline points="2 12 12 17 22 12"></polyline>
+                  </svg>
+                </div>
+                <div class="drop-zone-text">Click or drag site asset / photograph here</div>
+                <div class="drop-zone-sub">Uploads to <code>site-assets</code> bucket</div>
+
+                <div class="preview-thumbnail-wrap" id="asset-preview-wrap">
+                  <img src="" alt="Preview" class="preview-thumbnail-img" id="asset-preview-img" />
+                  <div style="text-align: left;">
+                    <span id="asset-preview-name" style="font-size: 0.75rem; font-weight: 600; display: block;"></span>
+                    <span id="asset-preview-status" style="font-size: 0.6875rem; color: var(--admin-success);">Ready to upload</span>
+                  </div>
+                </div>
+              </div>
+
+              <div class="form-grid-3">
+                <div class="admin-form-group">
+                  <label class="admin-label" for="asset-page">Target Page *</label>
+                  <select id="asset-page" class="admin-select" required>
+                    <option value="home">Homepage (index.html)</option>
+                    <option value="about">About Studio (about.html)</option>
+                  </select>
+                </div>
+
+                <div class="admin-form-group">
+                  <label class="admin-label" for="asset-section">Target Section *</label>
+                  <select id="asset-section" class="admin-select" required>
+                    <option value="home-marquee">Homepage Infinite Marquee Carousel</option>
+                    <option value="home-applications">Homepage Capabilities Showcase</option>
+                    <option value="foundation-story">About Us Foundation Story Image (.foundation-img)</option>
+                  </select>
+                </div>
+
+                <div class="admin-form-group">
+                  <label class="admin-label" for="asset-title">Title / Alt Text *</label>
+                  <input type="text" id="asset-title" class="admin-input" placeholder="e.g., Studio 5-Axis CNC Milling Showcase" required />
+                </div>
+              </div>
+
+              <div style="display: flex; gap: 0.75rem; justify-content: flex-end; margin-top: 1rem;">
+                <button type="submit" id="asset-submit-btn" class="admin-btn admin-btn-primary">
+                  Save Page Asset
+                </button>
+              </div>
+            </form>
+          </div>
+
+          <!-- Existing Page Assets -->
+          <div class="admin-panel">
+            <div class="admin-panel-title-bar">
+              <h3>Active Site Assets (<span id="assets-count-label">0</span>)</h3>
+            </div>
+
+            <div class="admin-table-wrapper">
+              <table class="admin-table">
+                <thead>
+                  <tr>
+                    <th>Thumbnail</th>
+                    <th>Target Page</th>
+                    <th>Section Target</th>
+                    <th>Title / Alt</th>
+                    <th>Created</th>
+                    <th>Actions</th>
+                  </tr>
+                </thead>
+                <tbody id="assets-tbody">
+                  <tr>
+                    <td colspan="6" style="text-align: center; padding: 2rem; color: var(--admin-muted);">
+                      Loading site assets...
+                    </td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+        </section>
+      </main>
+    </div>
+
+    <!-- Notification Toast -->
+    <div id="admin-toast" class="admin-toast"></div>
+
+    <!-- Admin Logic JavaScript Module -->
+    <script type="module" src="/admin.js"></script>
+  </body>
+</html>

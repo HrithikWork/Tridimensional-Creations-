@@ -26,6 +26,7 @@ export default defineConfig(() => {
           galleryFurniture: path.resolve(__dirname, 'gallery-furniture.html'),
           galleryRetail: path.resolve(__dirname, 'gallery-retail.html'),
           galleryArt: path.resolve(__dirname, 'gallery-art.html'),
+          admin: path.resolve(__dirname, 'admin.html'),
         },
       },
     },

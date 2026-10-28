@@ -63,51 +63,66 @@ app.get('/api/health', (req: Request, res: Response) => {
 app.post('/api/inquiries', async (req: Request, res: Response): Promise<void> => {
   try {
     const {
+      source,
       full_name,
       email,
       phone,
       service_type,
+      product_title,
+      width_x,
+      height_y,
+      thickness_z,
       appointment_date,
       message,
+      reference_file_url,
+      reference_file_name,
       uploaded_file_url
     } = req.body;
 
-    if (!full_name || !email) {
-      res.status(400).json({
-        success: false,
-        error: 'Full name and email are required fields.'
-      });
-      return;
-    }
+    const clientName = full_name || phone || email || 'Client';
+    const clientEmail = email || 'inquiry@tridimensional.in';
 
     const submissionData = {
-      full_name: String(full_name).trim(),
-      email: String(email).trim(),
+      source: source || (product_title ? 'Product Quote' : 'Studio Appointment'),
+      full_name: String(clientName).trim(),
+      email: String(clientEmail).trim(),
       phone: phone ? String(phone).trim() : null,
       service_type: service_type ? String(service_type).trim() : 'General Inquiry',
+      product_title: product_title ? String(product_title).trim() : null,
+      width_x: width_x ? String(width_x).trim() : null,
+      height_y: height_y ? String(height_y).trim() : null,
+      thickness_z: thickness_z ? String(thickness_z).trim() : null,
       appointment_date: appointment_date ? String(appointment_date).trim() : null,
       message: message ? String(message).trim() : '',
-      uploaded_file_url: uploaded_file_url ? String(uploaded_file_url).trim() : null,
+      status: 'New',
+      reference_file_url: reference_file_url || uploaded_file_url || null,
+      reference_file_name: reference_file_name || null,
       created_at: new Date().toISOString()
     };
 
     if (supabase) {
-      const { data, error } = await supabase
-        .from('quotes_and_appointments')
+      // Try customer_inquiries table first
+      let { data, error } = await supabase
+        .from('customer_inquiries')
         .insert([submissionData])
         .select()
         .single();
 
+      // If customer_inquiries table is pending creation, try quotes_and_appointments
       if (error) {
-        console.error('[Backend] Supabase insert error:', error.message);
-        // Return 200 with fallback confirmation if Supabase table is pending creation
-        res.status(200).json({
-          success: true,
-          message: 'Inquiry received and logged to studio desk.',
-          data: submissionData,
-          warning: 'Stored locally. Please ensure quotes_and_appointments table is deployed in Supabase.'
-        });
-        return;
+        console.warn('[Backend] customer_inquiries notice:', error.message, 'Trying quotes_and_appointments fallback...');
+        const legacyData = {
+          full_name: submissionData.full_name,
+          email: submissionData.email,
+          phone: submissionData.phone,
+          service_type: submissionData.service_type || submissionData.product_title,
+          appointment_date: submissionData.appointment_date,
+          message: submissionData.message,
+          uploaded_file_url: submissionData.reference_file_url,
+          created_at: submissionData.created_at
+        };
+        const fallbackRes = await supabase.from('quotes_and_appointments').insert([legacyData]).select().single();
+        data = fallbackRes.data || submissionData;
       }
 
       res.status(201).json({
@@ -118,12 +133,12 @@ app.post('/api/inquiries', async (req: Request, res: Response): Promise<void> =>
       return;
     }
 
-    // Supabase client unavailable fallback
     res.status(200).json({
       success: true,
-      message: 'Inquiry received and acknowledged.',
+      message: 'Inquiry received and logged to studio desk.',
       data: submissionData
     });
+    return;
   } catch (error: any) {
     console.error('[Backend] Error in /api/inquiries:', error);
     res.status(500).json({

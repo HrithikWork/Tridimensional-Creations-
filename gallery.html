@@ -72,11 +72,11 @@
 
           <!-- Category Quick-Filter Tabs -->
           <div class="gallery-filter-tabs">
-            <button class="gallery-tab-btn active" data-filter="all">All Disciplines</button>
-            <button class="gallery-tab-btn" data-filter="decor">Home Decor</button>
-            <button class="gallery-tab-btn" data-filter="furniture">Furniture & Woodworking</button>
-            <button class="gallery-tab-btn" data-filter="retail">Retail & Event Displays</button>
-            <button class="gallery-tab-btn" data-filter="art">Figurines & Art</button>
+            <button class="gallery-tab-btn active" data-category="all" data-filter="all">All Disciplines</button>
+            <button class="gallery-tab-btn" data-category="decor" data-filter="decor">Home Decor</button>
+            <button class="gallery-tab-btn" data-category="furniture" data-filter="furniture">Furniture & Woodworking</button>
+            <button class="gallery-tab-btn" data-category="retail" data-filter="retail">Retail & Event Displays</button>
+            <button class="gallery-tab-btn" data-category="art" data-filter="art">Figurines & Art</button>
           </div>
         </div>
       </section>
@@ -421,71 +421,8 @@
     <!-- Global JavaScript File -->
     <script src="/main.js"></script>
 
-    <!-- Gallery Category Filter & URL Parameter Detection -->
-    <script>
-      document.addEventListener('DOMContentLoaded', function () {
-        const urlParams = new URLSearchParams(window.location.search);
-        const requestedCategory = urlParams.get('category') || 'all';
-
-        const titleMap = {
-          'all': 'Bespoke Production Gallery',
-          'decor': 'Custom Home Decor',
-          'furniture': 'Furniture & Woodworking',
-          'retail': 'Retail & Event Displays',
-          'art': 'Figurines & Art Sculptures'
-        };
-
-        const descMap = {
-          'all': 'A curated photographic collection of custom physical commissions fabricated at our Guwahati atelier—featuring high-torque CNC carving, parametric wall relief claddings, and high-detail resin 3D printing.',
-          'decor': 'Bespoke clocks, carved pooja room backdrops, intricate jali partitions, nameplates, and sculptural interior statement pieces tailored to your exact floor plan.',
-          'furniture': 'Continuous wardrobe surface textures, carved main entrance door shutters, fluted cabinet panels, and organic parametric acoustic wave structures.',
-          'retail': '3D corporate reception backdrops, chiseled signage, branded retail pedestals, and experiential commercial event centerpieces.',
-          'art': 'High-precision resin deity murti figurines, lifelike memorial portrait busts, and intricate collectibles digitally sculpted in ZBrush.'
-        };
-
-        const pageTitle = document.getElementById('gallery-page-title');
-        const pageDesc = document.getElementById('gallery-page-desc');
-        const filterBtns = document.querySelectorAll('.gallery-tab-btn');
-        const galleryItems = document.querySelectorAll('.gallery-item');
-
-        function applyFilter(category) {
-          if (titleMap[category] && pageTitle) {
-            pageTitle.textContent = titleMap[category];
-          }
-          if (descMap[category] && pageDesc) {
-            pageDesc.textContent = descMap[category];
-          }
-
-          filterBtns.forEach(btn => {
-            if (btn.getAttribute('data-filter') === category) {
-              btn.classList.add('active');
-            } else {
-              btn.classList.remove('active');
-            }
-          });
-
-          galleryItems.forEach(item => {
-            const itemCat = item.getAttribute('data-category');
-            if (category === 'all' || itemCat === category) {
-              item.style.display = 'flex';
-            } else {
-              item.style.display = 'none';
-            }
-          });
-        }
-
-        filterBtns.forEach(btn => {
-          btn.addEventListener('click', function () {
-            const cat = this.getAttribute('data-filter');
-            applyFilter(cat);
-          });
-        });
-
-        if (requestedCategory && requestedCategory !== 'all') {
-          applyFilter(requestedCategory);
-        }
-      });
-    </script>
+    <!-- Dynamic Gallery & Category Filtering handled via gallery-fetch.js -->
   <script src="/animations.js"></script>
+  <script type="module" src="gallery-fetch.js"></script>
 </body>
 </html>
